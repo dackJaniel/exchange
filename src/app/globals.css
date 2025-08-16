@@ -119,19 +119,24 @@
   }
   html {
     color-scheme: dark;
+    height: 100%;
   }
   body {
     @apply bg-black text-white font-mono;
-    min-height: 100vh;
+    height: 100vh;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
 }
 
 /* Custom calculator styles */
 .calculator-button {
   @apply rounded-full shadow-lg active:shadow-md transition-all duration-100 active:scale-95;
-  min-height: 64px; /* 64px für bessere Touch-Zugänglichkeit */
-  min-width: 64px;
+  min-height: 55px; /* Kleiner für bessere Raumausnutzung */
+  min-width: 55px;
+  height: 55px; /* Fixed height für konsistente Runde Form */
+  width: 100%; /* Nimmt verfügbare Breite ein */
   touch-action: manipulation; /* Verhindert zoom bei double-tap */
   user-select: none; /* Verhindert Textauswahl */
 }
@@ -151,18 +156,24 @@
 .display-primary {
   @apply text-right tracking-wider font-mono font-light text-white;
   /* Verhindert zoom bei focus auf iOS */
-  font-size: max(16px, 3rem);
+  font-size: max(16px, 2.5rem); /* Kleinere Schrift */
 }
 
 .display-secondary {
   @apply text-right font-mono text-zinc-400;
+  font-size: 1rem; /* Explizite kleinere Größe */
 }
 
 /* Touch optimization for mobile */
 @media (max-width: 768px) {
   .calculator-button {
-    min-height: 70px; /* Noch größer auf kleinen Bildschirmen */
-    min-width: 70px;
+    min-height: 60px; /* Größer auf kleinen Bildschirmen, aber nicht zu groß */
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .display-primary {
+    font-size: max(16px, 2rem); /* Noch kompakter auf Mobile */
   }
 
   /* Safe area insets für notched devices */
@@ -181,4 +192,19 @@ body {
 /* Entfernt highlight bei touch auf mobile devices */
 * {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Zusätzliche Mobile-Optimierung */
+.main-container {
+  height: 100vh;
+  height: 100dvh; /* Dynamische Viewport-Höhe für bessere Unterstützung */
+  overflow: hidden;
+}
+
+/* Ensure proper scrolling behavior */
+html,
+body {
+  height: 100vh;
+  height: 100dvh;
+  overscroll-behavior-y: none;
 }

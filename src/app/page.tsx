@@ -15,7 +15,7 @@ import {
   trackPWAUsage,
 } from '@/lib/pwa';
 import { Button } from '@/components/ui/button';
-import { Settings, History, Download } from 'lucide-react';
+import { Download } from 'lucide-react';
 
 export default function Home() {
   const isHydrated = useHydrated();
@@ -50,14 +50,14 @@ export default function Home() {
   return (
     <>
       <ServiceWorkerRegistration />
-      <div className='min-h-screen bg-black flex flex-col justify-end px-4 py-4 max-w-md mx-auto main-container'>
-        {/* Header */}
-        <div className='flex justify-between items-center mb-8'>
-          <h1 className='text-white text-lg font-medium'>
-            Currency Calculator
-          </h1>
-          <div className='flex gap-2'>
-            {/* PWA Install Button */}
+      <div className='h-screen w-screen max-w-4xl m-auto bg-black main-container'>
+        <div className='p-2 h-full flex flex-col justify-between'>
+          {/* Header - kompakter ohne Icons */}
+          <div className='flex justify-center items-center my-4 relative'>
+            <h1 className='text-white text-lg font-medium'>
+              Currency Calculator
+            </h1>
+            {/* PWA Install Button - hidden by default, shown via JavaScript */}
             <Button
               id='install-button'
               variant='ghost'
@@ -66,45 +66,35 @@ export default function Home() {
               title='Install App'>
               <Download className='h-5 w-5' />
             </Button>
-            <Button
-              variant='ghost'
-              size='icon'
-              className='text-zinc-400 hover:text-white hover:bg-zinc-800'>
-              <History className='h-5 w-5' />
-            </Button>
-            <Button
-              variant='ghost'
-              size='icon'
-              className='text-zinc-400 hover:text-white hover:bg-zinc-800'>
-              <Settings className='h-5 w-5' />
-            </Button>
+          </div>
+
+          {/* Currency Selectors */}
+          <div className='grid grid-cols-2 gap-2 mb-2'>
+            <div>
+              <label className='text-zinc-400 text-xs mb-1 block'>From</label>
+              <CurrencySelector type='base' />
+            </div>
+            <div>
+              <label className='text-zinc-400 text-xs mb-1 block'>To</label>
+              <CurrencySelector type='target' />
+            </div>
+          </div>
+
+          {/* Exchange Rate Display */}
+          <ExchangeRateDisplay />
+
+          {/* Display Panel */}
+          <DisplayPanel
+            display={display}
+            previousValue={previousValue}
+            operation={operation}
+          />
+
+          {/* Keypad - nimmt den verfügbaren Platz ein */}
+          <div className='flex-1 flex items-end'>
+            <KeypadGrid />
           </div>
         </div>
-
-        {/* Currency Selectors */}
-        <div className='grid grid-cols-2 gap-4 mb-6'>
-          <div>
-            <label className='text-zinc-400 text-sm mb-2 block'>From</label>
-            <CurrencySelector type='base' />
-          </div>
-          <div>
-            <label className='text-zinc-400 text-sm mb-2 block'>To</label>
-            <CurrencySelector type='target' />
-          </div>
-        </div>
-
-        {/* Exchange Rate Display */}
-        <ExchangeRateDisplay />
-
-        {/* Display Panel */}
-        <DisplayPanel
-          display={display}
-          previousValue={previousValue}
-          operation={operation}
-        />
-
-        {/* Keypad */}
-        <KeypadGrid />
       </div>
     </>
   );

@@ -12,18 +12,17 @@ interface CalculatorButtonProps {
 }
 
 const getVariantClasses = (variant: ButtonVariant): string => {
-  const baseClasses =
-    'calculator-button text-xl font-medium h-16 w-16 sm:h-18 sm:w-18 md:h-20 md:w-20';
+  const baseClasses = 'calculator-button text-lg font-medium';
 
   switch (variant) {
     case 'number':
       return `${baseClasses} number-button`;
     case 'operator':
-      return `${baseClasses} operator-button text-lg`;
+      return `${baseClasses} operator-button text-base`;
     case 'function':
-      return `${baseClasses} function-button text-base`;
+      return `${baseClasses} function-button text-sm`;
     case 'zero':
-      return `${baseClasses} number-button col-span-2 w-auto px-6`;
+      return `${baseClasses} number-button col-span-2 w-auto px-4`;
     default:
       return `${baseClasses} number-button`;
   }

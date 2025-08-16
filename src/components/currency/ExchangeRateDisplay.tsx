@@ -19,10 +19,8 @@ export function ExchangeRateDisplay() {
   const formatLastUpdated = (date: Date | string | null) => {
     if (!date || !isHydrated) return 'Never';
 
-    // Handle both Date objects and date strings from localStorage
     const dateObj = typeof date === 'string' ? new Date(date) : date;
 
-    // Check if the date is valid
     if (isNaN(dateObj.getTime())) return 'Never';
 
     const now = new Date();
@@ -37,8 +35,8 @@ export function ExchangeRateDisplay() {
   };
 
   return (
-    <div className='flex items-center justify-between text-xs text-zinc-500 px-2 py-1'>
-      <div className='flex items-center gap-2'>
+    <div className='flex items-center justify-between text-xs text-zinc-500 px-1 py-0.5 mb-1'>
+      <div className='flex items-center gap-1'>
         {rate && (
           <span>
             1 {baseCurrency.code} = {rate.toFixed(4)} {targetCurrency.code}
@@ -46,15 +44,15 @@ export function ExchangeRateDisplay() {
         )}
       </div>
 
-      <div className='flex items-center gap-2'>
+      <div className='flex items-center gap-1'>
         <span>{formatLastUpdated(lastUpdated)}</span>
         <Button
           variant='ghost'
           size='sm'
-          className='h-6 w-6 p-0 text-zinc-500 hover:text-white'
+          className='h-5 w-5 p-0 text-zinc-500 hover:text-white'
           onClick={fetchExchangeRates}
           disabled={isLoading}>
-          <RefreshCw className={`h-3 w-3 ${isLoading ? 'animate-spin' : ''}`} />
+          <RefreshCw className={`h-2 w-2 ${isLoading ? 'animate-spin' : ''}`} />
         </Button>
       </div>
     </div>

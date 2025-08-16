@@ -40,9 +40,9 @@ export function DisplayPanel({
   };
 
   return (
-    <div className='w-full bg-black rounded-xl shadow-xl p-6 mb-6 border border-zinc-800'>
+    <div className='w-full bg-black rounded-lg shadow-lg p-3 mb-2 border border-zinc-800'>
       {/* Header with Switch Button and Operation */}
-      <div className='flex items-start justify-between mb-4'>
+      <div className='flex items-start justify-between mb-2'>
         {/* Switch Button - moved to top left */}
         <Button
           variant='ghost'
@@ -63,28 +63,28 @@ export function DisplayPanel({
       </div>
 
       {/* Primary Currency Display - left aligned */}
-      <div className='text-left mb-6'>
-        <div className='display-primary text-4xl sm:text-5xl mb-2'>
+      <div className='text-left mb-3'>
+        <div className='display-primary text-2xl sm:text-3xl mb-1'>
           {formatNumber(displayValue)}
         </div>
-        <div className='text-zinc-500 text-sm uppercase tracking-wide'>
+        <div className='text-zinc-500 text-xs uppercase tracking-wide'>
           {baseCurrency.flag} {baseCurrency.code}
         </div>
       </div>
 
       {/* Secondary Currency Display - left aligned, same size */}
       <div className='text-left'>
-        <div className='display-primary text-4xl sm:text-5xl mb-2'>
+        <div className='display-primary text-2xl sm:text-3xl mb-1'>
           {isLoading ? (
             <div className='flex items-center gap-2'>
-              <Loader2 className='h-6 w-6 animate-spin' />
-              <span>Loading...</span>
+              <Loader2 className='h-4 w-4 animate-spin' />
+              <span className='text-sm'>Loading...</span>
             </div>
           ) : (
             formatNumber(convertedValue)
           )}
         </div>
-        <div className='text-zinc-500 text-sm uppercase tracking-wide'>
+        <div className='text-zinc-500 text-xs uppercase tracking-wide'>
           {targetCurrency.flag} {targetCurrency.code}
         </div>
       </div>

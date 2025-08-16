@@ -33,7 +33,7 @@ export function KeypadGrid() {
   };
 
   return (
-    <div className='grid grid-cols-4 gap-3 p-4 max-w-sm mx-auto bg-black'>
+    <div className='grid grid-cols-4 gap-2 w-full bg-black'>
       {/* Row 1 */}
       <CalculatorButton value='AC' onClick={clear} variant='function' />
       <CalculatorButton value='+/-' onClick={toggleSign} variant='function' />

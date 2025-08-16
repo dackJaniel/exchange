@@ -152,7 +152,7 @@ export function CurrencyCombobox({ type }: CurrencyComboboxProps) {
           variant='outline'
           role='combobox'
           aria-expanded={open}
-          className='w-48 justify-between bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-600 hover:border-zinc-500 transition-colors h-auto px-3 py-2'>
+          className='w-full justify-between bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-600 hover:border-zinc-500 transition-colors h-auto px-3 py-2'>
           <div className='flex items-center gap-2'>
             <span className='text-lg'>{currentCurrency.flag}</span>
             <span className='font-medium'>{currentCurrency.code}</span>
