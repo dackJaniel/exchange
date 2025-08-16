@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { toast } from 'sonner';
 import { useCurrencyStore } from '@/lib/store/currency';
+import { useUpdateNotifications } from './useUpdateNotifications';
 
 interface UpdateState {
     updateAvailable: boolean;
@@ -16,6 +17,7 @@ export function useAppUpdates() {
     });
 
     const isOnline = useCurrencyStore((state) => state.isOnline);
+    const { showUpdateNotification, hasActiveNotification } = useUpdateNotifications();
 
     const applyUpdate = useCallback(() => {
         if (state.registration?.waiting) {
@@ -107,33 +109,40 @@ export function useAppUpdates() {
                                 if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                                     setState(prev => ({ ...prev, updateAvailable: true }));
 
-                                    // Only show persistent notification for background updates
-                                    // Silent updates will be handled via checkForUpdatesAndApply
-                                    toast('Neue App-Version verfügbar! 🎉', {
-                                        description: 'Möchten Sie jetzt aktualisieren?',
-                                        action: {
-                                            label: 'Jetzt aktualisieren',
-                                            onClick: applyUpdate,
-                                        },
-                                        cancel: {
-                                            label: 'Später',
-                                            onClick: () => {
-                                                // Show reminder in 5 minutes
-                                                setTimeout(() => {
-                                                    if (state.updateAvailable) {
-                                                        toast.info('Update-Erinnerung', {
-                                                            description: 'Vergessen Sie nicht, die App zu aktualisieren!',
-                                                            action: {
-                                                                label: 'Aktualisieren',
-                                                                onClick: applyUpdate,
-                                                            },
-                                                        });
-                                                    }
-                                                }, 5 * 60 * 1000);
-                                            },
-                                        },
-                                        duration: Infinity, // Keep toast until user interacts
-                                    });
+                                    // Use central notification manager - prüfe ob bereits eine Benachrichtigung aktiv ist
+                                    if (!hasActiveNotification()) {
+                                        console.log('useAppUpdates: Showing update notification via central manager');
+
+                                        const updateCallback = () => {
+                                            applyUpdate();
+                                        };
+
+                                        const onDismiss = () => {
+                                            // Show reminder in 5 minutes
+                                            setTimeout(() => {
+                                                if (state.updateAvailable && !hasActiveNotification()) {
+                                                    showUpdateNotification(
+                                                        'Update-Erinnerung',
+                                                        'Vergessen Sie nicht, die App zu aktualisieren!',
+                                                        'Aktualisieren',
+                                                        'Später',
+                                                        applyUpdate
+                                                    );
+                                                }
+                                            }, 5 * 60 * 1000);
+                                        };
+
+                                        showUpdateNotification(
+                                            'Neue App-Version verfügbar! 🎉',
+                                            'Möchten Sie jetzt aktualisieren?',
+                                            'Jetzt aktualisieren',
+                                            'Später',
+                                            updateCallback,
+                                            onDismiss
+                                        );
+                                    } else {
+                                        console.log('useAppUpdates: Update notification already active, skipping...');
+                                    }
                                 }
                             });
                         }
@@ -164,7 +173,7 @@ export function useAppUpdates() {
                 }
             });
         }
-    }, [applyUpdate, state.updateAvailable, isOnline]);
+    }, [applyUpdate, state.updateAvailable, isOnline, showUpdateNotification, hasActiveNotification]);
 
     return {
         updateAvailable: state.updateAvailable,

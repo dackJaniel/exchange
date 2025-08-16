@@ -14,10 +14,11 @@ import { LanguageSelector } from '@/components/ui/LanguageSelector';
 import { Download, Menu, Coffee } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTranslation } from '@/lib/i18n/provider';
+import { useTranslation, useI18n } from '@/lib/i18n/provider';
 
 export function NavigationHeader() {
   const t = useTranslation();
+  const { locale } = useI18n();
   return (
     <header className='border-b border-zinc-800 bg-black/90 backdrop-blur-sm sticky top-0 z-50'>
       <nav className='flex items-center justify-between px-4 py-3'>
@@ -68,7 +69,7 @@ export function NavigationHeader() {
               </SheetHeader>
               <div className='mt-6 flex flex-col space-y-4'>
                 {/* Language Selection */}
-                <div className='pb-2 border-b border-zinc-700'>
+                <div className='pb-2'>
                   <div className='text-sm text-zinc-400 mb-2'>
                     {t.ui.language}
                   </div>
@@ -92,24 +93,14 @@ export function NavigationHeader() {
                 </div>
 
                 <Link
-                  href='/datenschutz'
+                  href={locale === 'de' ? '/datenschutz' : '/privacy'}
                   className='text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800'>
-                  {t.ui.dataProtection}
+                  {locale === 'de' ? t.ui.dataProtection : t.ui.privacy}
                 </Link>
                 <Link
-                  href='/privacy'
+                  href={locale === 'de' ? '/impressum' : '/site-notice'}
                   className='text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800'>
-                  {t.ui.privacy}
-                </Link>
-                <Link
-                  href='/impressum'
-                  className='text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800'>
-                  {t.ui.imprint}
-                </Link>
-                <Link
-                  href='/site-notice'
-                  className='text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800'>
-                  {t.ui.siteNotice}
+                  {locale === 'de' ? t.ui.imprint : t.ui.siteNotice}
                 </Link>
 
                 {/* Share Button */}

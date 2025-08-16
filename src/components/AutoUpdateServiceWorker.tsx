@@ -2,8 +2,11 @@
 
 import { useEffect } from 'react';
 import { toast } from 'sonner';
+import { useUpdateNotifications } from '@/hooks/useUpdateNotifications';
 
 export function AutoUpdateServiceWorker() {
+  const { dismissCurrentNotification } = useUpdateNotifications();
+
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -25,6 +28,9 @@ export function AutoUpdateServiceWorker() {
                   newWorker.state === 'installed' &&
                   navigator.serviceWorker.controller
                 ) {
+                  // Dismiss any existing update notifications since we're auto-updating
+                  dismissCurrentNotification();
+
                   // Show brief notification
                   toast.success('App wird aktualisiert...', {
                     description: 'Die neueste Version wird geladen.',
@@ -45,6 +51,9 @@ export function AutoUpdateServiceWorker() {
 
           // Handle already waiting service worker
           if (registration.waiting) {
+            // Dismiss any existing notifications
+            dismissCurrentNotification();
+
             registration.waiting.postMessage({ type: 'SKIP_WAITING' });
             setTimeout(() => {
               window.location.reload();
@@ -64,7 +73,7 @@ export function AutoUpdateServiceWorker() {
         }
       });
     }
-  }, []);
+  }, [dismissCurrentNotification]);
 
   return null;
 }

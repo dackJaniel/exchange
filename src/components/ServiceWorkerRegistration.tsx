@@ -1,55 +1,57 @@
 'use client';
 
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { toast } from 'sonner';
 import { useCurrencyStore } from '@/lib/store/currency';
 import { useTranslation } from '@/lib/i18n/provider';
+import { useUpdateNotifications } from '@/hooks/useUpdateNotifications';
 
 export function ServiceWorkerRegistration() {
   const [registration, setRegistration] =
     useState<ServiceWorkerRegistration | null>(null);
-  const updateNotificationShownRef = useRef(false);
   const setOnlineStatus = useCurrencyStore((state) => state.setOnlineStatus);
   const isOnline = useCurrencyStore((state) => state.isOnline);
   const t = useTranslation();
+  const { showUpdateNotification, hasActiveNotification } =
+    useUpdateNotifications();
 
-  const showUpdateNotification = useCallback(() => {
-    // Prevent showing multiple notifications in the same session
-    if (updateNotificationShownRef.current) {
-      console.log('SW: Update notification already shown in this session');
+  const handleShowUpdateNotification = useCallback(() => {
+    // Prüfe ob bereits eine Update-Benachrichtigung aktiv ist
+    if (hasActiveNotification()) {
+      console.log('SW: Update notification already active, skipping...');
       return;
     }
 
-    updateNotificationShownRef.current = true;
-    console.log('SW: Showing update notification');
+    console.log('SW: Showing update notification via central manager');
 
-    toast(t.ui.updateAvailable, {
-      description: t.ui.updateDescription,
-      action: {
-        label: t.ui.updateButton,
-        onClick: () => {
-          if (registration?.waiting) {
-            console.log('SW: Applying update...');
-            registration.waiting.postMessage({ type: 'SKIP_WAITING' });
-            window.location.reload();
-          }
-        },
-      },
-      cancel: {
-        label: t.ui.updateLater,
-        onClick: () => {
-          console.log('SW: Update dismissed by user');
-        },
-      },
-      duration: 15000,
-      id: 'sw-update', // Prevent duplicate toasts
-    });
+    const updateCallback = () => {
+      if (registration?.waiting) {
+        console.log('SW: Applying update...');
+        registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+        window.location.reload();
+      }
+    };
+
+    const onDismiss = () => {
+      console.log('SW: Update dismissed by user');
+    };
+
+    showUpdateNotification(
+      t.ui.updateAvailable,
+      t.ui.updateDescription,
+      t.ui.updateButton,
+      t.ui.updateLater,
+      updateCallback,
+      onDismiss
+    );
   }, [
     registration,
     t.ui.updateAvailable,
     t.ui.updateDescription,
     t.ui.updateButton,
     t.ui.updateLater,
+    showUpdateNotification,
+    hasActiveNotification,
   ]);
 
   useEffect(() => {
@@ -85,17 +87,17 @@ export function ServiceWorkerRegistration() {
                 ) {
                   // New version is available and ready to use
                   console.log('SW: New version installed and ready');
-                  showUpdateNotification();
+                  handleShowUpdateNotification();
                 }
               });
             }
           });
 
           // Only show update notification if there's a waiting worker AND
-          // we haven't already shown a notification in this session
-          if (reg.waiting && !updateNotificationShownRef.current) {
+          // no notification is currently active
+          if (reg.waiting && !hasActiveNotification()) {
             console.log('SW: Waiting worker found on registration');
-            showUpdateNotification();
+            handleShowUpdateNotification();
           }
 
           // Cleanup function for the interval
@@ -118,11 +120,12 @@ export function ServiceWorkerRegistration() {
       });
     }
   }, [
-    showUpdateNotification,
+    handleShowUpdateNotification,
     t.ui.ratesUpdated,
     t.ui.ratesUpdatedDescription,
     isOnline,
-  ]); // Include isOnline dependency
+    hasActiveNotification,
+  ]); // Include all dependencies
 
   // Additional effect for online/offline handling from service worker perspective
   useEffect(() => {
