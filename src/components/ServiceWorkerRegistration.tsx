@@ -2,11 +2,13 @@
 
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { toast } from 'sonner';
+import { useCurrencyStore } from '@/lib/store/currency';
 
 export function ServiceWorkerRegistration() {
   const [registration, setRegistration] =
     useState<ServiceWorkerRegistration | null>(null);
   const updateNotificationShownRef = useRef(false);
+  const setOnlineStatus = useCurrencyStore((state) => state.setOnlineStatus);
 
   const showUpdateNotification = useCallback(() => {
     // Prevent showing multiple notifications in the same session
@@ -97,6 +99,30 @@ export function ServiceWorkerRegistration() {
       });
     }
   }, [showUpdateNotification]); // showUpdateNotification is now stable with useCallback
+
+  // Additional effect for online/offline handling from service worker perspective
+  useEffect(() => {
+    // Sync online status when service worker registration is active
+    if (typeof navigator !== 'undefined' && navigator.serviceWorker) {
+      const handleOnlineOffline = () => {
+        const isOnline = navigator.onLine;
+        console.log('SW Registration: Online status changed to', isOnline);
+        setOnlineStatus(isOnline);
+      };
+
+      // Listen for browser online/offline events
+      window.addEventListener('online', handleOnlineOffline);
+      window.addEventListener('offline', handleOnlineOffline);
+
+      // Set initial status
+      setOnlineStatus(navigator.onLine);
+
+      return () => {
+        window.removeEventListener('online', handleOnlineOffline);
+        window.removeEventListener('offline', handleOnlineOffline);
+      };
+    }
+  }, [setOnlineStatus]);
 
   return null;
 }

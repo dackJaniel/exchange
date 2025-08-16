@@ -72,6 +72,7 @@ export function ExchangeRateDisplay() {
           <span className={isOnline ? 'text-green-500' : 'text-red-500'}>
             {isOnline ? 'Online' : 'Offline'}
           </span>
+          {!isHydrated && <span className='text-zinc-600'>(Loading...)</span>}
         </div>
 
         {/* Exchange Rate */}

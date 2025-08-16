@@ -62,20 +62,25 @@ export const useCurrencyStore = create<CurrencyStore>()(
             currencies: CURRENCIES,
             isHydrated: false,
             cachedRates: {},
-            isOnline: true,
+            isOnline: typeof navigator !== 'undefined' ? navigator.onLine : true,
             hasEverBeenOnline: false,
 
             setOnlineStatus: (status: boolean) => {
                 const state = get();
+                console.log(`Currency store: Setting online status to ${status} (was ${state.isOnline})`);
                 set({ isOnline: status });
 
                 if (status) {
                     // When coming back online, mark as having been online and refresh rates
                     if (!state.hasEverBeenOnline) {
+                        console.log('First time online - marking hasEverBeenOnline=true');
                         set({ hasEverBeenOnline: true });
                     }
                     // Fetch all currency rates in background when online
+                    console.log('Going online - fetching currency rates in background');
                     state.fetchAllCurrencyRates();
+                } else {
+                    console.log('Going offline - will use cached rates');
                 }
             },
 

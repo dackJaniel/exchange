@@ -9,6 +9,7 @@ import { OfflineNotice } from '@/components/currency/OfflineNotice';
 import { PullToRefreshWrapper } from '@/components/layout/PullToRefreshWrapper';
 import { NavigationHeader } from '@/components/layout/NavigationHeader';
 import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration';
+import { OnlineStatusDebug } from '@/components/OnlineStatusDebug';
 import { useHydrated } from '@/hooks/useHydrated';
 import { useOnlineStatus } from '@/hooks/useOnlineStatus';
 import { useCalculatorStore } from '@/lib/store/calculator';
@@ -76,6 +77,7 @@ export default function Home() {
 
   return (
     <>
+      <OnlineStatusDebug />
       <ServiceWorkerRegistration />
       <div className='max-h-screen min-h-[90vh] bg-black flex flex-col'>
         {/* Navigation Header */}
