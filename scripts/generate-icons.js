@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
-const inputIcon = path.join(__dirname, '../public/icons/icon-base.svg');
+const inputIcon = path.join(__dirname, '../public/icons/logo.png');
 const outputDir = path.join(__dirname, '../public/icons');
 
 async function generateIcons() {
