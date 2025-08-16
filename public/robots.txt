@@ -1,0 +1,47 @@
+User-agent: *
+Allow: /
+
+# Hauptseiten
+Allow: /
+Allow: /datenschutz
+Allow: /impressum
+Allow: /privacy
+Allow: /site-notice
+Allow: /offline
+
+# Statische Ressourcen
+Allow: /icons/
+Allow: /manifest.json
+Allow: /_next/static/
+Allow: /favicon.ico
+
+# Service Worker
+Allow: /sw.js
+
+# Sitemaps
+Sitemap: https://exchange.danielhilmer.de/sitemap.xml
+
+# Crawl-delay (optional, nur bei Bedarf)
+# Crawl-delay: 1
+
+# Spezifische Bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /

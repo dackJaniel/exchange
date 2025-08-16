@@ -9,6 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { ShareButton } from '@/components/ui/ShareButton';
 import { Download, Menu, Coffee } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -99,6 +100,11 @@ export function NavigationHeader() {
                   className='text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800'>
                   Site Notice
                 </Link>
+
+                {/* Share Button */}
+                <div className='pt-2 border-t border-zinc-700'>
+                  <ShareButton />
+                </div>
               </div>
             </SheetContent>
           </Sheet>

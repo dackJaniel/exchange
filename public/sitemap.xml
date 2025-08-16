@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+  
+  <!-- Hauptseite -->
+  <url>
+    <loc>https://exchange.danielhilmer.de/</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://exchange.danielhilmer.de/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://exchange.danielhilmer.de/en" />
+  </url>
+
+  <!-- Datenschutz -->
+  <url>
+    <loc>https://exchange.danielhilmer.de/datenschutz</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Impressum -->
+  <url>
+    <loc>https://exchange.danielhilmer.de/impressum</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Privacy (EN) -->
+  <url>
+    <loc>https://exchange.danielhilmer.de/privacy</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Site Notice (EN) -->
+  <url>
+    <loc>https://exchange.danielhilmer.de/site-notice</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Offline Page -->
+  <url>
+    <loc>https://exchange.danielhilmer.de/offline</loc>
+    <lastmod>2025-08-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+    <mobile:mobile/>
+  </url>
+
+</urlset>

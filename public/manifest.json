@@ -1,19 +1,25 @@
 {
-    "name": "Currency Exchange Calculator",
+    "name": "Currency Exchange Calculator - Kostenloser Währungsrechner",
     "short_name": "Currency Calc",
-    "description": "Modern currency exchange calculator with real-time rates",
+    "description": "Kostenloser Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen. Funktioniert auch offline.",
     "start_url": "/",
     "display": "standalone",
-    "orientation": "portrait",
+    "orientation": "portrait-primary",
     "theme_color": "#000000",
     "background_color": "#000000",
     "lang": "de-DE",
+    "dir": "ltr",
     "scope": "/",
+    "id": "currency-exchange-calculator",
     "categories": [
         "finance",
         "utilities",
-        "productivity"
+        "productivity",
+        "business"
     ],
+    "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+    "prefer_related_applications": false,
+    "related_applications": [],
     "icons": [
         {
             "src": "/icons/icon-72x72.png",
@@ -77,7 +83,5 @@
                 }
             ]
         }
-    ],
-    "related_applications": [],
-    "prefer_related_applications": false
+    ]
 }
