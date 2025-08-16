@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a **Currency Exchange Calculator PWA** built with Next.js 15, combining real-time currency conversion with calculator functionality. The app features a clean, dark design with full internationalization (i18n) support for English and German.
+This is a **Currency Exchange Calculator PWA** built with Next.js 15, combining real-time currency conversion with calculator functionality. The app features a clean, dark design with full internationalization (i18n) support for English and German, enhanced with advanced PWA capabilities including push notifications and background sync.
 
 ## Architecture & Key Concepts
 
@@ -53,8 +53,10 @@ src/components/
 ├── calculator/          # Calculator button component
 ├── currency/           # Currency selection, exchange rates, offline notices
 ├── layout/             # Display panel, keypad grid, navigation header
-├── ui/                 # shadcn/ui components, language selector, share button
-└── ServiceWorkerRegistration.tsx  # PWA service worker management
+├── ui/                 # shadcn/ui components, language selector, share button, notification settings
+├── ServiceWorkerRegistration.tsx  # Enhanced PWA service worker management with push notifications
+├── AutoBackgroundUpdates.tsx      # Fully automatic background updates
+└── AutomaticRateUpdates.tsx       # Smart background sync for exchange rates
 ```
 
 ### File Structure
@@ -62,18 +64,19 @@ src/components/
 ```
 src/
 ├── app/                 # Next.js app router pages
-│   ├── api/            # API routes (manifest generation)
+│   ├── api/            # API routes (manifest generation, push notifications)
 │   ├── [locale]/       # Localized routes (datenschutz, impressum, etc.)
 │   ├── sitemap.ts      # Multilingual sitemap generation
 │   └── robots.ts       # SEO robots configuration
 ├── components/         # React components (see architecture above)
-├── hooks/              # Custom React hooks (useAppUpdates, useOnlineStatus, etc.)
+├── hooks/              # Custom React hooks (useAutoUpdates, useOnlineStatus, usePWAFeatures, etc.)
 ├── lib/
 │   ├── i18n/          # Internationalization system
 │   │   ├── config.ts   # Locale configuration and detection
 │   │   ├── provider.tsx # React context provider
-│   │   └── translations.ts # Translation dictionaries
+│   │   └── translations.ts # Translation dictionaries (including PWA notifications)
 │   ├── store/         # Zustand state management
+│   ├── pwa-features.ts # PWA notification and background sync managers
 │   └── utils.ts       # Utility functions
 └── types/             # TypeScript type definitions
 ```
@@ -146,6 +149,8 @@ npm run deploy
 - **Navigation UX**: Language selector moved to hamburger menu for better mobile experience
 - **Currency Exchange**: Real-time rates with 15-minute caching and offline fallback
 - **Pull-to-Refresh**: Smart refresh with offline detection and appropriate messaging
+- **Automatic Background Updates**: Fully automated update system with single success notification
+- **Enhanced PWA Features**: Push notifications, background sync, and automatic rate updates
 
 ## File Patterns
 
@@ -182,6 +187,8 @@ npm run deploy
 8. **i18n**: Full internationalization with automatic detection and localStorage persistence
 9. **Error Handling**: Context-specific error messages, offline-aware UI states
 10. **UX Optimization**: Language selector in hamburger menu, clear offline indicators
+11. **Automatic Updates**: Fully automated background updates with intelligent duplicate prevention
+12. **PWA Features**: Push notifications, background sync, and enhanced service worker capabilities
 
 ## Development Guidelines
 
@@ -194,6 +201,7 @@ npm run deploy
 5. Add proper ARIA labels for accessibility
 6. Consider offline behavior and error states
 7. Implement proper loading states and feedback
+8. For PWA features, use the `usePWAFeatures` hook for notification and background sync functionality
 
 ### Translation Management
 
@@ -212,6 +220,25 @@ npm run deploy
 - **State Management**: Clear loading states when going offline
 - **User Feedback**: Show appropriate offline notices and indicators
 
+### PWA Features Development
+
+- **Push Notifications**: Use `PWANotificationManager` for local notifications and permission management
+- **Background Sync**: Use `PWABackgroundSyncManager` for automatic rate updates and offline action sync
+- **Hooks Integration**: Use `usePWAFeatures()` hook for React components requiring PWA functionality
+- **Service Worker**: Enhanced with push event handlers, notification clicks, and background sync events
+- **Environment Setup**: Configure VAPID keys for push notifications in `.env.local`
+- **Browser Support**: Check feature availability before using advanced PWA APIs
+- **User Experience**: Provide clear settings UI for notification permissions and background sync
+
+### Automatic Update System
+
+- **AutoBackgroundUpdates Component**: Main component for fully automatic updates
+- **useAutoUpdates Hook**: Provides AutoUpdateManager with intelligent duplicate prevention
+- **Update Flow**: Detection → Background download → Silent application → Single success notification
+- **No User Interaction**: Updates happen transparently without interrupting user workflow
+- **Error Handling**: Automatic retry mechanisms and fallback strategies
+- **Timing Control**: Minimum 10-second intervals between updates to prevent spam
+
 ## Recent Improvements (August 2025)
 
 ### ✅ Offline-Mode Fixes
@@ -228,6 +255,25 @@ npm run deploy
 - **Automatic language persistence**: Selected language is saved and restored automatically
 - **Better offline feedback**: Clear indicators and notices for offline state
 
+### ✅ Automatic Update System (August 2025)
+
+- **Fully automated background updates**: No user interaction required
+- **Single success notification**: Only one toast after update completion
+- **Duplicate prevention**: AutoUpdateManager prevents multiple concurrent updates
+- **Intelligent timing**: Minimum 10-second intervals between updates
+- **Seamless experience**: Updates happen transparently during app usage
+- **Error handling**: Automatic retry and fallback mechanisms
+
+### ✅ Enhanced PWA Features (August 2025)
+
+- **Push Notifications**: Local notifications for rate updates with permission management
+- **Background Sync**: Automatic rate synchronization when app is not visible
+- **Notification Settings**: User-friendly UI in hamburger menu for PWA configuration
+- **Service Worker Enhancement**: Push and sync event handlers with notification click management
+- **Automatic Rate Updates**: Smart background sync triggered by visibility changes and periodic intervals
+- **VAPID Integration**: Secure push notification setup with environment configuration
+- **Multi-language Support**: PWA notifications fully translated in English and German
+
 ### ✅ Technical Improvements
 
 - **API timeout implementation**: 10-second timeout for all external requests
@@ -235,12 +281,43 @@ npm run deploy
 - **Improved caching**: 15-minute cache duration with intelligent fallback strategies
 - **Enhanced pull-to-refresh**: Offline-aware with appropriate messaging
 
+## PWA Configuration & Setup
+
+### Environment Variables (.env.local)
+
+```env
+# PWA Push Notifications Configuration
+# Generate VAPID keys using: npx web-push generate-vapid-keys
+NEXT_PUBLIC_VAPID_PUBLIC_KEY=your_vapid_public_key_here
+VAPID_PRIVATE_KEY=your_vapid_private_key_here
+VAPID_SUBJECT=mailto:your-email@example.com
+
+# API Configuration
+EXCHANGE_RATE_API_URL=https://api.exchangerate-api.com/v4/latest
+```
+
+### PWA Features Usage
+
+- **Notification Settings**: Accessible through hamburger menu → "Notification Settings"
+- **Push Notifications**: Local notifications for background rate updates
+- **Background Sync**: Automatic synchronization when app becomes visible or periodically
+- **Permission Management**: User-friendly UI for enabling/disabling PWA features
+- **Browser Compatibility**: Graceful degradation for unsupported browsers
+
+### Files Structure for PWA
+
+- `src/lib/pwa-features.ts` - Core PWA managers (NotificationManager, BackgroundSyncManager)
+- `src/hooks/usePWAFeatures.ts` - React hooks for PWA integration
+- `src/components/ui/NotificationSettings.tsx` - Settings UI component
+- `src/app/api/push-notifications/route.ts` - API endpoint for push notifications
+- `.env.example` - Environment variables template
+
 ## Known Issues & Limitations
 
-- Service Worker updates only function when online
 - Initial currency data download required for first-time usage
 - Cache validity limited to 15 minutes for exchange rates
 - Browser offline detection can sometimes be delayed
+- Update system only functions when online (by design)
 
 ## Next Steps for Enhancement
 
@@ -248,9 +325,9 @@ npm run deploy
 2. ✅ ~~Implement proper error handling~~ - COMPLETED
 3. ✅ ~~Add comprehensive translations~~ - COMPLETED
 4. ✅ ~~Optimize navigation UX~~ - COMPLETED
-5. Add haptic feedback for mobile interactions
-6. Enhance PWA features (push notifications, background sync)
-7. Add more currencies and exchange rate providers
-8. Implement advanced calculator features
+5. ✅ ~~Implement automatic background updates~~ - COMPLETED
+6. ✅ ~~Add haptic feedback for mobile interactions~~ - COMPLETED
+7. ✅ ~~Enhance PWA features (push notifications, background sync)~~ - COMPLETED
+8. ✅ ~~Add more currencies and exchange rate providers~~ - COMPLETED
 
-Refer to `KONZEPT.md` for detailed design specifications, `OFFLINE_TEST.md` for testing guidelines, and color codes for complete implementation roadmap.
+Refer to `KONZEPT.md` for detailed design specifications, `OFFLINE_TEST.md` for testing guidelines, `AUTO_BACKGROUND_UPDATES.md` for automatic update system documentation, `PWA_FEATURES.md` for PWA implementation details, and color codes for complete implementation roadmap.

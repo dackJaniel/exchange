@@ -83,5 +83,18 @@
                 }
             ]
         }
+    ],
+    "features": [
+        "push-notifications",
+        "background-sync",
+        "offline-support",
+        "cross-platform",
+        "touch-support"
+    ],
+    "capabilities": [
+        "background_sync",
+        "notifications",
+        "offline",
+        "persistent-storage"
     ]
 }

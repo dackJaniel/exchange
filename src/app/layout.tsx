@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration';
 import { Toaster } from '@/components/ui/sonner';
 import { I18nProvider } from '@/lib/i18n/provider';
 import './globals.css';
@@ -341,7 +340,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white overflow-x-hidden`}>
         <I18nProvider>
           {children}
-          <ServiceWorkerRegistration />
           <Toaster
             position='top-center'
             toastOptions={{

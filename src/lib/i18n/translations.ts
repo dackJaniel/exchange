@@ -136,6 +136,39 @@ export const translations = {
             notFoundTitle: 'Page Not Found',
             notFoundDescription: 'The requested page could not be found.',
             notFoundButton: 'Back to Calculator',
+
+            // Notifications and PWA features
+            notifications: {
+                settings: 'Notification Settings',
+                title: 'Push Notifications',
+                description: 'Configure notifications and background sync for exchange rate updates.',
+                permission: 'Notification Permission',
+                granted: 'Granted',
+                denied: 'Denied',
+                notRequested: 'Not requested',
+                enable: 'Enable Notifications',
+                disable: 'Disable',
+                enabled: 'Notifications enabled!',
+                enabledDescription: 'You will receive updates about exchange rate changes.',
+                disabled: 'Notifications disabled',
+                permissionDenied: 'Notification permission denied',
+                permissionRequired: 'Notification permission required',
+                error: 'Failed to update notification settings',
+                test: 'Send Test',
+                testTitle: 'Test Notification',
+                testBody: 'This is a test notification from the Currency Calculator',
+                testSent: 'Test notification sent',
+                testError: 'Failed to send test notification',
+                pushNotifications: 'Push Notifications',
+                pushDescription: 'Receive notifications even when the app is not open.',
+                active: 'Active',
+                inactive: 'Inactive',
+                backgroundSync: 'Background Sync',
+                backgroundSyncDescription: 'Automatically sync exchange rates in the background when you have an internet connection.',
+                backgroundSyncEnabled: 'Background sync enabled!',
+                backgroundSyncError: 'Failed to enable background sync',
+                enableBackgroundSync: 'Enable Background Sync',
+            },
         },
     },
     de: {
@@ -277,6 +310,39 @@ export const translations = {
             notFoundTitle: 'Seite nicht gefunden',
             notFoundDescription: 'Die angeforderte Seite konnte nicht gefunden werden.',
             notFoundButton: 'Zurück zum Calculator',
+
+            // Notifications and PWA features
+            notifications: {
+                settings: 'Benachrichtigungseinstellungen',
+                title: 'Push-Benachrichtigungen',
+                description: 'Konfigurieren Sie Benachrichtigungen und Hintergrundsynchronisation für Wechselkurs-Updates.',
+                permission: 'Benachrichtigungsberechtigung',
+                granted: 'Gewährt',
+                denied: 'Verweigert',
+                notRequested: 'Nicht angefragt',
+                enable: 'Benachrichtigungen aktivieren',
+                disable: 'Deaktivieren',
+                enabled: 'Benachrichtigungen aktiviert!',
+                enabledDescription: 'Sie erhalten Updates über Wechselkursänderungen.',
+                disabled: 'Benachrichtigungen deaktiviert',
+                permissionDenied: 'Benachrichtigungsberechtigung verweigert',
+                permissionRequired: 'Benachrichtigungsberechtigung erforderlich',
+                error: 'Fehler beim Aktualisieren der Benachrichtigungseinstellungen',
+                test: 'Test senden',
+                testTitle: 'Test-Benachrichtigung',
+                testBody: 'Dies ist eine Test-Benachrichtigung vom Währungsrechner',
+                testSent: 'Test-Benachrichtigung gesendet',
+                testError: 'Fehler beim Senden der Test-Benachrichtigung',
+                pushNotifications: 'Push-Benachrichtigungen',
+                pushDescription: 'Erhalten Sie Benachrichtigungen auch wenn die App nicht geöffnet ist.',
+                active: 'Aktiv',
+                inactive: 'Inaktiv',
+                backgroundSync: 'Hintergrundsynchronisation',
+                backgroundSyncDescription: 'Wechselkurse automatisch im Hintergrund synchronisieren, wenn eine Internetverbindung verfügbar ist.',
+                backgroundSyncEnabled: 'Hintergrundsynchronisation aktiviert!',
+                backgroundSyncError: 'Fehler beim Aktivieren der Hintergrundsynchronisation',
+                enableBackgroundSync: 'Hintergrundsynchronisation aktivieren',
+            },
         },
     },
 } as const;
@@ -384,5 +450,38 @@ export type TranslationKeys = {
         notFoundTitle: string;
         notFoundDescription: string;
         notFoundButton: string;
+
+        // Notifications and PWA features
+        notifications: {
+            settings: string;
+            title: string;
+            description: string;
+            permission: string;
+            granted: string;
+            denied: string;
+            notRequested: string;
+            enable: string;
+            disable: string;
+            enabled: string;
+            enabledDescription: string;
+            disabled: string;
+            permissionDenied: string;
+            permissionRequired: string;
+            error: string;
+            test: string;
+            testTitle: string;
+            testBody: string;
+            testSent: string;
+            testError: string;
+            pushNotifications: string;
+            pushDescription: string;
+            active: string;
+            inactive: string;
+            backgroundSync: string;
+            backgroundSyncDescription: string;
+            backgroundSyncEnabled: string;
+            backgroundSyncError: string;
+            enableBackgroundSync: string;
+        };
     };
 };

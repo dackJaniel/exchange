@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/sheet';
 import { ShareButton } from '@/components/ui/ShareButton';
 import { LanguageSelector } from '@/components/ui/LanguageSelector';
+import { NotificationSettings } from '@/components/ui/NotificationSettings';
 import { Download, Menu, Coffee } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -74,6 +75,11 @@ export function NavigationHeader() {
                     {t.ui.language}
                   </div>
                   <LanguageSelector />
+                </div>
+
+                {/* Notification Settings */}
+                <div className='pb-2'>
+                  <NotificationSettings />
                 </div>
 
                 {/* Coffee Donation Button */}
