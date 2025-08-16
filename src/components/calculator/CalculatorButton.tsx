@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { triggerHapticFeedback } from '@/lib/haptic';
+import { memo } from 'react';
 
 type ButtonVariant = 'number' | 'operator' | 'function' | 'zero';
 
@@ -12,7 +13,8 @@ interface CalculatorButtonProps {
 }
 
 const getVariantClasses = (variant: ButtonVariant): string => {
-  const baseClasses = 'calculator-button text-lg font-medium';
+  const baseClasses =
+    'calculator-button text-lg font-medium transition-all duration-150 active:scale-95';
 
   switch (variant) {
     case 'number':
@@ -28,31 +30,32 @@ const getVariantClasses = (variant: ButtonVariant): string => {
   }
 };
 
-export function CalculatorButton({
-  value,
-  onClick,
-  variant = 'number',
-  className,
-}: CalculatorButtonProps) {
-  const handleClick = () => {
-    // Trigger haptic feedback based on button type
-    if (variant === 'operator') {
-      triggerHapticFeedback('medium');
-    } else if (variant === 'function') {
-      triggerHapticFeedback('light');
-    } else {
-      triggerHapticFeedback('light');
-    }
+const CalculatorButton = memo<CalculatorButtonProps>(
+  ({ value, onClick, variant = 'number', className }) => {
+    const handleClick = () => {
+      // Trigger haptic feedback based on button type
+      if (variant === 'operator') {
+        triggerHapticFeedback('medium');
+      } else if (variant === 'function') {
+        triggerHapticFeedback('light');
+      } else {
+        triggerHapticFeedback('light');
+      }
 
-    onClick();
-  };
+      onClick();
+    };
 
-  return (
-    <Button
-      onClick={handleClick}
-      className={cn(getVariantClasses(variant), className)}
-      variant='ghost'>
-      {value}
-    </Button>
-  );
-}
+    return (
+      <Button
+        onClick={handleClick}
+        className={cn(getVariantClasses(variant), className)}
+        variant='ghost'>
+        {value}
+      </Button>
+    );
+  }
+);
+
+CalculatorButton.displayName = 'CalculatorButton';
+
+export { CalculatorButton };

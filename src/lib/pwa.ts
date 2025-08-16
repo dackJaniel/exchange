@@ -1,4 +1,5 @@
 // PWA Utility Functions
+import { pwaLogger } from './debug';
 
 interface BeforeInstallPromptEvent extends Event {
     readonly platforms: string[];
@@ -27,7 +28,7 @@ export function registerServiceWorker() {
                     scope: '/',
                 });
 
-                console.log('SW registered: ', registration.scope);
+                pwaLogger.info('SW registered: ', registration.scope);
 
                 // Handle updates
                 registration.addEventListener('updatefound', () => {
@@ -45,7 +46,7 @@ export function registerServiceWorker() {
                 });
 
             } catch (error) {
-                console.log('SW registration failed: ', error);
+                pwaLogger.error('SW registration failed: ', error);
             }
         });
     }

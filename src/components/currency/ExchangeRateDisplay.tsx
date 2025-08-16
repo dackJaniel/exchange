@@ -38,20 +38,21 @@ export function ExchangeRateDisplay() {
   }
 
   const formatLastUpdated = (date: Date | string | null) => {
-    if (!date || !isHydrated) return 'Never';
+    if (!date || !isHydrated) return t.ui.never;
 
     const dateObj = typeof date === 'string' ? new Date(date) : date;
 
-    if (isNaN(dateObj.getTime())) return 'Never';
+    if (isNaN(dateObj.getTime())) return t.ui.never;
 
     const now = new Date();
     const diffInMinutes = Math.floor(
       (now.getTime() - dateObj.getTime()) / (1000 * 60)
     );
 
-    if (diffInMinutes < 1) return 'Just now';
-    if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
-    if (diffInMinutes < 1440) return `${Math.floor(diffInMinutes / 60)}h ago`;
+    if (diffInMinutes < 1) return t.ui.justNow;
+    if (diffInMinutes < 60) return t.ui.minutesAgo(diffInMinutes);
+    if (diffInMinutes < 1440)
+      return t.ui.hoursAgo(Math.floor(diffInMinutes / 60));
     return dateObj.toLocaleDateString();
   };
 
@@ -81,13 +82,18 @@ export function ExchangeRateDisplay() {
         {rate && (
           <span>
             | 1 {baseCurrency.code} = {rate.toFixed(4)} {targetCurrency.code}
-            {isFromCache && ' (cached)'}
+            {isFromCache && ` (${t.ui.cached})`}
           </span>
         )}
 
         {/* Show warning if no rate available and never been online */}
-        {!rate && !hasEverBeenOnline && (
+        {!rate && !hasEverBeenOnline && !isOnline && (
           <span className='text-orange-500'>| {t.ui.noRatesOffline}</span>
+        )}
+
+        {/* Show loading when online and fetching */}
+        {!rate && isOnline && isLoading && (
+          <span className='text-blue-500'>| {t.ui.loading}</span>
         )}
 
         {/* Show error message if any */}
@@ -102,11 +108,7 @@ export function ExchangeRateDisplay() {
           className='h-5 w-5 p-0 text-zinc-500 hover:text-white disabled:opacity-30'
           onClick={handleRefresh}
           disabled={isLoading || !isOnline}
-          title={
-            !isOnline
-              ? 'Offline - keine Aktualisierung möglich'
-              : 'Wechselkurse aktualisieren'
-          }>
+          title={!isOnline ? t.ui.offlineUpdate : t.ui.refreshRates}>
           <RefreshCw className={`h-2 w-2 ${isLoading ? 'animate-spin' : ''}`} />
         </Button>
       </div>

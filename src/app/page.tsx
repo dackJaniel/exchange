@@ -19,6 +19,7 @@ import {
   setupInstallPrompt,
   trackPWAUsage,
 } from '@/lib/pwa';
+import { currencyLogger } from '@/lib/debug';
 
 export default function Home() {
   const isHydrated = useHydrated();
@@ -41,7 +42,9 @@ export default function Home() {
 
       // Check if we've never been online before - fetch immediately
       if (!hasEverBeenOnline) {
-        console.log('First time online - fetching initial currency rates...');
+        currencyLogger.info(
+          'First time online - fetching initial currency rates...'
+        );
         fetchExchangeRates();
         return;
       }

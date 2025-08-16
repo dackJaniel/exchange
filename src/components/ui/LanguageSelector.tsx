@@ -28,7 +28,7 @@ export function LanguageSelector() {
     <Select
       value={locale}
       onValueChange={(value) => setLocale(value as Locale)}>
-      <SelectTrigger className='w-auto min-w-32 bg-zinc-800 border-zinc-700 text-white'>
+      <SelectTrigger className='w-full bg-zinc-800 border-zinc-700 text-white hover:bg-zinc-700'>
         <div className='flex items-center gap-2'>
           <Languages className='h-4 w-4' />
           <SelectValue>

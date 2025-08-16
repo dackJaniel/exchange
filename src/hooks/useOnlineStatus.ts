@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useCurrencyStore } from '@/lib/store/currency';
+import { onlineLogger } from '@/lib/debug';
 
 // Simple connectivity test using the actual API we use for rates
 const testConnectivity = async (): Promise<boolean> => {
@@ -18,7 +19,7 @@ const testConnectivity = async (): Promise<boolean> => {
         const response = await Promise.race([fetchPromise, timeoutPromise]);
         return response.ok;
     } catch (error) {
-        console.log('Connectivity test failed:', error);
+        onlineLogger.debug('Connectivity test failed:', error);
         return false;
     }
 };
@@ -38,8 +39,8 @@ export const useOnlineStatus = () => {
 
     // Function to verify actual connectivity
     const verifyConnectivity = useCallback(async () => {
-        // Don't test if already testing or tested recently
-        if (isTestingConnectivity) {
+        // Don't test if already testing, tested recently, or browser says offline
+        if (isTestingConnectivity || !navigator.onLine) {
             return;
         }
 
@@ -56,17 +57,18 @@ export const useOnlineStatus = () => {
 
             // Only update state if there's a meaningful difference
             if (actuallyOnline !== isOnline) {
-                console.log(`Connectivity verified: Browser=${navigator.onLine}, Test=${actuallyOnline}, Setting=${actuallyOnline}`);
+                onlineLogger.info(`Connectivity verified: Browser=${navigator.onLine}, Test=${actuallyOnline}, Setting=${actuallyOnline}`);
                 setIsOnline(actuallyOnline);
                 setOnlineStatus(actuallyOnline);
             }
         } catch (error) {
-            console.warn('Connectivity test failed:', error);
-            // On test failure, trust browser status
+            onlineLogger.warn('Connectivity test failed:', error);
+            // On test failure, trust browser status but prioritize offline state
             const browserStatus = navigator.onLine;
-            if (browserStatus !== isOnline) {
-                setIsOnline(browserStatus);
-                setOnlineStatus(browserStatus);
+            const finalStatus = browserStatus && isOnline; // Be more conservative
+            if (finalStatus !== isOnline) {
+                setIsOnline(finalStatus);
+                setOnlineStatus(finalStatus);
             }
         } finally {
             setIsTestingConnectivity(false);
@@ -75,7 +77,7 @@ export const useOnlineStatus = () => {
 
     // Update status based on browser events
     const updateOnlineStatus = useCallback((browserOnline: boolean) => {
-        console.log(`Browser event: ${browserOnline ? 'online' : 'offline'}`);
+        onlineLogger.debug(`Browser event: ${browserOnline ? 'online' : 'offline'}`);
         setIsOnline(browserOnline);
         setOnlineStatus(browserOnline);
 
@@ -93,7 +95,7 @@ export const useOnlineStatus = () => {
 
         // Set initial status
         const initialStatus = navigator.onLine;
-        console.log(`Initial browser status: ${initialStatus}`);
+        onlineLogger.debug(`Initial browser status: ${initialStatus}`);
         setIsOnline(initialStatus);
         setOnlineStatus(initialStatus);
 
@@ -103,19 +105,19 @@ export const useOnlineStatus = () => {
         }
 
         const handleOnline = () => {
-            console.log('Browser online event');
+            onlineLogger.debug('Browser online event');
             updateOnlineStatus(true);
         };
 
         const handleOffline = () => {
-            console.log('Browser offline event');
+            onlineLogger.debug('Browser offline event');
             updateOnlineStatus(false);
         };
 
         // Also check when page becomes visible (PWA focus)
         const handleVisibilityChange = () => {
             if (!document.hidden && navigator.onLine) {
-                console.log('PWA focused and browser online - verifying connectivity');
+                onlineLogger.debug('PWA focused and browser online - verifying connectivity');
                 verifyConnectivity();
             }
         };

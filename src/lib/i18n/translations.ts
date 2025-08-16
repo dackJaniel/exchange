@@ -48,6 +48,45 @@ export const translations = {
 
         // UI translations
         ui: {
+            // Navigation & Menu
+            menu: 'Menu',
+            navigationDescription: 'Navigation and legal information',
+            language: 'Language',
+            install: 'Install',
+            installApp: 'Install App',
+
+            // Currency & Calculator
+            calculator: 'Calculator',
+            conversion: 'Conversion',
+            exchangeRate: 'Exchange Rate',
+            from: 'From',
+            to: 'To',
+            amount: 'Amount',
+            result: 'Result',
+            swapCurrencies: 'Swap currencies',
+            selectCurrency: 'Select currency',
+            searchCurrency: 'Search currency...',
+
+            // Status messages
+            loading: 'Loading...',
+            updating: 'Updating...',
+            cached: 'cached',
+            justNow: 'Just now',
+            minutesAgo: (minutes: number) => `${minutes}m ago`,
+            hoursAgo: (hours: number) => `${hours}h ago`,
+            never: 'Never',
+
+            // Error messages
+            networkError: 'Network error',
+            offlineUpdate: 'Offline - no update possible',
+            refreshRates: 'Refresh exchange rates',
+
+            // Legal pages
+            privacy: 'Privacy Policy',
+            dataProtection: 'Data Protection',
+            imprint: 'Imprint',
+            siteNotice: 'Site Notice',
+
             // Share functionality
             shareApp: 'Share App',
             shareTitle: 'Share App',
@@ -65,6 +104,9 @@ export const translations = {
             // Offline notice
             offlineTitle: 'Internet connection required',
             offlineDescription: 'For first use, an online connection is needed to load current exchange rates. Afterwards, the app works offline too.',
+            offlineMode: 'Offline Mode',
+            offlineCachedData: 'Working with cached data. Last updated:',
+            unknown: 'Unknown',
 
             // Pull to refresh
             pullToRefreshRelease: 'Release to refresh',
@@ -147,6 +189,45 @@ export const translations = {
 
         // UI translations
         ui: {
+            // Navigation & Menu
+            menu: 'Menü',
+            navigationDescription: 'Navigation und rechtliche Informationen',
+            language: 'Sprache',
+            install: 'Installieren',
+            installApp: 'App installieren',
+
+            // Currency & Calculator
+            calculator: 'Rechner',
+            conversion: 'Umrechnung',
+            exchangeRate: 'Wechselkurs',
+            from: 'Von',
+            to: 'Nach',
+            amount: 'Betrag',
+            result: 'Ergebnis',
+            swapCurrencies: 'Währungen tauschen',
+            selectCurrency: 'Währung auswählen',
+            searchCurrency: 'Währung suchen...',
+
+            // Status messages
+            loading: 'Lädt...',
+            updating: 'Aktualisiert...',
+            cached: 'gespeichert',
+            justNow: 'Gerade eben',
+            minutesAgo: (minutes: number) => `vor ${minutes}m`,
+            hoursAgo: (hours: number) => `vor ${hours}h`,
+            never: 'Nie',
+
+            // Error messages
+            networkError: 'Netzwerkfehler',
+            offlineUpdate: 'Offline - keine Aktualisierung möglich',
+            refreshRates: 'Wechselkurse aktualisieren',
+
+            // Legal pages
+            privacy: 'Privacy Policy',
+            dataProtection: 'Datenschutz',
+            imprint: 'Impressum',
+            siteNotice: 'Site Notice',
+
             // Share functionality
             shareApp: 'App teilen',
             shareTitle: 'App teilen',
@@ -164,6 +245,9 @@ export const translations = {
             // Offline notice
             offlineTitle: 'Internet-Verbindung erforderlich',
             offlineDescription: 'Für die erste Nutzung ist eine Online-Verbindung nötig, um aktuelle Wechselkurse zu laden. Danach funktioniert die App auch offline.',
+            offlineMode: 'Offline-Modus',
+            offlineCachedData: 'Arbeitet mit zwischengespeicherten Daten. Zuletzt aktualisiert:',
+            unknown: 'Unbekannt',
 
             // Pull to refresh
             pullToRefreshRelease: 'Loslassen zum Aktualisieren',
@@ -212,6 +296,46 @@ export type TranslationKeys = {
     keywords: readonly string[];
     features: readonly string[];
     ui: {
+        // Navigation & Menu
+        menu: string;
+        navigationDescription: string;
+        language: string;
+        install: string;
+        installApp: string;
+
+        // Currency & Calculator
+        calculator: string;
+        conversion: string;
+        exchangeRate: string;
+        from: string;
+        to: string;
+        amount: string;
+        result: string;
+        swapCurrencies: string;
+        selectCurrency: string;
+        searchCurrency: string;
+
+        // Status messages
+        loading: string;
+        updating: string;
+        cached: string;
+        justNow: string;
+        minutesAgo: (minutes: number) => string;
+        hoursAgo: (hours: number) => string;
+        never: string;
+
+        // Error messages
+        networkError: string;
+        offlineUpdate: string;
+        refreshRates: string;
+
+        // Legal pages
+        privacy: string;
+        dataProtection: string;
+        imprint: string;
+        siteNotice: string;
+
+        // Share functionality
         shareApp: string;
         shareTitle: string;
         shareDescription: string;
@@ -224,24 +348,39 @@ export type TranslationKeys = {
         shareCopyLinkCopied: string;
         shareCopyDescription: string;
         shareFooter: string;
+
+        // Offline notice
         offlineTitle: string;
         offlineDescription: string;
+        offlineMode: string;
+        offlineCachedData: string;
+        unknown: string;
+
+        // Pull to refresh
         pullToRefreshRelease: string;
         pullToRefreshPull: string;
         pullToRefreshUpdating: string;
         pullToRefreshChecking: string;
         pullToRefreshOffline: string;
+
+        // Service Worker
         updateAvailable: string;
         updateDescription: string;
         updateButton: string;
         updateLater: string;
         ratesUpdated: string;
         ratesUpdatedDescription: string;
+
+        // Exchange rates
         online: string;
         offline: string;
         noRatesOffline: string;
+
+        // Currency search
         noCurrencyFound: string;
         noCurrencyMatching: string;
+
+        // 404 page
         notFoundTitle: string;
         notFoundDescription: string;
         notFoundButton: string;

@@ -2,6 +2,44 @@ import { CalculatorButton } from '@/components/calculator/CalculatorButton';
 import { useCalculatorStore } from '@/lib/store/calculator';
 import { Operation } from '@/types/calculator';
 
+// Button configuration for cleaner, data-driven approach
+const buttonConfig = [
+  // Row 1
+  [
+    { value: 'AC', action: 'clear', variant: 'function' as const },
+    { value: '+/-', action: 'toggleSign', variant: 'function' as const },
+    { value: '%', action: 'percentage', variant: 'function' as const },
+    { value: '÷', action: 'operation', variant: 'operator' as const },
+  ],
+  // Row 2
+  [
+    { value: '7', action: 'number', variant: 'number' as const },
+    { value: '8', action: 'number', variant: 'number' as const },
+    { value: '9', action: 'number', variant: 'number' as const },
+    { value: '×', action: 'operation', variant: 'operator' as const },
+  ],
+  // Row 3
+  [
+    { value: '4', action: 'number', variant: 'number' as const },
+    { value: '5', action: 'number', variant: 'number' as const },
+    { value: '6', action: 'number', variant: 'number' as const },
+    { value: '-', action: 'operation', variant: 'operator' as const },
+  ],
+  // Row 4
+  [
+    { value: '1', action: 'number', variant: 'number' as const },
+    { value: '2', action: 'number', variant: 'number' as const },
+    { value: '3', action: 'number', variant: 'number' as const },
+    { value: '+', action: 'operation', variant: 'operator' as const },
+  ],
+  // Row 5
+  [
+    { value: '0', action: 'number', variant: 'zero' as const },
+    { value: '.', action: 'number', variant: 'number' as const },
+    { value: '=', action: 'operation', variant: 'operator' as const },
+  ],
+];
+
 export function KeypadGrid() {
   const {
     inputNumber,
@@ -32,100 +70,35 @@ export function KeypadGrid() {
     }
   };
 
+  const getButtonHandler = (button: (typeof buttonConfig)[0][0]) => {
+    switch (button.action) {
+      case 'clear':
+        return clear;
+      case 'toggleSign':
+        return toggleSign;
+      case 'percentage':
+        return percentage;
+      case 'number':
+        return () => handleNumber(button.value);
+      case 'operation':
+        return () => handleOperation(button.value as Operation);
+      default:
+        return () => {};
+    }
+  };
+
   return (
     <div className='grid grid-cols-4 gap-2 w-full bg-black'>
-      {/* Row 1 */}
-      <CalculatorButton value='AC' onClick={clear} variant='function' />
-      <CalculatorButton value='+/-' onClick={toggleSign} variant='function' />
-      <CalculatorButton value='%' onClick={percentage} variant='function' />
-      <CalculatorButton
-        value='÷'
-        onClick={() => handleOperation('÷')}
-        variant='operator'
-      />
-
-      {/* Row 2 */}
-      <CalculatorButton
-        value='7'
-        onClick={() => handleNumber('7')}
-        variant='number'
-      />
-      <CalculatorButton
-        value='8'
-        onClick={() => handleNumber('8')}
-        variant='number'
-      />
-      <CalculatorButton
-        value='9'
-        onClick={() => handleNumber('9')}
-        variant='number'
-      />
-      <CalculatorButton
-        value='×'
-        onClick={() => handleOperation('×')}
-        variant='operator'
-      />
-
-      {/* Row 3 */}
-      <CalculatorButton
-        value='4'
-        onClick={() => handleNumber('4')}
-        variant='number'
-      />
-      <CalculatorButton
-        value='5'
-        onClick={() => handleNumber('5')}
-        variant='number'
-      />
-      <CalculatorButton
-        value='6'
-        onClick={() => handleNumber('6')}
-        variant='number'
-      />
-      <CalculatorButton
-        value='-'
-        onClick={() => handleOperation('-')}
-        variant='operator'
-      />
-
-      {/* Row 4 */}
-      <CalculatorButton
-        value='1'
-        onClick={() => handleNumber('1')}
-        variant='number'
-      />
-      <CalculatorButton
-        value='2'
-        onClick={() => handleNumber('2')}
-        variant='number'
-      />
-      <CalculatorButton
-        value='3'
-        onClick={() => handleNumber('3')}
-        variant='number'
-      />
-      <CalculatorButton
-        value='+'
-        onClick={() => handleOperation('+')}
-        variant='operator'
-      />
-
-      {/* Row 5 */}
-      <CalculatorButton
-        value='0'
-        onClick={() => handleNumber('0')}
-        variant='zero'
-      />
-      <CalculatorButton
-        value='.'
-        onClick={() => handleNumber('.')}
-        variant='number'
-      />
-      <CalculatorButton
-        value='='
-        onClick={() => handleOperation('=')}
-        variant='operator'
-      />
+      {buttonConfig.map((row, rowIndex) =>
+        row.map((button, buttonIndex) => (
+          <CalculatorButton
+            key={`${rowIndex}-${buttonIndex}`}
+            value={button.value}
+            onClick={getButtonHandler(button)}
+            variant={button.variant}
+          />
+        ))
+      )}
     </div>
   );
 }

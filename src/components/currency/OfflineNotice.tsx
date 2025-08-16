@@ -3,7 +3,7 @@
 import { useOnlineStatus } from '@/hooks/useOnlineStatus';
 import { useCurrencyStore } from '@/lib/store/currency';
 import { useTranslation } from '@/lib/i18n/provider';
-import { WifiOff, Wifi } from 'lucide-react';
+import { WifiOff } from 'lucide-react';
 
 export function OfflineNotice() {
   const isOnline = useOnlineStatus();
@@ -41,9 +41,9 @@ export function OfflineNotice() {
       <div className='flex items-center gap-2 text-orange-500'>
         <WifiOff className='h-4 w-4' />
         <div className='flex-1'>
-          <h3 className='font-medium text-sm'>Offline-Modus</h3>
+          <h3 className='font-medium text-sm'>{t.ui.offlineMode}</h3>
           <p className='text-xs text-orange-400 mt-1'>
-            Arbeitet mit zwischengespeicherten Daten. Zuletzt aktualisiert:{' '}
+            {t.ui.offlineCachedData}{' '}
             {lastUpdated
               ? new Date(lastUpdated).toLocaleString('de-DE', {
                   day: '2-digit',
@@ -51,7 +51,7 @@ export function OfflineNotice() {
                   hour: '2-digit',
                   minute: '2-digit',
                 })
-              : 'Unbekannt'}
+              : t.ui.unknown}
           </p>
         </div>
       </div>

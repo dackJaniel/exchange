@@ -10,7 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { Share2, MessageCircle, Send, Mail, Copy, Check } from 'lucide-react';
+import { Share2, MessageCircle, Copy, Check } from 'lucide-react';
 import { useTranslation } from '@/lib/i18n/provider';
 
 export function ShareButton() {
@@ -53,7 +53,7 @@ export function ShareButton() {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (error) {
+    } catch {
       // Fallback for older browsers
       const textArea = document.createElement('textarea');
       textArea.value = shareUrl;

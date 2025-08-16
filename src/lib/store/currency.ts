@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { CurrencyState, Currency } from '@/types/calculator';
+import { currencyLogger } from '@/lib/debug';
 
 // Popular currencies with their symbols and flags
 const CURRENCIES: Currency[] = [
@@ -67,29 +68,41 @@ export const useCurrencyStore = create<CurrencyStore>()(
 
             setOnlineStatus: (status: boolean) => {
                 const state = get();
-                console.log(`Currency store: Setting online status to ${status} (was ${state.isOnline})`);
+                currencyLogger.debug(`Setting online status to ${status} (was ${state.isOnline})`);
 
                 // Update the state immediately for UI feedback
                 set({ isOnline: status });
 
-                if (status) {
-                    // When coming back online, mark as having been online and refresh rates
+                if (status && !state.isOnline) {
+                    // When coming back online from offline state
                     if (!state.hasEverBeenOnline) {
-                        console.log('First time online - marking hasEverBeenOnline=true');
+                        currencyLogger.info('First time online - marking hasEverBeenOnline=true');
                         set({ hasEverBeenOnline: true });
                     }
-                    // Fetch current currency rates in background when online
-                    console.log('Going online - fetching currency rates for current pair');
+
+                    currencyLogger.debug('Going online - will fetch currency rates for current pair');
+                    // Small delay to allow UI to update, then fetch rates
                     setTimeout(() => {
-                        state.fetchExchangeRates(true); // Force refresh when coming back online
+                        const currentState = get();
+                        if (currentState.isOnline) { // Double-check we're still online
+                            currentState.fetchExchangeRates(true); // Force refresh when coming back online
+                        }
                     }, 1000);
 
-                    // Also fetch comprehensive rates in background
+                    // Also fetch comprehensive rates in background after a longer delay
                     setTimeout(() => {
-                        state.fetchAllCurrencyRates();
-                    }, 2000);
-                } else {
-                    console.log('Going offline - will use cached rates');
+                        const currentState = get();
+                        if (currentState.isOnline) { // Double-check we're still online
+                            currentState.fetchAllCurrencyRates();
+                        }
+                    }, 3000);
+                } else if (!status) {
+                    currencyLogger.debug('Going offline - will use cached rates only');
+                    // Clear any loading states when going offline
+                    set({
+                        isLoading: false,
+                        error: state.hasEverBeenOnline ? null : 'Network connection required for initial setup'
+                    });
                 }
             },
 
@@ -143,6 +156,32 @@ export const useCurrencyStore = create<CurrencyStore>()(
                 // If offline and we have cached data, don't attempt to fetch
                 if (!state.isOnline && !forceRefresh) {
                     console.log('Offline: Using cached exchange rates');
+
+                    // Try to use cached data
+                    const cachedRate = state.getRatesFromCache(state.baseCurrency.code, state.targetCurrency.code);
+                    if (cachedRate !== null) {
+                        // Update UI to show we're using cached data
+                        set({
+                            isLoading: false,
+                            error: null
+                        });
+                        return;
+                    } else {
+                        // No cached data available
+                        set({
+                            isLoading: false,
+                            error: state.hasEverBeenOnline ? 'Using cached rates (network unavailable)' : 'Network connection required for initial setup'
+                        });
+                        return;
+                    }
+                }
+
+                // If offline and forcing refresh, show appropriate message
+                if (!state.isOnline && forceRefresh) {
+                    set({
+                        isLoading: false,
+                        error: 'Cannot refresh - device is offline'
+                    });
                     return;
                 }
 
@@ -151,6 +190,10 @@ export const useCurrencyStore = create<CurrencyStore>()(
                     const cachedRate = state.getRatesFromCache(state.baseCurrency.code, state.targetCurrency.code);
                     if (cachedRate !== null) {
                         console.log('Using cached exchange rates');
+                        set({
+                            isLoading: false,
+                            error: null
+                        });
                         return;
                     }
                 }
@@ -159,7 +202,10 @@ export const useCurrencyStore = create<CurrencyStore>()(
 
                 try {
                     const response = await fetch(
-                        `https://api.exchangerate-api.com/v4/latest/${state.baseCurrency.code}`
+                        `https://api.exchangerate-api.com/v4/latest/${state.baseCurrency.code}`,
+                        {
+                            signal: AbortSignal.timeout(10000) // 10 second timeout
+                        }
                     );
 
                     if (!response.ok) {
@@ -194,12 +240,14 @@ export const useCurrencyStore = create<CurrencyStore>()(
                         console.log('API failed, using cached rates');
                         set({
                             isLoading: false,
-                            error: 'Using cached rates (network unavailable)'
+                            error: 'Using cached rates (network error)'
                         });
                     } else {
                         set({
                             isLoading: false,
-                            error: 'Unable to fetch exchange rates and no cached data available',
+                            error: state.hasEverBeenOnline
+                                ? 'Unable to fetch exchange rates and no cached data available'
+                                : 'Network connection required - please try again when online',
                         });
                     }
                 }

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { triggerHapticFeedback } from '@/lib/haptic';
+import { pullRefreshLogger } from '@/lib/debug';
 
 interface UsePullToRefreshOptions {
     onRefresh: () => Promise<void>;
@@ -107,7 +108,7 @@ export const usePullToRefresh = ({
             try {
                 await onRefresh();
             } catch (error) {
-                console.error('Pull to refresh failed:', error);
+                pullRefreshLogger.error('Pull to refresh failed:', error);
                 triggerHapticFeedback('error');
             } finally {
                 setState({
