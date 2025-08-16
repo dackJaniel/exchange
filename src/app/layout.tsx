@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration';
+import { Toaster } from '@/components/ui/sonner';
 import './globals.css';
 
 const geistSans = Geist({
@@ -172,6 +174,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white overflow-x-hidden`}>
         {children}
+        <ServiceWorkerRegistration />
+        <Toaster
+          position='top-center'
+          toastOptions={{
+            style: {
+              background: '#1a1a1a',
+              color: '#ffffff',
+              border: '1px solid #333',
+            },
+          }}
+        />
       </body>
     </html>
   );

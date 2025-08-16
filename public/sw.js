@@ -1,7 +1,8 @@
-const CACHE_NAME = 'currency-calculator-v2';
-const STATIC_CACHE = 'currency-calc-static-v2';
-const DYNAMIC_CACHE = 'currency-calc-dynamic-v2';
-const API_CACHE = 'currency-calc-api-v2';
+const CACHE_NAME = 'currency-calculator-v1_2_1'; // Increment for new versions
+const STATIC_CACHE = 'currency-calc-static-v1_2_1';
+const DYNAMIC_CACHE = 'currency-calc-dynamic-v1_2_1';
+const API_CACHE = 'currency-calc-api-v1_2_1';
+const VERSION = '1.2.2'; // App version
 
 // Critical assets for offline functionality
 const urlsToCache = [
@@ -26,12 +27,21 @@ self.addEventListener('install', (event) => {
       })
       .then(() => {
         console.log('SW: Installation complete');
-        return self.skipWaiting();
+        // Don't auto-activate, wait for user confirmation
+        // return self.skipWaiting();
       })
       .catch((error) => {
         console.error('SW: Installation failed', error);
       })
   );
+});
+
+// Listen for skip waiting message from client
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    console.log('SW: Received skip waiting message');
+    self.skipWaiting();
+  }
 });
 
 // Activate event - cleanup old caches
@@ -44,7 +54,7 @@ self.addEventListener('activate', (event) => {
         return Promise.all(
           cacheNames
             .filter((cacheName) => {
-              return !cacheName.includes('v2'); // Keep only v2 caches
+              return !cacheName.includes('v1_2_1'); // Keep only current version caches
             })
             .map((cacheName) => {
               console.log('SW: Deleting old cache', cacheName);
@@ -53,9 +63,20 @@ self.addEventListener('activate', (event) => {
         );
       })
       .then(() => {
-        console.log('SW: Activation complete');
-        return self.clients.claim();
+        console.log('SW: Activation complete, version:', VERSION);
+
+        // Notify all clients about the new version
+        return self.clients.matchAll().then((clients) => {
+          clients.forEach((client) => {
+            client.postMessage({
+              type: 'SW_UPDATED',
+              version: VERSION,
+              timestamp: Date.now(),
+            });
+          });
+        });
       })
+      .then(() => self.clients.claim())
   );
 });
 
