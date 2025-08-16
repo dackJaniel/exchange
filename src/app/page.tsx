@@ -7,6 +7,7 @@ import { CurrencySelector } from '@/components/currency/CurrencySelector';
 import { ExchangeRateDisplay } from '@/components/currency/ExchangeRateDisplay';
 import { OfflineNotice } from '@/components/currency/OfflineNotice';
 import { PullToRefreshWrapper } from '@/components/layout/PullToRefreshWrapper';
+import { NavigationHeader } from '@/components/layout/NavigationHeader';
 import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration';
 import { useHydrated } from '@/hooks/useHydrated';
 import { useOnlineStatus } from '@/hooks/useOnlineStatus';
@@ -17,8 +18,6 @@ import {
   setupInstallPrompt,
   trackPWAUsage,
 } from '@/lib/pwa';
-import { Button } from '@/components/ui/button';
-import { Download } from 'lucide-react';
 
 export default function Home() {
   const isHydrated = useHydrated();
@@ -78,55 +77,44 @@ export default function Home() {
   return (
     <>
       <ServiceWorkerRegistration />
-      <PullToRefreshWrapper>
-        <div className='p-2 h-full flex flex-col justify-between'>
-          {/* Header - kompakter ohne Icons */}
-          <div className='flex justify-center items-center my-4 relative'>
-            <h1 className='text-white text-lg font-medium'>
-              Currency Calculator
-            </h1>
-            {/* PWA Install Button - hidden by default, shown via JavaScript */}
-            <Button
-              id='install-button'
-              variant='ghost'
-              size='icon'
-              className='text-zinc-400 hover:text-white hover:bg-zinc-800 hidden'
-              title='Install App'>
-              <Download className='h-5 w-5' />
-            </Button>
-          </div>
+      <div className='min-h-screen bg-black flex flex-col'>
+        {/* Navigation Header */}
+        <NavigationHeader />
 
-          {/* Offline Notice */}
-          <OfflineNotice />
+        <PullToRefreshWrapper>
+          <div className='p-2 h-full flex flex-col justify-between flex-1'>
+            {/* Offline Notice */}
+            <OfflineNotice />
 
-          {/* Currency Selectors */}
-          <div className='grid grid-cols-2 gap-2 mb-2'>
-            <div>
-              <label className='text-zinc-400 text-xs mb-1 block'>From</label>
-              <CurrencySelector type='base' />
+            {/* Currency Selectors */}
+            <div className='grid grid-cols-2 gap-2 mb-2'>
+              <div>
+                <label className='text-zinc-400 text-xs mb-1 block'>From</label>
+                <CurrencySelector type='base' />
+              </div>
+              <div>
+                <label className='text-zinc-400 text-xs mb-1 block'>To</label>
+                <CurrencySelector type='target' />
+              </div>
             </div>
-            <div>
-              <label className='text-zinc-400 text-xs mb-1 block'>To</label>
-              <CurrencySelector type='target' />
+
+            {/* Exchange Rate Display */}
+            <ExchangeRateDisplay />
+
+            {/* Display Panel */}
+            <DisplayPanel
+              display={display}
+              previousValue={previousValue}
+              operation={operation}
+            />
+
+            {/* Keypad - nimmt den verfügbaren Platz ein */}
+            <div className='flex-1 flex items-end'>
+              <KeypadGrid />
             </div>
           </div>
-
-          {/* Exchange Rate Display */}
-          <ExchangeRateDisplay />
-
-          {/* Display Panel */}
-          <DisplayPanel
-            display={display}
-            previousValue={previousValue}
-            operation={operation}
-          />
-
-          {/* Keypad - nimmt den verfügbaren Platz ein */}
-          <div className='flex-1 flex items-end'>
-            <KeypadGrid />
-          </div>
-        </div>
-      </PullToRefreshWrapper>
+        </PullToRefreshWrapper>
+      </div>
     </>
   );
 }

@@ -1,15 +1,23 @@
-const CACHE_NAME = 'currency-calculator-v1_2_1'; // Increment for new versions
-const STATIC_CACHE = 'currency-calc-static-v1_2_1';
-const DYNAMIC_CACHE = 'currency-calc-dynamic-v1_2_1';
-const API_CACHE = 'currency-calc-api-v1_2_1';
-const VERSION = '1.2.2'; // App version
+const CACHE_NAME = 'currency-calculator-v1_2_2'; // Increment for new versions
+const STATIC_CACHE = 'currency-calc-static-v1_2_2';
+const DYNAMIC_CACHE = 'currency-calc-dynamic-v1_2_2';
+const API_CACHE = 'currency-calc-api-v1_2_2';
+const VERSION = '1.2.5'; // App version
 
 // Critical assets for offline functionality
 const urlsToCache = [
   '/',
   '/offline',
   '/manifest.json',
+  '/favicon.ico',
+  '/icons/favicon-32x32.png',
+  '/icons/icon-72x72.png',
+  '/icons/icon-96x96.png',
+  '/icons/icon-128x128.png',
+  '/icons/icon-144x144.png',
+  '/icons/icon-152x152.png',
   '/icons/icon-192x192.png',
+  '/icons/icon-384x384.png',
   '/icons/icon-512x512.png',
   '/icons/apple-touch-icon.png',
   // Add other critical static assets
@@ -36,11 +44,19 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Listen for skip waiting message from client
+// Listen for messages from client
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     console.log('SW: Received skip waiting message');
     self.skipWaiting();
+  } else if (event.data && event.data.type === 'GET_VERSION') {
+    console.log('SW: Sending version to client:', VERSION);
+    // Send version back to client
+    event.ports[0]?.postMessage({
+      type: 'VERSION_RESPONSE',
+      version: VERSION,
+    }) ||
+      event.source?.postMessage({ type: 'VERSION_RESPONSE', version: VERSION });
   }
 });
 

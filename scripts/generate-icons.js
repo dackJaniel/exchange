@@ -49,6 +49,36 @@ async function generateIcons() {
     console.error('✗ Failed to generate favicon-32x32.png:', error.message);
   }
 
+  // Generate favicon.ico for app directory
+  try {
+    const icoBuffer = await sharp(inputIcon).resize(32, 32).png().toBuffer();
+
+    // For proper ICO format, we'll use PNG format but save as .ico
+    // Most browsers accept PNG data in .ico files
+    fs.writeFileSync(path.join(__dirname, '../src/app/favicon.ico'), icoBuffer);
+
+    console.log('✓ Generated favicon.ico for app directory');
+  } catch (error) {
+    console.error(
+      '✗ Failed to generate favicon.ico for app directory:',
+      error.message
+    );
+  }
+
+  // Also copy to public root for fallback
+  try {
+    const icoBuffer = await sharp(inputIcon).resize(32, 32).png().toBuffer();
+
+    fs.writeFileSync(path.join(__dirname, '../public/favicon.ico'), icoBuffer);
+
+    console.log('✓ Generated favicon.ico for public directory');
+  } catch (error) {
+    console.error(
+      '✗ Failed to generate favicon.ico for public directory:',
+      error.message
+    );
+  }
+
   console.log('Icon generation completed!');
 }
 

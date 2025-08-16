@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { toast } from 'sonner';
 
 export function ServiceWorkerRegistration() {
   const [registration, setRegistration] =
     useState<ServiceWorkerRegistration | null>(null);
-  const [updateAvailable, setUpdateAvailable] = useState(false);
+  const updateNotificationShownRef = useRef(false);
 
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -16,30 +16,36 @@ export function ServiceWorkerRegistration() {
           console.log('SW registered: ', reg);
           setRegistration(reg);
 
-          // Check for updates every 30 seconds
+          // Check for updates every 2 minutes
           setInterval(() => {
             reg.update();
-          }, 30000);
+          }, 120000);
 
-          // Listen for waiting service worker (new version available)
+          // Listen for updatefound event (new service worker is downloading)
           reg.addEventListener('updatefound', () => {
             const newWorker = reg.installing;
+            console.log('SW: Update found, new worker installing...');
+
             if (newWorker) {
               newWorker.addEventListener('statechange', () => {
+                console.log('SW: New worker state:', newWorker.state);
+
                 if (
                   newWorker.state === 'installed' &&
                   navigator.serviceWorker.controller
                 ) {
-                  setUpdateAvailable(true);
+                  // New version is available and ready to use
+                  console.log('SW: New version installed and ready');
                   showUpdateNotification();
                 }
               });
             }
           });
 
-          // Check if there's already a waiting worker
-          if (reg.waiting) {
-            setUpdateAvailable(true);
+          // Only show update notification if there's a waiting worker AND
+          // we haven't already shown a notification in this session
+          if (reg.waiting && !updateNotificationShownRef.current) {
+            console.log('SW: Waiting worker found on registration');
             showUpdateNotification();
           }
         })
@@ -56,9 +62,18 @@ export function ServiceWorkerRegistration() {
         }
       });
     }
-  }, []);
+  }, []); // showUpdateNotification is now stable with useCallback
 
-  const showUpdateNotification = () => {
+  const showUpdateNotification = useCallback(() => {
+    // Prevent showing multiple notifications in the same session
+    if (updateNotificationShownRef.current) {
+      console.log('SW: Update notification already shown in this session');
+      return;
+    }
+
+    updateNotificationShownRef.current = true;
+    console.log('SW: Showing update notification');
+
     toast('App-Update verfügbar! 🚀', {
       description:
         'Eine neue Version der App ist verfügbar. Jetzt aktualisieren?',
@@ -66,16 +81,22 @@ export function ServiceWorkerRegistration() {
         label: 'Aktualisieren',
         onClick: () => {
           if (registration?.waiting) {
-            // Tell the waiting service worker to skip waiting and become active
+            console.log('SW: Applying update...');
             registration.waiting.postMessage({ type: 'SKIP_WAITING' });
-            // Reload the page to use the new service worker
             window.location.reload();
           }
         },
       },
-      duration: 10000, // Show for 10 seconds
+      cancel: {
+        label: 'Später',
+        onClick: () => {
+          console.log('SW: Update dismissed by user');
+        },
+      },
+      duration: 15000,
+      id: 'sw-update', // Prevent duplicate toasts
     });
-  };
+  }, [registration]);
 
   return null;
 }
