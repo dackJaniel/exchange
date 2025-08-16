@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useCurrencyStore } from '@/lib/store/currency';
 
 // Simple connectivity test using the actual API we use for rates
@@ -36,7 +36,7 @@ export const useOnlineStatus = () => {
     const setOnlineStatus = useCurrencyStore((state) => state.setOnlineStatus);
 
     // Function to verify actual connectivity
-    const verifyConnectivity = async () => {
+    const verifyConnectivity = useCallback(async () => {
         const now = Date.now();
         if (now - lastConnectivityCheck < 30000) { // Don't test more than once per 30 seconds
             return;
@@ -54,10 +54,10 @@ export const useOnlineStatus = () => {
         } catch (error) {
             console.warn('Connectivity test failed:', error);
         }
-    };
+    }, [lastConnectivityCheck, isOnline, setOnlineStatus]);
 
     // Update status based on browser events
-    const updateOnlineStatus = (browserOnline: boolean) => {
+    const updateOnlineStatus = useCallback((browserOnline: boolean) => {
         setIsOnline(browserOnline);
         setOnlineStatus(browserOnline);
 
@@ -65,7 +65,7 @@ export const useOnlineStatus = () => {
         if (browserOnline) {
             setTimeout(verifyConnectivity, 2000);
         }
-    };
+    }, [setOnlineStatus, verifyConnectivity]);
 
     useEffect(() => {
         // Don't run in SSR
@@ -110,7 +110,7 @@ export const useOnlineStatus = () => {
             window.removeEventListener('offline', handleOffline);
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
-    }, [setOnlineStatus]);
+    }, [setOnlineStatus, updateOnlineStatus, verifyConnectivity]);
 
     return isOnline;
 };

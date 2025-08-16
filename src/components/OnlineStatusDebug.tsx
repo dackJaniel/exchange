@@ -17,10 +17,28 @@ export function OnlineStatusDebug() {
       setNavigatorOnline(navigator.onLine);
 
       // Check Network Information API if available
+      interface NavigatorWithConnection extends Navigator {
+        connection?: {
+          effectiveType?: string;
+          addEventListener(type: string, listener: () => void): void;
+          removeEventListener(type: string, listener: () => void): void;
+        };
+        mozConnection?: {
+          effectiveType?: string;
+          addEventListener(type: string, listener: () => void): void;
+          removeEventListener(type: string, listener: () => void): void;
+        };
+        webkitConnection?: {
+          effectiveType?: string;
+          addEventListener(type: string, listener: () => void): void;
+          removeEventListener(type: string, listener: () => void): void;
+        };
+      }
+
       const connection =
-        (navigator as any).connection ||
-        (navigator as any).mozConnection ||
-        (navigator as any).webkitConnection;
+        (navigator as NavigatorWithConnection).connection ||
+        (navigator as NavigatorWithConnection).mozConnection ||
+        (navigator as NavigatorWithConnection).webkitConnection;
       if (connection) {
         setConnectionType(connection.effectiveType || 'unknown');
 
