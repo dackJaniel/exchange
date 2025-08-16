@@ -16,6 +16,51 @@ const CURRENCIES: Currency[] = [
     { code: 'JPY', symbol: '¥', name: 'Japanese Yen', flag: '🇯🇵' },
     { code: 'CNY', symbol: '¥', name: 'Chinese Yuan', flag: '🇨🇳' },
     { code: 'MXN', symbol: '$', name: 'Mexican Peso', flag: '🇲🇽' },
+
+    // Major Asian currencies
+    { code: 'INR', symbol: '₹', name: 'Indian Rupee', flag: '🇮🇳' },
+    { code: 'KRW', symbol: '₩', name: 'South Korean Won', flag: '🇰🇷' },
+    { code: 'SGD', symbol: 'S$', name: 'Singapore Dollar', flag: '🇸🇬' },
+    { code: 'HKD', symbol: 'HK$', name: 'Hong Kong Dollar', flag: '🇭🇰' },
+    { code: 'THB', symbol: '฿', name: 'Thai Baht', flag: '🇹🇭' },
+    { code: 'MYR', symbol: 'RM', name: 'Malaysian Ringgit', flag: '🇲🇾' },
+    { code: 'IDR', symbol: 'Rp', name: 'Indonesian Rupiah', flag: '🇮🇩' },
+    { code: 'PHP', symbol: '₱', name: 'Philippine Peso', flag: '🇵🇭' },
+    { code: 'VND', symbol: '₫', name: 'Vietnamese Dong', flag: '🇻🇳' },
+
+    // Middle East & Africa
+    { code: 'AED', symbol: 'د.إ', name: 'UAE Dirham', flag: '🇦🇪' },
+    { code: 'SAR', symbol: '﷼', name: 'Saudi Riyal', flag: '🇸🇦' },
+    { code: 'ZAR', symbol: 'R', name: 'South African Rand', flag: '🇿🇦' },
+    { code: 'ILS', symbol: '₪', name: 'Israeli Shekel', flag: '🇮🇱' },
+    { code: 'TRY', symbol: '₺', name: 'Turkish Lira', flag: '🇹🇷' },
+    { code: 'EGP', symbol: 'E£', name: 'Egyptian Pound', flag: '🇪🇬' },
+
+    // South America
+    { code: 'BRL', symbol: 'R$', name: 'Brazilian Real', flag: '🇧🇷' },
+    { code: 'ARS', symbol: '$', name: 'Argentine Peso', flag: '🇦🇷' },
+    { code: 'COP', symbol: '$', name: 'Colombian Peso', flag: '🇨🇴' },
+    { code: 'CLP', symbol: '$', name: 'Chilean Peso', flag: '🇨🇱' },
+    { code: 'PEN', symbol: 'S/', name: 'Peruvian Sol', flag: '🇵🇪' },
+
+    // Nordic countries
+    { code: 'SEK', symbol: 'kr', name: 'Swedish Krona', flag: '🇸🇪' },
+    { code: 'NOK', symbol: 'kr', name: 'Norwegian Krone', flag: '🇳🇴' },
+    { code: 'DKK', symbol: 'kr', name: 'Danish Krone', flag: '🇩🇰' },
+    { code: 'ISK', symbol: 'kr', name: 'Icelandic Krona', flag: '🇮🇸' },
+
+    // Other European currencies
+    { code: 'HUF', symbol: 'Ft', name: 'Hungarian Forint', flag: '🇭🇺' },
+    { code: 'RON', symbol: 'lei', name: 'Romanian Leu', flag: '🇷🇴' },
+    { code: 'BGN', symbol: 'лв', name: 'Bulgarian Lev', flag: '🇧🇬' },
+    { code: 'HRK', symbol: 'kn', name: 'Croatian Kuna', flag: '🇭🇷' },
+    { code: 'RSD', symbol: 'дин', name: 'Serbian Dinar', flag: '🇷🇸' },
+    { code: 'UAH', symbol: '₴', name: 'Ukrainian Hryvnia', flag: '🇺🇦' },
+    { code: 'RUB', symbol: '₽', name: 'Russian Ruble', flag: '🇷🇺' },
+
+    // Other major currencies
+    { code: 'NZD', symbol: 'NZ$', name: 'New Zealand Dollar', flag: '🇳🇿' },
+    { code: 'TWD', symbol: 'NT$', name: 'Taiwan Dollar', flag: '🇹🇼' },
 ];
 
 // Cache duration: 15 minutes
