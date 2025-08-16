@@ -30,11 +30,44 @@ export function useAppUpdates() {
         }
     }, [state.registration]);
 
+    const applyUpdateSilently = useCallback(() => {
+        if (state.registration?.waiting) {
+            setState(prev => ({ ...prev, installing: true }));
+            state.registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+
+            // Show success notification after silent update
+            toast.success('App aktualisiert', {
+                description: 'Die App wurde im Hintergrund aktualisiert.',
+                duration: 4000,
+            });
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000);
+        }
+    }, [state.registration]);
+
     const checkForUpdates = useCallback(() => {
         if (state.registration) {
             state.registration.update();
         }
     }, [state.registration]);
+
+    const checkForUpdatesAndApply = useCallback(async () => {
+        if (state.registration) {
+            // Force a check for updates
+            await state.registration.update();
+
+            // If an update is already waiting, apply it immediately
+            if (state.registration.waiting) {
+                applyUpdateSilently();
+                return true; // Update was applied
+            }
+
+            return false; // No update available
+        }
+        return false;
+    }, [state.registration, applyUpdateSilently]);
 
     useEffect(() => {
         if ('serviceWorker' in navigator) {
@@ -55,7 +88,8 @@ export function useAppUpdates() {
                                 if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
                                     setState(prev => ({ ...prev, updateAvailable: true }));
 
-                                    // Show persistent update notification
+                                    // Only show persistent notification for background updates
+                                    // Silent updates will be handled via checkForUpdatesAndApply
                                     toast('Neue App-Version verfügbar! 🎉', {
                                         description: 'Möchten Sie jetzt aktualisieren?',
                                         action: {
@@ -117,6 +151,8 @@ export function useAppUpdates() {
         updateAvailable: state.updateAvailable,
         installing: state.installing,
         applyUpdate,
+        applyUpdateSilently,
         checkForUpdates,
+        checkForUpdatesAndApply,
     };
 }
