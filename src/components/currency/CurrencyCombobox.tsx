@@ -20,6 +20,7 @@ import {
 } from '@/components/ui/popover';
 import { useCurrencyStore } from '@/lib/store/currency';
 import { Currency } from '@/types/calculator';
+import { useTranslation } from '@/lib/i18n/provider';
 
 interface CurrencyComboboxProps {
   type: 'base' | 'target';
@@ -28,6 +29,7 @@ interface CurrencyComboboxProps {
 export function CurrencyCombobox({ type }: CurrencyComboboxProps) {
   const [open, setOpen] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState('');
+  const t = useTranslation();
 
   const {
     currencies,
@@ -174,9 +176,7 @@ export function CurrencyCombobox({ type }: CurrencyComboboxProps) {
           />
           <CommandList className='max-h-[300px] overflow-auto'>
             <CommandEmpty className='py-6 text-center text-sm text-zinc-400'>
-              {searchValue
-                ? 'Keine passende Währung gefunden.'
-                : 'Keine Währung gefunden.'}
+              {searchValue ? t.ui.noCurrencyMatching : t.ui.noCurrencyFound}
             </CommandEmpty>
             <CommandGroup className='p-1'>
               {filteredCurrencies.map((currency, index) => (

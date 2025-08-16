@@ -68,6 +68,8 @@ export const useCurrencyStore = create<CurrencyStore>()(
             setOnlineStatus: (status: boolean) => {
                 const state = get();
                 console.log(`Currency store: Setting online status to ${status} (was ${state.isOnline})`);
+
+                // Update the state immediately for UI feedback
                 set({ isOnline: status });
 
                 if (status) {
@@ -76,9 +78,16 @@ export const useCurrencyStore = create<CurrencyStore>()(
                         console.log('First time online - marking hasEverBeenOnline=true');
                         set({ hasEverBeenOnline: true });
                     }
-                    // Fetch all currency rates in background when online
-                    console.log('Going online - fetching currency rates in background');
-                    state.fetchAllCurrencyRates();
+                    // Fetch current currency rates in background when online
+                    console.log('Going online - fetching currency rates for current pair');
+                    setTimeout(() => {
+                        state.fetchExchangeRates(true); // Force refresh when coming back online
+                    }, 1000);
+
+                    // Also fetch comprehensive rates in background
+                    setTimeout(() => {
+                        state.fetchAllCurrencyRates();
+                    }, 2000);
                 } else {
                     console.log('Going offline - will use cached rates');
                 }
@@ -207,11 +216,12 @@ export const useCurrencyStore = create<CurrencyStore>()(
                 console.log('Fetching all currency rates in background...');
 
                 // Fetch rates for all major currencies to build comprehensive cache
-                const baseCurrencies = ['EUR', 'USD', 'GBP'];
+                const baseCurrencies = ['EUR', 'USD', 'GBP', 'CHF', 'CZK', 'PLN']; // Extended list
                 const promises = baseCurrencies.map(async (baseCurrency) => {
                     try {
                         const response = await fetch(
-                            `https://api.exchangerate-api.com/v4/latest/${baseCurrency}`
+                            `https://api.exchangerate-api.com/v4/latest/${baseCurrency}`,
+                            { cache: 'no-cache' } // Ensure fresh data
                         );
 
                         if (!response.ok) {
@@ -235,17 +245,21 @@ export const useCurrencyStore = create<CurrencyStore>()(
                 const results = await Promise.all(promises);
                 const newCachedRates = { ...state.cachedRates };
 
+                let successCount = 0;
                 results.forEach((result) => {
                     if (result) {
                         newCachedRates[result.baseCurrency] = {
                             rates: result.rates,
                             timestamp: result.timestamp,
                         };
+                        successCount++;
                     }
                 });
 
-                set({ cachedRates: newCachedRates });
-                console.log('Background currency rates updated');
+                if (successCount > 0) {
+                    set({ cachedRates: newCachedRates });
+                    console.log(`Background currency rates updated (${successCount}/${baseCurrencies.length} successful)`);
+                }
             },
 
             convertAmount: (amount: number): number => {

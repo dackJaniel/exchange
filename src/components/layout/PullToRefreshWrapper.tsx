@@ -5,6 +5,7 @@ import { usePullToRefresh } from '@/hooks/usePullToRefresh';
 import { useOnlineStatus } from '@/hooks/useOnlineStatus';
 import { useAppUpdates } from '@/hooks/useAppUpdates';
 import { useCurrencyStore } from '@/lib/store/currency';
+import { useTranslation } from '@/lib/i18n/provider';
 import { RefreshCw } from 'lucide-react';
 
 interface PullToRefreshWrapperProps {
@@ -17,6 +18,7 @@ export const PullToRefreshWrapper = ({
   const { fetchExchangeRates, isLoading } = useCurrencyStore();
   const { checkForUpdatesAndApply, installing } = useAppUpdates();
   const isOnline = useOnlineStatus();
+  const t = useTranslation();
 
   const handleRefresh = async () => {
     // Check if online before attempting refresh
@@ -68,14 +70,14 @@ export const PullToRefreshWrapper = ({
                 canRefresh ? 'text-orange-500' : 'text-zinc-400'
               }`}>
               {installing
-                ? 'App wird aktualisiert...'
+                ? t.ui.pullToRefreshUpdating
                 : isRefreshing || isLoading
-                ? 'Suche nach Updates...'
+                ? t.ui.pullToRefreshChecking
                 : canRefresh
-                ? 'Loslassen zum Aktualisieren'
+                ? t.ui.pullToRefreshRelease
                 : !isOnline
-                ? 'Offline - keine Aktualisierung möglich'
-                : 'Zum Aktualisieren herunterziehen'}
+                ? t.ui.pullToRefreshOffline
+                : t.ui.pullToRefreshPull}
             </span>
           </div>
         </div>

@@ -10,6 +10,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { ShareButton } from '@/components/ui/ShareButton';
+import { LanguageSelector } from '@/components/ui/LanguageSelector';
 import { Download, Menu, Coffee } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -32,8 +33,11 @@ export function NavigationHeader() {
           </span>
         </Link>
 
-        {/* Right side - Download & Hamburger Menu */}
+        {/* Right side - Language, Download & Hamburger Menu */}
         <div className='flex items-center space-x-2'>
+          {/* Language Selector */}
+          <LanguageSelector />
+
           {/* PWA Install Button */}
           <Button
             id='install-button'

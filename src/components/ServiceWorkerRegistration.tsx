@@ -3,12 +3,15 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { toast } from 'sonner';
 import { useCurrencyStore } from '@/lib/store/currency';
+import { useTranslation } from '@/lib/i18n/provider';
 
 export function ServiceWorkerRegistration() {
   const [registration, setRegistration] =
     useState<ServiceWorkerRegistration | null>(null);
   const updateNotificationShownRef = useRef(false);
   const setOnlineStatus = useCurrencyStore((state) => state.setOnlineStatus);
+  const isOnline = useCurrencyStore((state) => state.isOnline);
+  const t = useTranslation();
 
   const showUpdateNotification = useCallback(() => {
     // Prevent showing multiple notifications in the same session
@@ -20,11 +23,10 @@ export function ServiceWorkerRegistration() {
     updateNotificationShownRef.current = true;
     console.log('SW: Showing update notification');
 
-    toast('App-Update verfügbar! 🚀', {
-      description:
-        'Eine neue Version der App ist verfügbar. Jetzt aktualisieren?',
+    toast(t.ui.updateAvailable, {
+      description: t.ui.updateDescription,
       action: {
-        label: 'Aktualisieren',
+        label: t.ui.updateButton,
         onClick: () => {
           if (registration?.waiting) {
             console.log('SW: Applying update...');
@@ -34,7 +36,7 @@ export function ServiceWorkerRegistration() {
         },
       },
       cancel: {
-        label: 'Später',
+        label: t.ui.updateLater,
         onClick: () => {
           console.log('SW: Update dismissed by user');
         },
@@ -42,7 +44,13 @@ export function ServiceWorkerRegistration() {
       duration: 15000,
       id: 'sw-update', // Prevent duplicate toasts
     });
-  }, [registration]);
+  }, [
+    registration,
+    t.ui.updateAvailable,
+    t.ui.updateDescription,
+    t.ui.updateButton,
+    t.ui.updateLater,
+  ]);
 
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -52,10 +60,15 @@ export function ServiceWorkerRegistration() {
           console.log('SW registered: ', reg);
           setRegistration(reg);
 
-          // Check for updates every 2 minutes
-          setInterval(() => {
-            reg.update();
-          }, 120000);
+          // Check for updates periodically, but only when online
+          const updateCheckInterval = setInterval(() => {
+            if (isOnline) {
+              console.log('SW: Checking for updates (online)');
+              reg.update();
+            } else {
+              console.log('SW: Skipping update check (offline)');
+            }
+          }, 180000); // Check every 3 minutes when online
 
           // Listen for updatefound event (new service worker is downloading)
           reg.addEventListener('updatefound', () => {
@@ -84,6 +97,12 @@ export function ServiceWorkerRegistration() {
             console.log('SW: Waiting worker found on registration');
             showUpdateNotification();
           }
+
+          // Cleanup function for the interval
+          return () => {
+            console.log('SW: Cleaning up update check interval');
+            clearInterval(updateCheckInterval);
+          };
         })
         .catch((registrationError) => {
           console.log('SW registration failed: ', registrationError);
@@ -92,13 +111,18 @@ export function ServiceWorkerRegistration() {
       // Listen for messages from service worker
       navigator.serviceWorker.addEventListener('message', (event) => {
         if (event.data?.type === 'RATES_UPDATED') {
-          toast.success('Wechselkurse aktualisiert', {
-            description: 'Die neuesten Wechselkurse wurden geladen.',
+          toast.success(t.ui.ratesUpdated, {
+            description: t.ui.ratesUpdatedDescription,
           });
         }
       });
     }
-  }, [showUpdateNotification]); // showUpdateNotification is now stable with useCallback
+  }, [
+    showUpdateNotification,
+    t.ui.ratesUpdated,
+    t.ui.ratesUpdatedDescription,
+    isOnline,
+  ]); // Include isOnline dependency
 
   // Additional effect for online/offline handling from service worker perspective
   useEffect(() => {

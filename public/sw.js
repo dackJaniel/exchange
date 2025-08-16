@@ -1,12 +1,13 @@
-const CACHE_NAME = 'currency-calculator-v1_2_2'; // Increment for new versions
-const STATIC_CACHE = 'currency-calc-static-v1_2_2';
-const DYNAMIC_CACHE = 'currency-calc-dynamic-v1_2_2';
-const API_CACHE = 'currency-calc-api-v1_2_2';
-const VERSION = '1.2.10'; // App version
+const CACHE_NAME = 'currency-calculator-v1_2_3'; // Increment for new versions
+const STATIC_CACHE = 'currency-calc-static-v1_2_3';
+const DYNAMIC_CACHE = 'currency-calc-dynamic-v1_2_3';
+const API_CACHE = 'currency-calc-api-v1_2_3';
+const VERSION = '1.2.17'; // App version
 
 // Critical assets for offline functionality
 const urlsToCache = [
   '/',
+  '/de',
   '/offline',
   '/manifest.json',
   '/favicon.ico',
@@ -20,7 +21,6 @@ const urlsToCache = [
   '/icons/icon-384x384.png',
   '/icons/icon-512x512.png',
   '/icons/apple-touch-icon.png',
-  // Add other critical static assets
 ];
 
 // Install event - cache critical resources
@@ -35,8 +35,8 @@ self.addEventListener('install', (event) => {
       })
       .then(() => {
         console.log('SW: Installation complete');
-        // Don't auto-activate, wait for user confirmation
-        // return self.skipWaiting();
+        // Auto-activate for better offline-first behavior
+        return self.skipWaiting();
       })
       .catch((error) => {
         console.error('SW: Installation failed', error);
@@ -70,7 +70,7 @@ self.addEventListener('activate', (event) => {
         return Promise.all(
           cacheNames
             .filter((cacheName) => {
-              return !cacheName.includes('v1_2_1'); // Keep only current version caches
+              return !cacheName.includes('v1_2_3'); // Keep only current version caches
             })
             .map((cacheName) => {
               console.log('SW: Deleting old cache', cacheName);
@@ -164,27 +164,47 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Navigation requests - Network first with offline fallback
+  // Navigation requests - Cache first for offline-first behavior
   if (request.mode === 'navigate') {
     event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Cache successful navigation responses
-          const responseClone = response.clone();
-          caches
-            .open(DYNAMIC_CACHE)
-            .then((cache) => cache.put(request, responseClone));
-          return response;
-        })
-        .catch(() => {
-          // Serve offline page or cached version
-          return caches.match(request).then((cachedResponse) => {
-            if (cachedResponse) {
-              return cachedResponse;
+      caches.match(request).then((cachedResponse) => {
+        if (cachedResponse) {
+          // Serve from cache immediately, then try to update in background
+          console.log('SW: Serving navigation from cache');
+          fetch(request)
+            .then((networkResponse) => {
+              if (networkResponse && networkResponse.status === 200) {
+                // Update cache in background
+                caches.open(DYNAMIC_CACHE).then((cache) => {
+                  cache.put(request, networkResponse.clone());
+                });
+              }
+            })
+            .catch(() => {
+              // Network failed, cache was the right choice
+              console.log('SW: Network failed, cache was correct');
+            });
+          return cachedResponse;
+        }
+
+        // Not in cache, try network
+        return fetch(request)
+          .then((response) => {
+            if (response && response.status === 200) {
+              // Cache successful navigation responses
+              const responseClone = response.clone();
+              caches.open(DYNAMIC_CACHE).then((cache) => {
+                cache.put(request, responseClone);
+              });
             }
+            return response;
+          })
+          .catch(() => {
+            // Network failed and no cache - serve offline page
+            console.log('SW: Serving offline page');
             return caches.match('/offline') || caches.match('/');
           });
-        })
+      })
     );
     return;
   }

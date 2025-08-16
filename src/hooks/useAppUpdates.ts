@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { toast } from 'sonner';
+import { useCurrencyStore } from '@/lib/store/currency';
 
 interface UpdateState {
     updateAvailable: boolean;
@@ -13,6 +14,8 @@ export function useAppUpdates() {
         installing: false,
         registration: null,
     });
+
+    const isOnline = useCurrencyStore((state) => state.isOnline);
 
     const applyUpdate = useCallback(() => {
         if (state.registration?.waiting) {
@@ -48,14 +51,25 @@ export function useAppUpdates() {
     }, [state.registration]);
 
     const checkForUpdates = useCallback(() => {
-        if (state.registration) {
+        // Only check for updates when online
+        if (isOnline && state.registration) {
+            console.log('Checking for app updates...');
             state.registration.update();
+        } else if (!isOnline) {
+            console.log('Offline - skipping update check');
         }
-    }, [state.registration]);
+    }, [isOnline, state.registration]);
 
     const checkForUpdatesAndApply = useCallback(async () => {
+        // Only check when online
+        if (!isOnline) {
+            console.log('Offline - skipping update check and apply');
+            return false;
+        }
+
         if (state.registration) {
             // Force a check for updates
+            console.log('Checking for updates and applying if available...');
             await state.registration.update();
 
             // If an update is already waiting, apply it immediately
@@ -67,7 +81,7 @@ export function useAppUpdates() {
             return false; // No update available
         }
         return false;
-    }, [state.registration, applyUpdateSilently]);
+    }, [isOnline, state.registration, applyUpdateSilently]);
 
     useEffect(() => {
         if ('serviceWorker' in navigator) {
@@ -76,10 +90,15 @@ export function useAppUpdates() {
                 .then((registration) => {
                     setState(prev => ({ ...prev, registration }));
 
-                    // Check for updates periodically
+                    // Check for updates periodically, but only when online
                     const updateInterval = setInterval(() => {
-                        registration.update();
-                    }, 60000); // Check every minute
+                        if (isOnline) {
+                            console.log('Periodic update check (online)');
+                            registration.update();
+                        } else {
+                            console.log('Skipping periodic update check (offline)');
+                        }
+                    }, 120000); // Check every 2 minutes (only when online)
 
                     const handleUpdateFound = () => {
                         const newWorker = registration.installing;
@@ -145,7 +164,7 @@ export function useAppUpdates() {
                 }
             });
         }
-    }, [applyUpdate, state.updateAvailable]);
+    }, [applyUpdate, state.updateAvailable, isOnline]);
 
     return {
         updateAvailable: state.updateAvailable,

@@ -8,7 +8,12 @@ import { useEffect, useState } from 'react';
 export function OnlineStatusDebug() {
   const isHydrated = useHydrated();
   const isOnlineHook = useOnlineStatus();
-  const { isOnline: storeOnline, hasEverBeenOnline } = useCurrencyStore();
+  const {
+    isOnline: storeOnline,
+    hasEverBeenOnline,
+    lastUpdated,
+    cachedRates,
+  } = useCurrencyStore();
   const [navigatorOnline, setNavigatorOnline] = useState<boolean | null>(null);
   const [connectionType, setConnectionType] = useState<string>('unknown');
 
@@ -65,7 +70,7 @@ export function OnlineStatusDebug() {
 
   return (
     <div className='fixed top-0 left-0 right-0 z-50 bg-black/80 text-white p-2 text-xs font-mono'>
-      <div className='flex flex-wrap gap-4'>
+      <div className='flex flex-wrap gap-4 items-center'>
         <div>
           Navigator: {navigatorOnline ? '🟢' : '🔴'} {String(navigatorOnline)}
         </div>
@@ -78,6 +83,13 @@ export function OnlineStatusDebug() {
         <div>Ever Online: {hasEverBeenOnline ? '✅' : '❌'}</div>
         <div>Connection: {connectionType}</div>
         <div>Hydrated: {isHydrated ? '✅' : '❌'}</div>
+        <div>
+          Last Updated:{' '}
+          {lastUpdated
+            ? new Date(lastUpdated).toLocaleTimeString('de-DE')
+            : 'Never'}
+        </div>
+        <div>Cached: {Object.keys(cachedRates).length}</div>
       </div>
     </div>
   );

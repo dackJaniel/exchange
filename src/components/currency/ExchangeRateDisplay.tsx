@@ -3,10 +3,12 @@ import { useHydrated } from '@/hooks/useHydrated';
 import { useOnlineStatus } from '@/hooks/useOnlineStatus';
 import { RefreshCw, Wifi, WifiOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/lib/i18n/provider';
 
 export function ExchangeRateDisplay() {
   const isHydrated = useHydrated();
   const isOnline = useOnlineStatus();
+  const t = useTranslation();
 
   const {
     baseCurrency,
@@ -70,7 +72,7 @@ export function ExchangeRateDisplay() {
             <WifiOff className='h-3 w-3 text-red-500' />
           )}
           <span className={isOnline ? 'text-green-500' : 'text-red-500'}>
-            {isOnline ? 'Online' : 'Offline'}
+            {isOnline ? t.ui.online : t.ui.offline}
           </span>
           {!isHydrated && <span className='text-zinc-600'>(Loading...)</span>}
         </div>
@@ -85,9 +87,7 @@ export function ExchangeRateDisplay() {
 
         {/* Show warning if no rate available and never been online */}
         {!rate && !hasEverBeenOnline && (
-          <span className='text-orange-500'>
-            | Keine Kurse - Online-Verbindung erforderlich
-          </span>
+          <span className='text-orange-500'>| {t.ui.noRatesOffline}</span>
         )}
 
         {/* Show error message if any */}

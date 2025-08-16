@@ -11,19 +11,19 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Share2, MessageCircle, Send, Mail, Copy, Check } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n/provider';
 
 export function ShareButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const t = useTranslation();
 
   const shareUrl =
     typeof window !== 'undefined'
       ? window.location.href
       : 'https://exchange.danielhilmer.de';
-  const shareTitle =
-    'Currency Exchange Calculator - Kostenloser Währungsrechner';
-  const shareText =
-    'Schau dir diesen kostenlosen Währungsrechner an! Über 170 Währungen mit aktuellen Wechselkursen. 📱💱';
+  const shareTitle = t.meta.title;
+  const shareText = t.ui.shareText;
 
   const handleNativeShare = async () => {
     if (navigator.share) {
@@ -45,22 +45,6 @@ export function ShareButton() {
       `${shareText} ${shareUrl}`
     )}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-    setIsOpen(false);
-  };
-
-  const handleTelegramShare = () => {
-    const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(
-      shareUrl
-    )}&text=${encodeURIComponent(shareText)}`;
-    window.open(telegramUrl, '_blank', 'noopener,noreferrer');
-    setIsOpen(false);
-  };
-
-  const handleEmailShare = () => {
-    const emailUrl = `mailto:?subject=${encodeURIComponent(
-      shareTitle
-    )}&body=${encodeURIComponent(`${shareText}\n\n${shareUrl}`)}`;
-    window.open(emailUrl, '_blank', 'noopener,noreferrer');
     setIsOpen(false);
   };
 
@@ -89,34 +73,20 @@ export function ShareButton() {
 
   const shareOptions = [
     {
-      name: 'WhatsApp',
+      name: t.ui.shareWhatsApp,
       icon: MessageCircle,
       action: handleWhatsAppShare,
       color: 'hover:bg-green-600/20 hover:text-green-400',
-      description: 'Mit Freunden teilen',
+      description: t.ui.shareWhatsAppDescription,
     },
     {
-      name: 'Telegram',
-      icon: Send,
-      action: handleTelegramShare,
-      color: 'hover:bg-blue-600/20 hover:text-blue-400',
-      description: 'Über Telegram senden',
-    },
-    {
-      name: 'E-Mail',
-      icon: Mail,
-      action: handleEmailShare,
-      color: 'hover:bg-orange-600/20 hover:text-orange-400',
-      description: 'Per E-Mail versenden',
-    },
-    {
-      name: copied ? 'Kopiert!' : 'Link kopieren',
+      name: copied ? t.ui.shareCopyLinkCopied : t.ui.shareCopyLink,
       icon: copied ? Check : Copy,
       action: handleCopyLink,
       color: copied
         ? 'bg-green-600/20 text-green-400'
         : 'hover:bg-zinc-600/20 hover:text-zinc-300',
-      description: 'Link in Zwischenablage',
+      description: t.ui.shareCopyDescription,
     },
   ];
 
@@ -127,16 +97,18 @@ export function ShareButton() {
           variant='ghost'
           className='w-full text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800 justify-start'>
           <Share2 className='h-4 w-4 mr-3' />
-          App teilen
+          {t.ui.shareApp}
         </Button>
       </SheetTrigger>
       <SheetContent
         side='bottom'
         className='bg-zinc-900 border-zinc-700 rounded-t-xl max-h-[400px]'>
         <SheetHeader className='text-center pb-4'>
-          <SheetTitle className='text-white text-lg'>App teilen</SheetTitle>
+          <SheetTitle className='text-white text-lg'>
+            {t.ui.shareTitle}
+          </SheetTitle>
           <SheetDescription className='text-zinc-400 text-sm'>
-            Teile den kostenlosen Währungsrechner mit deinen Freunden
+            {t.ui.shareDescription}
           </SheetDescription>
         </SheetHeader>
 
@@ -150,9 +122,11 @@ export function ShareButton() {
               <div className='flex items-center space-x-3'>
                 <Share2 className='h-5 w-5 text-orange-500' />
                 <div>
-                  <div className='text-white font-medium'>Teilen</div>
+                  <div className='text-white font-medium'>
+                    {t.ui.shareNativeTitle}
+                  </div>
                   <div className='text-zinc-400 text-sm'>
-                    System Share verwenden
+                    {t.ui.shareNativeDescription}
                   </div>
                 </div>
               </div>
@@ -181,7 +155,7 @@ export function ShareButton() {
 
         <div className='mt-4 pt-4 border-t border-zinc-700'>
           <div className='text-center text-xs text-zinc-500'>
-            💱 Kostenloser Währungsrechner für alle!
+            {t.ui.shareFooter}
           </div>
         </div>
       </SheetContent>

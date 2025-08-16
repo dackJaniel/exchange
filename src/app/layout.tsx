@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration';
 import { Toaster } from '@/components/ui/sonner';
+import { I18nProvider } from '@/lib/i18n/provider';
 import './globals.css';
 
 const geistSans = Geist({
@@ -16,33 +17,38 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Currency Exchange Calculator - Kostenloser Währungsrechner',
+    default: 'Currency Exchange Calculator - Free Currency Converter',
     template: '%s | Currency Exchange Calculator',
   },
   description:
-    'Kostenloser Währungsrechner mit aktuellen Wechselkursen. Rechnen Sie zwischen 170+ Währungen um - EUR, USD, GBP und mehr. Progressive Web App mit Offline-Funktionen.',
+    'Free currency calculator with live exchange rates. Convert between 170+ currencies - EUR, USD, GBP and more. Progressive Web App with offline functionality.',
   keywords: [
-    'währungsrechner',
     'currency calculator',
-    'wechselkurs',
+    'currency converter',
     'exchange rate',
-    'euro umrechner',
-    'dollar rechner',
-    'pfund sterling',
-    'währung umrechnen',
+    'euro converter',
+    'dollar calculator',
+    'pound sterling',
     'currency conversion',
-    'kostenlos',
-    'online rechner',
+    'free',
+    'online calculator',
     'PWA',
     'progressive web app',
     'offline',
-    'mobil',
+    'mobile',
     'real-time rates',
-    'aktuell',
-    'finanzen',
-    'reise',
+    'current',
+    'finance',
+    'travel',
     'business',
   ],
+  alternates: {
+    canonical: 'https://exchange.danielhilmer.de/',
+    languages: {
+      'en-US': 'https://exchange.danielhilmer.de/',
+      'de-DE': 'https://exchange.danielhilmer.de/de',
+    },
+  },
   authors: [{ name: 'Daniel Hilmer', url: 'https://danielhilmer.de' }],
   creator: 'Daniel Hilmer',
   publisher: 'Daniel Hilmer',
@@ -85,11 +91,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: 'Currency Exchange Calculator',
-    title: 'Kostenloser Währungsrechner - Currency Exchange Calculator',
+    title: 'Free Currency Calculator - Currency Exchange Calculator',
     description:
-      'Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen. Einfach, schnell und kostenlos. Funktioniert auch offline als PWA.',
-    locale: 'de_DE',
-    alternateLocale: ['en_US'],
+      'Currency calculator with live exchange rates for 170+ currencies. Simple, fast and free. Works offline as PWA.',
+    locale: 'en_US',
+    alternateLocale: ['de_DE'],
     url: 'https://exchange.danielhilmer.de',
     countryName: 'Deutschland',
     images: [
@@ -97,7 +103,7 @@ export const metadata: Metadata = {
         url: 'https://exchange.danielhilmer.de/icons/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Currency Exchange Calculator - Kostenloser Währungsrechner',
+        alt: 'Currency Exchange Calculator - Free Currency Converter',
         type: 'image/png',
       },
       {
@@ -115,9 +121,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@YourTwitterHandle', // Hier Twitter Handle einfügen
     creator: '@YourTwitterHandle', // Hier Twitter Handle einfügen
-    title: 'Kostenloser Währungsrechner - Currency Exchange Calculator',
+    title: 'Free Currency Calculator - Currency Exchange Calculator',
     description:
-      'Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen. Einfach, schnell und kostenlos.',
+      'Currency calculator with live exchange rates for 170+ currencies. Simple, fast and free.',
     images: {
       url: 'https://exchange.danielhilmer.de/icons/og-image.png',
       alt: 'Currency Exchange Calculator Screenshot',
@@ -154,7 +160,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='de' className='dark'>
+    <html lang='en' className='dark'>
       <head>
         {/* Additional PWA Meta Tags */}
         <meta name='mobile-web-app-capable' content='yes' />
@@ -190,6 +196,23 @@ export default function RootLayout({
         <link rel='dns-prefetch' href='//fonts.googleapis.com' />
         <link rel='dns-prefetch' href='//fonts.gstatic.com' />
 
+        {/* Multilingual SEO */}
+        <link
+          rel='alternate'
+          hrefLang='en'
+          href='https://exchange.danielhilmer.de/'
+        />
+        <link
+          rel='alternate'
+          hrefLang='de'
+          href='https://exchange.danielhilmer.de/de'
+        />
+        <link
+          rel='alternate'
+          hrefLang='x-default'
+          href='https://exchange.danielhilmer.de/'
+        />
+
         {/* Schema.org structured data */}
         <script
           type='application/ld+json'
@@ -199,7 +222,7 @@ export default function RootLayout({
               '@type': 'WebApplication',
               name: 'Currency Exchange Calculator',
               description:
-                'Kostenloser Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen',
+                'Free currency calculator with live exchange rates for 170+ currencies',
               url: 'https://exchange.danielhilmer.de',
               applicationCategory: 'FinanceApplication',
               operatingSystem: 'All',
@@ -231,13 +254,13 @@ export default function RootLayout({
                 worstRating: '1',
               },
               featureList: [
-                'Aktuelle Wechselkurse',
-                'Offline-Funktionalität',
+                'Live exchange rates',
+                'Offline functionality',
                 'Progressive Web App',
-                'Über 170 Währungen',
-                'Kostenlose Nutzung',
-                'Mobile optimiert',
-                'Schnelle Berechnungen',
+                '170+ currencies',
+                'Free to use',
+                'Mobile optimized',
+                'Fast calculations',
               ],
             }),
           }}
@@ -316,18 +339,20 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white overflow-x-hidden`}>
-        {children}
-        <ServiceWorkerRegistration />
-        <Toaster
-          position='top-center'
-          toastOptions={{
-            style: {
-              background: '#1a1a1a',
-              color: '#ffffff',
-              border: '1px solid #333',
-            },
-          }}
-        />
+        <I18nProvider>
+          {children}
+          <ServiceWorkerRegistration />
+          <Toaster
+            position='top-center'
+            toastOptions={{
+              style: {
+                background: '#1a1a1a',
+                color: '#ffffff',
+                border: '1px solid #333',
+              },
+            }}
+          />
+        </I18nProvider>
       </body>
     </html>
   );
