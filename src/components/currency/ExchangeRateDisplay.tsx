@@ -1,10 +1,13 @@
 import { useCurrencyStore } from '@/lib/store/currency';
 import { useHydrated } from '@/hooks/useHydrated';
-import { RefreshCw } from 'lucide-react';
+import { useOnlineStatus } from '@/hooks/useOnlineStatus';
+import { RefreshCw, Wifi, WifiOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function ExchangeRateDisplay() {
   const isHydrated = useHydrated();
+  const isOnline = useOnlineStatus();
+
   const {
     baseCurrency,
     targetCurrency,
@@ -12,9 +15,25 @@ export function ExchangeRateDisplay() {
     lastUpdated,
     isLoading,
     fetchExchangeRates,
+    getRatesFromCache,
+    hasEverBeenOnline,
+    error,
   } = useCurrencyStore();
 
-  const rate = rates[targetCurrency.code];
+  // Try to get rate from current rates, fallback to cache
+  let rate = rates[targetCurrency.code];
+  let isFromCache = false;
+
+  if (!rate) {
+    const cachedRate = getRatesFromCache(
+      baseCurrency.code,
+      targetCurrency.code
+    );
+    if (cachedRate !== null) {
+      rate = cachedRate;
+      isFromCache = true;
+    }
+  }
 
   const formatLastUpdated = (date: Date | string | null) => {
     if (!date || !isHydrated) return 'Never';
@@ -34,14 +53,44 @@ export function ExchangeRateDisplay() {
     return dateObj.toLocaleDateString();
   };
 
+  const handleRefresh = () => {
+    if (isOnline) {
+      fetchExchangeRates(true); // Force refresh
+    }
+  };
+
   return (
     <div className='flex items-center justify-between text-xs text-zinc-500 px-1 py-0.5 mb-1'>
-      <div className='flex items-center gap-1'>
+      <div className='flex items-center gap-2'>
+        {/* Online Status Indicator */}
+        <div className='flex items-center gap-1'>
+          {isOnline ? (
+            <Wifi className='h-3 w-3 text-green-500' />
+          ) : (
+            <WifiOff className='h-3 w-3 text-red-500' />
+          )}
+          <span className={isOnline ? 'text-green-500' : 'text-red-500'}>
+            {isOnline ? 'Online' : 'Offline'}
+          </span>
+        </div>
+
+        {/* Exchange Rate */}
         {rate && (
           <span>
-            1 {baseCurrency.code} = {rate.toFixed(4)} {targetCurrency.code}
+            | 1 {baseCurrency.code} = {rate.toFixed(4)} {targetCurrency.code}
+            {isFromCache && ' (cached)'}
           </span>
         )}
+
+        {/* Show warning if no rate available and never been online */}
+        {!rate && !hasEverBeenOnline && (
+          <span className='text-orange-500'>
+            | Keine Kurse - Online-Verbindung erforderlich
+          </span>
+        )}
+
+        {/* Show error message if any */}
+        {error && <span className='text-orange-500'>| {error}</span>}
       </div>
 
       <div className='flex items-center gap-1'>
@@ -49,9 +98,14 @@ export function ExchangeRateDisplay() {
         <Button
           variant='ghost'
           size='sm'
-          className='h-5 w-5 p-0 text-zinc-500 hover:text-white'
-          onClick={fetchExchangeRates}
-          disabled={isLoading}>
+          className='h-5 w-5 p-0 text-zinc-500 hover:text-white disabled:opacity-30'
+          onClick={handleRefresh}
+          disabled={isLoading || !isOnline}
+          title={
+            !isOnline
+              ? 'Offline - keine Aktualisierung möglich'
+              : 'Wechselkurse aktualisieren'
+          }>
           <RefreshCw className={`h-2 w-2 ${isLoading ? 'animate-spin' : ''}`} />
         </Button>
       </div>

@@ -17,15 +17,33 @@ const CURRENCIES: Currency[] = [
     { code: 'MXN', symbol: '$', name: 'Mexican Peso', flag: '🇲🇽' },
 ];
 
+// Cache duration: 15 minutes
+const CACHE_DURATION = 15 * 60 * 1000;
+
+// Interface for cached exchange rates
+interface CachedRates {
+    [baseCurrency: string]: {
+        rates: { [targetCurrency: string]: number };
+        timestamp: number;
+    };
+}
+
 interface CurrencyStore extends CurrencyState {
     currencies: Currency[];
     isHydrated: boolean;
+    cachedRates: CachedRates;
+    isOnline: boolean;
+    hasEverBeenOnline: boolean;
     setBaseCurrency: (currency: Currency) => void;
     setTargetCurrency: (currency: Currency) => void;
     swapCurrencies: () => void;
-    fetchExchangeRates: () => Promise<void>;
+    fetchExchangeRates: (forceRefresh?: boolean) => Promise<void>;
+    fetchAllCurrencyRates: () => Promise<void>;
     convertAmount: (amount: number) => number;
     getCurrencyByCode: (code: string) => Currency | undefined;
+    setOnlineStatus: (status: boolean) => void;
+    isCacheValid: (baseCurrency: string) => boolean;
+    getRatesFromCache: (baseCurrency: string, targetCurrency: string) => number | null;
 }
 
 const initialState: CurrencyState = {
@@ -43,16 +61,54 @@ export const useCurrencyStore = create<CurrencyStore>()(
             ...initialState,
             currencies: CURRENCIES,
             isHydrated: false,
+            cachedRates: {},
+            isOnline: true,
+            hasEverBeenOnline: false,
+
+            setOnlineStatus: (status: boolean) => {
+                const state = get();
+                set({ isOnline: status });
+
+                if (status) {
+                    // When coming back online, mark as having been online and refresh rates
+                    if (!state.hasEverBeenOnline) {
+                        set({ hasEverBeenOnline: true });
+                    }
+                    // Fetch all currency rates in background when online
+                    state.fetchAllCurrencyRates();
+                }
+            },
+
+            isCacheValid: (baseCurrency: string): boolean => {
+                const state = get();
+                const cached = state.cachedRates[baseCurrency];
+                if (!cached) return false;
+
+                const now = Date.now();
+                return (now - cached.timestamp) < CACHE_DURATION;
+            },
+
+            getRatesFromCache: (baseCurrency: string, targetCurrency: string): number | null => {
+                const state = get();
+                const cached = state.cachedRates[baseCurrency];
+                if (!cached) return null;
+
+                return cached.rates[targetCurrency] || null;
+            },
 
             setBaseCurrency: (currency: Currency) => {
                 const state = get();
                 set({ baseCurrency: currency });
-                // Always fetch fresh rates when base currency changes
-                state.fetchExchangeRates();
+
+                // Only fetch rates if online, otherwise use cache
+                if (state.isOnline) {
+                    state.fetchExchangeRates();
+                }
             },
 
             setTargetCurrency: (currency: Currency) => {
                 set({ targetCurrency: currency });
+                // No need to fetch rates, conversion will use cached data
             },
 
             swapCurrencies: () => {
@@ -61,16 +117,33 @@ export const useCurrencyStore = create<CurrencyStore>()(
                     baseCurrency: state.targetCurrency,
                     targetCurrency: state.baseCurrency,
                 });
-                // Fetch new rates for the new base currency
-                state.fetchExchangeRates();
+                // Only fetch rates if online, otherwise use cache
+                if (state.isOnline) {
+                    state.fetchExchangeRates();
+                }
             },
 
-            fetchExchangeRates: async () => {
+            fetchExchangeRates: async (forceRefresh = false) => {
                 const state = get();
+
+                // If offline and we have cached data, don't attempt to fetch
+                if (!state.isOnline && !forceRefresh) {
+                    console.log('Offline: Using cached exchange rates');
+                    return;
+                }
+
+                // If we have valid cached data and not forcing refresh, use cache
+                if (!forceRefresh && state.isCacheValid(state.baseCurrency.code)) {
+                    const cachedRate = state.getRatesFromCache(state.baseCurrency.code, state.targetCurrency.code);
+                    if (cachedRate !== null) {
+                        console.log('Using cached exchange rates');
+                        return;
+                    }
+                }
+
                 set({ isLoading: true, error: null });
 
                 try {
-                    // Using a simpler, more reliable free API
                     const response = await fetch(
                         `https://api.exchangerate-api.com/v4/latest/${state.baseCurrency.code}`
                     );
@@ -80,36 +153,94 @@ export const useCurrencyStore = create<CurrencyStore>()(
                     }
 
                     const data = await response.json();
+                    const rates = data.rates || data.conversion_rates || {};
 
-                    // The API returns rates in a "rates" property
+                    // Update main rates
                     set({
-                        rates: data.rates || data.conversion_rates || {},
+                        rates,
                         lastUpdated: new Date(),
                         isLoading: false,
                         error: null,
                     });
-                } catch {
-                    console.warn('API failed, using mock data for development');
-                    // Fallback to mock data for development
-                    set({
-                        rates: {
-                            'EUR': 1,
-                            'USD': 1.09,
-                            'GBP': 0.86,
-                            'CZK': 25.4,
-                            'PLN': 4.33,
-                            'CHF': 0.94,
-                            'CAD': 1.48,
-                            'AUD': 1.66,
-                            'JPY': 162.8,
-                            'CNY': 7.89,
-                            'MXN': 18.75,
-                        },
-                        lastUpdated: new Date(),
-                        isLoading: false,
-                        error: null,
-                    });
+
+                    // Cache the rates
+                    const newCachedRates = { ...state.cachedRates };
+                    newCachedRates[state.baseCurrency.code] = {
+                        rates,
+                        timestamp: Date.now(),
+                    };
+                    set({ cachedRates: newCachedRates });
+
+                } catch (error) {
+                    console.error('Failed to fetch exchange rates:', error);
+
+                    // Try to use cached data as fallback
+                    const cachedRate = state.getRatesFromCache(state.baseCurrency.code, state.targetCurrency.code);
+                    if (cachedRate !== null) {
+                        console.log('API failed, using cached rates');
+                        set({
+                            isLoading: false,
+                            error: 'Using cached rates (network unavailable)'
+                        });
+                    } else {
+                        set({
+                            isLoading: false,
+                            error: 'Unable to fetch exchange rates and no cached data available',
+                        });
+                    }
                 }
+            },
+
+            fetchAllCurrencyRates: async () => {
+                const state = get();
+
+                if (!state.isOnline) {
+                    console.log('Offline: Skipping background currency fetch');
+                    return;
+                }
+
+                console.log('Fetching all currency rates in background...');
+
+                // Fetch rates for all major currencies to build comprehensive cache
+                const baseCurrencies = ['EUR', 'USD', 'GBP'];
+                const promises = baseCurrencies.map(async (baseCurrency) => {
+                    try {
+                        const response = await fetch(
+                            `https://api.exchangerate-api.com/v4/latest/${baseCurrency}`
+                        );
+
+                        if (!response.ok) {
+                            throw new Error(`Failed to fetch rates for ${baseCurrency}`);
+                        }
+
+                        const data = await response.json();
+                        const rates = data.rates || data.conversion_rates || {};
+
+                        return {
+                            baseCurrency,
+                            rates,
+                            timestamp: Date.now(),
+                        };
+                    } catch (error) {
+                        console.error(`Failed to fetch rates for ${baseCurrency}:`, error);
+                        return null;
+                    }
+                });
+
+                const results = await Promise.all(promises);
+                const newCachedRates = { ...state.cachedRates };
+
+                results.forEach((result) => {
+                    if (result) {
+                        newCachedRates[result.baseCurrency] = {
+                            rates: result.rates,
+                            timestamp: result.timestamp,
+                        };
+                    }
+                });
+
+                set({ cachedRates: newCachedRates });
+                console.log('Background currency rates updated');
             },
 
             convertAmount: (amount: number): number => {
@@ -123,19 +254,50 @@ export const useCurrencyStore = create<CurrencyStore>()(
                     return amount;
                 }
 
-                // The rates are based on the baseCurrency, so:
-                // - If baseCurrency is EUR and we want USD, multiply by USD rate
-                // - If baseCurrency is USD and we want EUR, divide by EUR rate (or multiply by 1/EUR rate)
+                // Strategy: Try multiple approaches to find a conversion rate
 
-                const baseRate = state.rates[state.baseCurrency.code] || 1;
-                const targetRate = state.rates[state.targetCurrency.code];
-
-                if (!targetRate) {
-                    return 0; // Return 0 if no rate available
+                // 1. Try direct conversion using cached rates for the base currency
+                const directRate = state.getRatesFromCache(state.baseCurrency.code, state.targetCurrency.code);
+                if (directRate !== null) {
+                    return amount * directRate;
                 }
 
-                // Convert: amount * (targetRate / baseRate)
-                return amount * (targetRate / baseRate);
+                // 2. Try using current rates
+                const currentBaseRate = state.rates[state.baseCurrency.code] || 1;
+                const currentTargetRate = state.rates[state.targetCurrency.code];
+                if (currentTargetRate && currentBaseRate) {
+                    return amount * (currentTargetRate / currentBaseRate);
+                }
+
+                // 3. Try reverse conversion (target as base currency)
+                const reverseRate = state.getRatesFromCache(state.targetCurrency.code, state.baseCurrency.code);
+                if (reverseRate !== null && reverseRate !== 0) {
+                    return amount / reverseRate;
+                }
+
+                // 4. Try using EUR as intermediary (most cached rates are EUR-based)
+                if (state.baseCurrency.code !== 'EUR' && state.targetCurrency.code !== 'EUR') {
+                    const baseToEUR = state.getRatesFromCache('EUR', state.baseCurrency.code);
+                    const eurToTarget = state.getRatesFromCache('EUR', state.targetCurrency.code);
+
+                    if (baseToEUR && eurToTarget && baseToEUR !== 0) {
+                        // Convert: amount / baseToEUR * eurToTarget
+                        return (amount / baseToEUR) * eurToTarget;
+                    }
+                }
+
+                // 5. Try using USD as intermediary
+                if (state.baseCurrency.code !== 'USD' && state.targetCurrency.code !== 'USD') {
+                    const baseToUSD = state.getRatesFromCache('USD', state.baseCurrency.code);
+                    const usdToTarget = state.getRatesFromCache('USD', state.targetCurrency.code);
+
+                    if (baseToUSD && usdToTarget && baseToUSD !== 0) {
+                        return (amount / baseToUSD) * usdToTarget;
+                    }
+                }
+
+                console.warn(`No conversion path found for ${state.baseCurrency.code} -> ${state.targetCurrency.code}`);
+                return 0;
             },
 
             getCurrencyByCode: (code: string): Currency | undefined => {
@@ -150,6 +312,8 @@ export const useCurrencyStore = create<CurrencyStore>()(
                 targetCurrency: state.targetCurrency,
                 rates: state.rates,
                 lastUpdated: state.lastUpdated,
+                cachedRates: state.cachedRates,
+                hasEverBeenOnline: state.hasEverBeenOnline,
             }),
             onRehydrateStorage: () => (state) => {
                 if (state) {

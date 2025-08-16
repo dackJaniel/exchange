@@ -5,8 +5,11 @@ import { DisplayPanel } from '@/components/layout/DisplayPanel';
 import { KeypadGrid } from '@/components/layout/KeypadGrid';
 import { CurrencySelector } from '@/components/currency/CurrencySelector';
 import { ExchangeRateDisplay } from '@/components/currency/ExchangeRateDisplay';
+import { OfflineNotice } from '@/components/currency/OfflineNotice';
+import { PullToRefreshWrapper } from '@/components/layout/PullToRefreshWrapper';
 import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistration';
 import { useHydrated } from '@/hooks/useHydrated';
+import { useOnlineStatus } from '@/hooks/useOnlineStatus';
 import { useCalculatorStore } from '@/lib/store/calculator';
 import { useCurrencyStore } from '@/lib/store/currency';
 import {
@@ -19,24 +22,49 @@ import { Download } from 'lucide-react';
 
 export default function Home() {
   const isHydrated = useHydrated();
+  const isOnline = useOnlineStatus();
   const { display, previousValue, operation } = useCalculatorStore();
-  const { fetchExchangeRates, lastUpdated } = useCurrencyStore();
+  const {
+    fetchExchangeRates,
+    fetchAllCurrencyRates,
+    lastUpdated,
+    hasEverBeenOnline,
+  } = useCurrencyStore();
 
   useEffect(() => {
     // Only fetch rates after hydration to avoid SSR issues
-    if (isHydrated) {
+    if (isHydrated && isOnline) {
       // Initialize PWA features
       registerServiceWorker();
       setupInstallPrompt();
       trackPWAUsage();
 
-      // Fetch exchange rates on app load if not cached or older than 15 minutes
+      // Check if we've never been online before - fetch immediately
+      if (!hasEverBeenOnline) {
+        console.log('First time online - fetching initial currency rates...');
+        fetchExchangeRates();
+        return;
+      }
+
+      // Check if we need to refresh rates (older than 15 minutes)
       const fifteenMinutesAgo = new Date(Date.now() - 15 * 60 * 1000);
       if (!lastUpdated || new Date(lastUpdated) < fifteenMinutesAgo) {
         fetchExchangeRates();
       }
+
+      // Fetch all currency rates in background for better offline experience
+      setTimeout(() => {
+        fetchAllCurrencyRates();
+      }, 2000); // Delay to not interfere with initial load
     }
-  }, [fetchExchangeRates, lastUpdated, isHydrated]);
+  }, [
+    fetchExchangeRates,
+    fetchAllCurrencyRates,
+    lastUpdated,
+    isHydrated,
+    isOnline,
+    hasEverBeenOnline,
+  ]);
 
   // Show loading state during hydration to prevent hydration mismatches
   if (!isHydrated) {
@@ -50,7 +78,7 @@ export default function Home() {
   return (
     <>
       <ServiceWorkerRegistration />
-      <div className='h-screen w-screen max-w-4xl m-auto bg-black main-container'>
+      <PullToRefreshWrapper>
         <div className='p-2 h-full flex flex-col justify-between'>
           {/* Header - kompakter ohne Icons */}
           <div className='flex justify-center items-center my-4 relative'>
@@ -67,6 +95,9 @@ export default function Home() {
               <Download className='h-5 w-5' />
             </Button>
           </div>
+
+          {/* Offline Notice */}
+          <OfflineNotice />
 
           {/* Currency Selectors */}
           <div className='grid grid-cols-2 gap-2 mb-2'>
@@ -95,7 +126,7 @@ export default function Home() {
             <KeypadGrid />
           </div>
         </div>
-      </div>
+      </PullToRefreshWrapper>
     </>
   );
 }
