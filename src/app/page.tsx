@@ -77,7 +77,7 @@ export default function Home() {
   return (
     <>
       <ServiceWorkerRegistration />
-      <div className='min-h-screen bg-black flex flex-col'>
+      <div className='max-h-screen min-h-[90vh] bg-black flex flex-col'>
         {/* Navigation Header */}
         <NavigationHeader />
 
