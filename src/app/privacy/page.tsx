@@ -40,11 +40,11 @@ export default function Privacy() {
               <p>
                 The following information will provide you with an easy to
                 navigate overview of what will happen with your personal data
-                when you visit this website. The term "personal data" comprises
-                all data that can be used to personally identify you. For
-                detailed information about the subject matter of data
-                protection, please consult our Data Protection Declaration,
-                which we have included beneath this copy.
+                when you visit this website. The term &ldquo;personal
+                data&rdquo; comprises all data that can be used to personally
+                identify you. For detailed information about the subject matter
+                of data protection, please consult our Data Protection
+                Declaration, which we have included beneath this copy.
               </p>
 
               <h3 className='text-xl font-medium text-white mb-3'>
@@ -53,13 +53,14 @@ export default function Privacy() {
 
               <h4 className='text-lg font-medium text-zinc-200 mb-2'>
                 Who is the responsible party for the recording of data on this
-                website (i.e., the "controller")?
+                website (i.e., the &ldquo;controller&rdquo;)?
               </h4>
               <p>
                 The data on this website is processed by the operator of the
                 website, whose contact information is available under section
-                "Information about the responsible party (referred to as the
-                "controller" in the GDPR)" in this Privacy Policy.
+                &ldquo;Information about the responsible party (referred to as
+                the &ldquo;controller&rdquo; in the GDPR)&rdquo; in this Privacy
+                Policy.
               </p>
 
               <h4 className='text-lg font-medium text-zinc-200 mb-2'>
@@ -142,7 +143,7 @@ export default function Privacy() {
                 processing is carried out exclusively on the basis of Art.
                 6(1)(a) GDPR and § 25 (1) TDDDG, insofar the consent includes
                 the storage of cookies or the access to information in the
-                user's end device (e.g., device fingerprinting) within the
+                user&apos;s end device (e.g., device fingerprinting) within the
                 meaning of the TDDDG. This consent can be revoked at any time.
               </p>
 
@@ -188,7 +189,7 @@ export default function Privacy() {
 
               <h3 className='text-xl font-medium text-white mb-3'>
                 Information about the responsible party (referred to as the
-                "controller" in the GDPR)
+                &ldquo;controller&rdquo; in the GDPR)
               </h3>
               <p>The data processing controller on this website is:</p>
               <div className='bg-zinc-800 p-4 rounded-md my-4'>
@@ -407,8 +408,9 @@ export default function Privacy() {
                 submit to us as the website operator, this website uses either
                 an SSL or a TLS encryption program. You can recognize an
                 encrypted connection by checking whether the address line of the
-                browser switches from "http://" to "https://" and also by the
-                appearance of the lock icon in the browser line.
+                browser switches from &ldquo;http://&rdquo; to
+                &ldquo;https://&rdquo; and also by the appearance of the lock
+                icon in the browser line.
               </p>
               <p>
                 If the SSL or TLS encryption is activated, data you transmit to

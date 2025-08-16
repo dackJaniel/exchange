@@ -57,7 +57,7 @@ export default function Datenschutz() {
               <p>
                 Die Datenverarbeitung auf dieser Website erfolgt durch den
                 Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt
-                „Hinweis zur Verantwortlichen Stelle" in dieser
+                &ldquo;Hinweis zur Verantwortlichen Stelle&rdquo; in dieser
                 Datenschutzerklärung entnehmen.
               </p>
 
@@ -416,8 +416,8 @@ export default function Datenschutz() {
                 oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine
                 SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung
                 erkennen Sie daran, dass die Adresszeile des Browsers von
-                „http://" auf „https://" wechselt und an dem Schloss-Symbol in
-                Ihrer Browserzeile.
+                &ldquo;http://&rdquo; auf &ldquo;https://&rdquo; wechselt und an
+                dem Schloss-Symbol in Ihrer Browserzeile.
               </p>
               <p>
                 Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die

@@ -8,6 +8,40 @@ export function ServiceWorkerRegistration() {
     useState<ServiceWorkerRegistration | null>(null);
   const updateNotificationShownRef = useRef(false);
 
+  const showUpdateNotification = useCallback(() => {
+    // Prevent showing multiple notifications in the same session
+    if (updateNotificationShownRef.current) {
+      console.log('SW: Update notification already shown in this session');
+      return;
+    }
+
+    updateNotificationShownRef.current = true;
+    console.log('SW: Showing update notification');
+
+    toast('App-Update verfügbar! 🚀', {
+      description:
+        'Eine neue Version der App ist verfügbar. Jetzt aktualisieren?',
+      action: {
+        label: 'Aktualisieren',
+        onClick: () => {
+          if (registration?.waiting) {
+            console.log('SW: Applying update...');
+            registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+            window.location.reload();
+          }
+        },
+      },
+      cancel: {
+        label: 'Später',
+        onClick: () => {
+          console.log('SW: Update dismissed by user');
+        },
+      },
+      duration: 15000,
+      id: 'sw-update', // Prevent duplicate toasts
+    });
+  }, [registration]);
+
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -62,41 +96,7 @@ export function ServiceWorkerRegistration() {
         }
       });
     }
-  }, []); // showUpdateNotification is now stable with useCallback
-
-  const showUpdateNotification = useCallback(() => {
-    // Prevent showing multiple notifications in the same session
-    if (updateNotificationShownRef.current) {
-      console.log('SW: Update notification already shown in this session');
-      return;
-    }
-
-    updateNotificationShownRef.current = true;
-    console.log('SW: Showing update notification');
-
-    toast('App-Update verfügbar! 🚀', {
-      description:
-        'Eine neue Version der App ist verfügbar. Jetzt aktualisieren?',
-      action: {
-        label: 'Aktualisieren',
-        onClick: () => {
-          if (registration?.waiting) {
-            console.log('SW: Applying update...');
-            registration.waiting.postMessage({ type: 'SKIP_WAITING' });
-            window.location.reload();
-          }
-        },
-      },
-      cancel: {
-        label: 'Später',
-        onClick: () => {
-          console.log('SW: Update dismissed by user');
-        },
-      },
-      duration: 15000,
-      id: 'sw-update', // Prevent duplicate toasts
-    });
-  }, [registration]);
+  }, [showUpdateNotification]); // showUpdateNotification is now stable with useCallback
 
   return null;
 }

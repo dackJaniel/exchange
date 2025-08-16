@@ -2,7 +2,7 @@
 
 import { useOnlineStatus } from '@/hooks/useOnlineStatus';
 import { useCurrencyStore } from '@/lib/store/currency';
-import { WifiOff, Wifi } from 'lucide-react';
+import { WifiOff } from 'lucide-react';
 
 export function OfflineNotice() {
   const isOnline = useOnlineStatus();
