@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#000000" rx="80"/>
+  <circle cx="256" cy="200" r="80" fill="#ff9500" stroke="#ffffff" stroke-width="4"/>
+  <circle cx="180" cy="320" r="60" fill="#333333" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="332" cy="320" r="60" fill="#333333" stroke="#ffffff" stroke-width="3"/>
+  <text x="256" y="210" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-size="48" font-weight="bold">€</text>
+  <text x="180" y="330" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">$</text>
+  <text x="332" y="330" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">£</text>
+  <path d="M200 260 L312 260" stroke="#ff9500" stroke-width="4" stroke-linecap="round"/>
+  <path d="M290 240 L312 260 L290 280" stroke="#ff9500" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>

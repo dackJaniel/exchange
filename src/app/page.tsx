@@ -9,8 +9,13 @@ import { ServiceWorkerRegistration } from '@/components/ServiceWorkerRegistratio
 import { useHydrated } from '@/hooks/useHydrated';
 import { useCalculatorStore } from '@/lib/store/calculator';
 import { useCurrencyStore } from '@/lib/store/currency';
+import {
+  registerServiceWorker,
+  setupInstallPrompt,
+  trackPWAUsage,
+} from '@/lib/pwa';
 import { Button } from '@/components/ui/button';
-import { Settings, History } from 'lucide-react';
+import { Settings, History, Download } from 'lucide-react';
 
 export default function Home() {
   const isHydrated = useHydrated();
@@ -20,6 +25,11 @@ export default function Home() {
   useEffect(() => {
     // Only fetch rates after hydration to avoid SSR issues
     if (isHydrated) {
+      // Initialize PWA features
+      registerServiceWorker();
+      setupInstallPrompt();
+      trackPWAUsage();
+
       // Fetch exchange rates on app load if not cached or older than 15 minutes
       const fifteenMinutesAgo = new Date(Date.now() - 15 * 60 * 1000);
       if (!lastUpdated || new Date(lastUpdated) < fifteenMinutesAgo) {
@@ -47,6 +57,15 @@ export default function Home() {
             Currency Calculator
           </h1>
           <div className='flex gap-2'>
+            {/* PWA Install Button */}
+            <Button
+              id='install-button'
+              variant='ghost'
+              size='icon'
+              className='text-zinc-400 hover:text-white hover:bg-zinc-800 hidden'
+              title='Install App'>
+              <Download className='h-5 w-5' />
+            </Button>
             <Button
               variant='ghost'
               size='icon'

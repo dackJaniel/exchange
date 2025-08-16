@@ -1,32 +1,232 @@
-const CACHE_NAME = 'currency-calculator-v1';
+const CACHE_NAME = 'currency-calculator-v2';
+const STATIC_CACHE = 'currency-calc-static-v2';
+const DYNAMIC_CACHE = 'currency-calc-dynamic-v2';
+const API_CACHE = 'currency-calc-api-v2';
+
+// Critical assets for offline functionality
 const urlsToCache = [
   '/',
+  '/offline',
   '/manifest.json',
-  '/favicon.svg',
-  // Add other static assets as needed
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/icons/apple-touch-icon.png',
+  // Add other critical static assets
 ];
 
+// Install event - cache critical resources
 self.addEventListener('install', (event) => {
+  console.log('SW: Installing service worker...');
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
+    caches
+      .open(STATIC_CACHE)
+      .then((cache) => {
+        console.log('SW: Caching critical assets');
+        return cache.addAll(urlsToCache);
+      })
+      .then(() => {
+        console.log('SW: Installation complete');
+        return self.skipWaiting();
+      })
+      .catch((error) => {
+        console.error('SW: Installation failed', error);
+      })
   );
 });
 
+// Activate event - cleanup old caches
+self.addEventListener('activate', (event) => {
+  console.log('SW: Activating service worker...');
+  event.waitUntil(
+    caches
+      .keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames
+            .filter((cacheName) => {
+              return !cacheName.includes('v2'); // Keep only v2 caches
+            })
+            .map((cacheName) => {
+              console.log('SW: Deleting old cache', cacheName);
+              return caches.delete(cacheName);
+            })
+        );
+      })
+      .then(() => {
+        console.log('SW: Activation complete');
+        return self.clients.claim();
+      })
+  );
+});
+
+// Fetch event - implement caching strategies
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      // Return cached version or fetch from network
-      return response || fetch(event.request);
-    })
-  );
+  const { request } = event;
+  const url = new URL(request.url);
+
+  // API calls - Network first with cache fallback
+  if (
+    url.hostname.includes('exchangerate-api.com') ||
+    url.pathname.includes('/api/')
+  ) {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          // Clone the response before caching
+          const responseClone = response.clone();
+          caches.open(API_CACHE).then((cache) => {
+            cache.put(request, responseClone);
+            console.log('SW: Cached API response');
+          });
+          return response;
+        })
+        .catch(() => {
+          console.log('SW: Network failed, serving from cache');
+          return caches.match(request).then((cachedResponse) => {
+            if (cachedResponse) {
+              return cachedResponse;
+            }
+            // Return offline fallback for API calls
+            return new Response(
+              JSON.stringify({
+                error: 'Network unavailable',
+                cached: false,
+                timestamp: Date.now(),
+              }),
+              {
+                headers: { 'Content-Type': 'application/json' },
+              }
+            );
+          });
+        })
+    );
+    return;
+  }
+
+  // Static assets - Cache first
+  if (
+    request.destination === 'image' ||
+    request.destination === 'style' ||
+    request.destination === 'script' ||
+    request.destination === 'font'
+  ) {
+    event.respondWith(
+      caches.match(request).then((response) => {
+        if (response) {
+          return response;
+        }
+        return fetch(request).then((fetchResponse) => {
+          const responseClone = fetchResponse.clone();
+          caches
+            .open(DYNAMIC_CACHE)
+            .then((cache) => cache.put(request, responseClone));
+          return fetchResponse;
+        });
+      })
+    );
+    return;
+  }
+
+  // Navigation requests - Network first with offline fallback
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          // Cache successful navigation responses
+          const responseClone = response.clone();
+          caches
+            .open(DYNAMIC_CACHE)
+            .then((cache) => cache.put(request, responseClone));
+          return response;
+        })
+        .catch(() => {
+          // Serve offline page or cached version
+          return caches.match(request).then((cachedResponse) => {
+            if (cachedResponse) {
+              return cachedResponse;
+            }
+            return caches.match('/offline') || caches.match('/');
+          });
+        })
+    );
+    return;
+  }
+
+  // Default strategy - network first
+  event.respondWith(fetch(request).catch(() => caches.match(request)));
 });
 
-// Handle background sync for currency rates
+// Background sync for currency rates
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync-rates') {
-    event.waitUntil(
-      // This would typically update exchange rates in the background
-      console.log('Background sync triggered for exchange rates')
-    );
+    event.waitUntil(syncExchangeRates());
   }
 });
+
+// Push notification handling
+self.addEventListener('push', (event) => {
+  if (!event.data) return;
+
+  const data = event.data.json();
+  const options = {
+    body: data.body || 'Exchange rates updated',
+    icon: '/icons/icon-192x192.png',
+    badge: '/icons/icon-72x72.png',
+    vibrate: [100, 50, 100],
+    data: data.url || '/',
+    actions: [
+      {
+        action: 'view',
+        title: 'View App',
+        icon: '/icons/icon-72x72.png',
+      },
+      {
+        action: 'dismiss',
+        title: 'Dismiss',
+      },
+    ],
+  };
+
+  event.waitUntil(
+    self.registration.showNotification(
+      data.title || 'Currency Calculator',
+      options
+    )
+  );
+});
+
+// Notification click handling
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+
+  if (event.action === 'view') {
+    event.waitUntil(clients.openWindow(event.notification.data || '/'));
+  }
+});
+
+// Helper function to sync exchange rates in background
+async function syncExchangeRates() {
+  try {
+    console.log('SW: Background syncing exchange rates...');
+
+    const response = await fetch(
+      'https://api.exchangerate-api.com/v4/latest/EUR'
+    );
+    if (response.ok) {
+      const cache = await caches.open(API_CACHE);
+      await cache.put('exchange-rates-eur', response.clone());
+      console.log('SW: Exchange rates synced successfully');
+
+      // Optionally notify all clients about the update
+      const clients = await self.clients.matchAll();
+      clients.forEach((client) => {
+        client.postMessage({
+          type: 'RATES_UPDATED',
+          timestamp: Date.now(),
+        });
+      });
+    }
+  } catch (error) {
+    console.error('SW: Failed to sync exchange rates', error);
+  }
+}
