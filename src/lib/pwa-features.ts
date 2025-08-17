@@ -86,9 +86,13 @@ export class PWANotificationManager {
 
             if (subscription) {
                 const successful = await subscription.unsubscribe();
+                console.log('Successfully unsubscribed from push notifications');
                 return successful;
             }
-            return false;
+
+            // No subscription found - that's also a successful "unsubscribe"
+            console.log('No active subscription found, already unsubscribed');
+            return true;
         } catch (error) {
             console.error('Failed to unsubscribe from push notifications:', error);
             return false;

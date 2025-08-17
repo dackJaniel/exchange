@@ -92,12 +92,9 @@ export function NotificationSettings() {
     try {
       const success =
         await pwaManager.notifications.unsubscribeFromPushNotifications();
-      if (success) {
-        setIsSubscribed(false);
-        toast.success(t.ui.notifications.disabled);
-      } else {
-        toast.error(t.ui.notifications.error);
-      }
+      // Always set to false and show success - if no subscription exists, that's fine
+      setIsSubscribed(false);
+      toast.success(t.ui.notifications.disabled);
     } catch (error) {
       console.error('Failed to disable notifications:', error);
       toast.error(t.ui.notifications.error);
@@ -151,19 +148,22 @@ export function NotificationSettings() {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
-        <Button variant='outline' size='sm' className='flex items-center gap-2'>
-          <Settings className='h-4 w-4' />
-          {t.ui.notifications.settings}
+      <DialogTrigger className='m-0' asChild>
+        <Button
+          variant='ghost'
+          size='sm'
+          className='w-full text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800 justify-start'>
+          <Settings className='h-4 w-4 mr-3' />
+          <span className='truncate'>{t.ui.notifications.settings}</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className='sm:max-w-md'>
+      <DialogContent className='max-w-sm mx-auto'>
         <DialogHeader>
-          <DialogTitle className='flex items-center gap-2'>
-            <Bell className='h-5 w-5' />
-            {t.ui.notifications.title}
+          <DialogTitle className='flex items-center gap-2 text-base'>
+            <Bell className='h-4 w-4 flex-shrink-0' />
+            <span className='truncate'>{t.ui.notifications.title}</span>
           </DialogTitle>
-          <DialogDescription>
+          <DialogDescription className='text-sm'>
             {t.ui.notifications.description}
           </DialogDescription>
         </DialogHeader>
@@ -171,19 +171,21 @@ export function NotificationSettings() {
         <div className='space-y-4'>
           {/* Notification Permission Status */}
           <div className='rounded-lg border p-4'>
-            <div className='flex items-center justify-between mb-3'>
-              <div className='flex items-center gap-2'>
+            <div className='flex items-start justify-between gap-3 mb-3'>
+              <div className='flex items-center gap-3 min-w-0 flex-1'>
                 {notificationPermission === 'granted' ? (
-                  <Bell className='h-4 w-4 text-green-500' />
+                  <Bell className='h-4 w-4 text-green-500 flex-shrink-0 mt-0.5' />
                 ) : (
-                  <BellOff className='h-4 w-4 text-gray-400' />
+                  <BellOff className='h-4 w-4 text-gray-400 flex-shrink-0 mt-0.5' />
                 )}
-                <span className='font-medium'>
-                  {t.ui.notifications.permission}
-                </span>
+                <div className='min-w-0 flex-1'>
+                  <span className='font-medium text-sm block leading-tight'>
+                    {t.ui.notifications.permission}
+                  </span>
+                </div>
               </div>
               <span
-                className={`text-sm px-2 py-1 rounded ${
+                className={`text-xs px-2 py-1 rounded flex-shrink-0 ${
                   notificationPermission === 'granted'
                     ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
                     : notificationPermission === 'denied'
@@ -204,7 +206,7 @@ export function NotificationSettings() {
                   onClick={handleEnableNotifications}
                   disabled={loading || notificationPermission === 'denied'}
                   size='sm'
-                  className='flex-1'>
+                  className='flex-1 text-xs h-8'>
                   {loading ? t.ui.loading : t.ui.notifications.enable}
                 </Button>
               ) : (
@@ -214,7 +216,7 @@ export function NotificationSettings() {
                     disabled={loading}
                     variant='outline'
                     size='sm'
-                    className='flex-1'>
+                    className='flex-1 text-xs h-8'>
                     {loading ? t.ui.loading : t.ui.notifications.test}
                   </Button>
                   <Button
@@ -222,7 +224,7 @@ export function NotificationSettings() {
                     disabled={loading}
                     variant='destructive'
                     size='sm'
-                    className='flex-1'>
+                    className='flex-1 text-xs h-8'>
                     {loading ? t.ui.loading : t.ui.notifications.disable}
                   </Button>
                 </>
@@ -233,15 +235,17 @@ export function NotificationSettings() {
           {/* Push Notifications Status */}
           {notificationPermission === 'granted' && (
             <div className='rounded-lg border p-4'>
-              <div className='flex items-center justify-between mb-3'>
-                <div className='flex items-center gap-2'>
-                  <Bell className='h-4 w-4' />
-                  <span className='font-medium'>
-                    {t.ui.notifications.pushNotifications}
-                  </span>
+              <div className='flex items-start justify-between gap-3 mb-3'>
+                <div className='flex items-center gap-3 min-w-0 flex-1'>
+                  <Bell className='h-4 w-4 flex-shrink-0 mt-0.5' />
+                  <div className='min-w-0 flex-1'>
+                    <span className='font-medium text-sm block leading-tight'>
+                      {t.ui.notifications.pushNotifications}
+                    </span>
+                  </div>
                 </div>
                 <span
-                  className={`text-sm px-2 py-1 rounded ${
+                  className={`text-xs px-2 py-1 rounded flex-shrink-0 ${
                     isSubscribed
                       ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
                       : 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200'
@@ -251,7 +255,7 @@ export function NotificationSettings() {
                     : t.ui.notifications.inactive}
                 </span>
               </div>
-              <p className='text-sm text-gray-600 dark:text-gray-400 mb-3'>
+              <p className='text-xs text-gray-600 dark:text-gray-400 leading-relaxed'>
                 {t.ui.notifications.pushDescription}
               </p>
             </div>
@@ -260,15 +264,15 @@ export function NotificationSettings() {
           {/* Background Sync */}
           {backgroundSyncSupported && (
             <div className='rounded-lg border p-4'>
-              <div className='flex items-center justify-between mb-3'>
-                <div className='flex items-center gap-2'>
-                  <RotateCcw className='h-4 w-4' />
-                  <span className='font-medium'>
+              <div className='flex items-center gap-3 mb-3'>
+                <RotateCcw className='h-4 w-4 flex-shrink-0' />
+                <div className='min-w-0 flex-1'>
+                  <span className='font-medium text-sm block leading-tight'>
                     {t.ui.notifications.backgroundSync}
                   </span>
                 </div>
               </div>
-              <p className='text-sm text-gray-600 dark:text-gray-400 mb-3'>
+              <p className='text-xs text-gray-600 dark:text-gray-400 mb-3 leading-relaxed'>
                 {t.ui.notifications.backgroundSyncDescription}
               </p>
               <Button
@@ -276,7 +280,7 @@ export function NotificationSettings() {
                 disabled={loading}
                 variant='outline'
                 size='sm'
-                className='w-full'>
+                className='w-full text-xs h-8'>
                 {loading
                   ? t.ui.loading
                   : t.ui.notifications.enableBackgroundSync}

@@ -71,15 +71,7 @@ export function NavigationHeader() {
               <div className='mt-6 flex flex-col space-y-4'>
                 {/* Language Selection */}
                 <div className='pb-2'>
-                  <div className='text-sm text-zinc-400 mb-2'>
-                    {t.ui.language}
-                  </div>
                   <LanguageSelector />
-                </div>
-
-                {/* Notification Settings */}
-                <div className='pb-2'>
-                  <NotificationSettings />
                 </div>
 
                 {/* Coffee Donation Button */}
@@ -109,8 +101,13 @@ export function NavigationHeader() {
                   {locale === 'de' ? t.ui.imprint : t.ui.siteNotice}
                 </Link>
 
+                {/* Notification Settings */}
+                {/* <div className='py-2 border-t border-zinc-700'>
+                  <NotificationSettings />
+                </div> */}
+
                 {/* Share Button */}
-                <div className='pt-2 border-t border-zinc-700'>
+                <div className='py-2 border-t border-zinc-700'>
                   <ShareButton />
                 </div>
               </div>

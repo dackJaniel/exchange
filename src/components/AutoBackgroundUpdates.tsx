@@ -101,11 +101,16 @@ export function AutoBackgroundUpdates() {
         }
       });
 
-      // Markiere Update-Zeitpunkt vor Seiten-Reload
-      const originalReload = window.location.reload;
-      window.location.reload = function (...args) {
+      // Lausche auf beforeunload Event, um Update-Zeitpunkt zu markieren
+      const handleBeforeUnload = () => {
         localStorage.setItem('lastAutoUpdate', Date.now().toString());
-        return originalReload.apply(this, args);
+      };
+
+      window.addEventListener('beforeunload', handleBeforeUnload);
+
+      // Cleanup function
+      return () => {
+        window.removeEventListener('beforeunload', handleBeforeUnload);
       };
     }
 
