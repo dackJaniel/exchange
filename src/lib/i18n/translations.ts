@@ -2,37 +2,70 @@ export const translations = {
     en: {
         // App metadata
         meta: {
-            title: 'Currency Exchange Calculator - Free Currency Converter',
-            description: 'Free currency calculator with live exchange rates. Convert between 170+ currencies - EUR, USD, GBP and more. Progressive Web App with offline functionality.',
-            manifestName: 'Currency Exchange Calculator - Free Currency Converter',
-            manifestDescription: 'Free currency calculator with live exchange rates for 170+ currencies. Works offline too.',
-            openGraphTitle: 'Free Currency Calculator - Currency Exchange Calculator',
-            openGraphDescription: 'Currency calculator with live exchange rates for 170+ currencies. Simple, fast and free. Works offline as PWA.',
-            twitterTitle: 'Free Currency Calculator - Currency Exchange Calculator',
-            twitterDescription: 'Currency calculator with live exchange rates for 170+ currencies. Simple, fast and free.',
-            schemaDescription: 'Free currency calculator with live exchange rates for 170+ currencies',
+            title: 'Free Currency Calculator - Live Exchange Rates for 170+ Currencies',
+            description: 'Convert currencies instantly with live exchange rates. Free currency calculator supporting EUR, USD, GBP, JPY and 170+ currencies. Works offline as PWA. Fast, accurate, and mobile-optimized for travel and business.',
+            manifestName: 'Currency Calculator - Free Currency Converter',
+            manifestDescription: 'Professional currency calculator with live exchange rates for 170+ currencies. Works offline with PWA technology.',
+            openGraphTitle: 'Free Currency Calculator - Convert EUR, USD, GBP + 170 More',
+            openGraphDescription: 'Professional currency calculator with real-time exchange rates. Convert between EUR, USD, GBP, JPY and 170+ currencies. Free, fast, and works offline as Progressive Web App.',
+            twitterTitle: 'Currency Calculator - Live Exchange Rates',
+            twitterDescription: 'Convert currencies with live rates for EUR, USD, GBP + 170 more. Free PWA works offline.',
+            schemaDescription: 'Professional currency calculator with live exchange rates for 170+ international currencies including EUR, USD, GBP, JPY, CHF and many more',
         },
 
         // Keywords for SEO
         keywords: [
+            // Primary high-volume keywords
             'currency calculator',
             'currency converter',
-            'exchange rate',
-            'euro converter',
-            'dollar calculator',
-            'pound sterling',
-            'currency conversion',
-            'free',
-            'online calculator',
-            'PWA',
+            'exchange rate calculator',
+            'free currency converter',
+            'currency exchange calculator',
+
+            // Specific currency pairs
+            'euro to dollar converter',
+            'eur to usd calculator',
+            'euro dollar calculator',
+            'pound to euro converter',
+            'gbp eur calculator',
+            'usd eur converter',
+            'dollar to euro',
+            'euro to pound',
+            'swiss franc euro calculator',
+            'chf eur converter',
+
+            // Long-tail transactional
+            'convert euro to dollar',
+            'currency conversion online',
+            'real time exchange rates',
+            'live currency rates',
+            'forex calculator',
+            'money converter',
+            'international currency calculator',
+
+            // Feature-based keywords
+            'offline currency converter',
+            'PWA currency calculator',
+            'mobile currency converter',
+            'free exchange rate calculator',
+            'accurate currency converter',
+            'fast currency calculator',
+
+            // Geographic and use-case
+            'travel currency converter',
+            'business currency calculator',
+            'international money transfer calculator',
+            'currency rates today',
+            'current exchange rates',
+
+            // Technical SEO
             'progressive web app',
-            'offline',
-            'mobile',
+            'offline calculator',
+            'mobile first',
             'real-time rates',
-            'current',
-            'finance',
-            'travel',
-            'business',
+            'finance calculator',
+            'crypto currency converter',
+            'bitcoin calculator',
         ],
 
         // Schema.org features
@@ -174,39 +207,73 @@ export const translations = {
     de: {
         // App metadata
         meta: {
-            title: 'Currency Exchange Calculator - Kostenloser Währungsrechner',
-            description: 'Kostenloser Währungsrechner mit aktuellen Wechselkursen. Rechnen Sie zwischen 170+ Währungen um - EUR, USD, GBP und mehr. Progressive Web App mit Offline-Funktionen.',
-            manifestName: 'Currency Exchange Calculator - Kostenloser Währungsrechner',
-            manifestDescription: 'Kostenloser Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen. Funktioniert auch offline.',
-            openGraphTitle: 'Kostenloser Währungsrechner - Currency Exchange Calculator',
-            openGraphDescription: 'Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen. Einfach, schnell und kostenlos. Funktioniert auch offline als PWA.',
-            twitterTitle: 'Kostenloser Währungsrechner - Currency Exchange Calculator',
-            twitterDescription: 'Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen. Einfach, schnell und kostenlos.',
-            schemaDescription: 'Kostenloser Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen',
-        },
-
-        // Keywords for SEO
+            title: 'Währungsrechner Kostenlos - Aktuelle Wechselkurse für 170+ Währungen',
+            description: 'Währungen sofort umrechnen mit aktuellen Wechselkursen. Kostenloser Währungsrechner für EUR, USD, GBP, CHF und 170+ Währungen. Funktioniert offline als PWA. Schnell, genau und mobil-optimiert für Reisen und Business.',
+            manifestName: 'Währungsrechner - Kostenloser Currency Calculator',
+            manifestDescription: 'Professioneller Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen. Funktioniert offline mit PWA-Technologie.',
+            openGraphTitle: 'Kostenloser Währungsrechner - EUR, USD, CHF + 170 weitere Währungen',
+            openGraphDescription: 'Professioneller Währungsrechner mit Echtzeit-Wechselkursen. Umrechnung zwischen EUR, USD, GBP, CHF und 170+ Währungen. Kostenlos, schnell und funktioniert offline als Progressive Web App.',
+            twitterTitle: 'Währungsrechner - Aktuelle Wechselkurse',
+            twitterDescription: 'Währungen umrechnen mit Live-Kursen für EUR, USD, CHF + 170 weitere. Kostenlose PWA funktioniert offline.',
+            schemaDescription: 'Professioneller Währungsrechner mit aktuellen Wechselkursen für 170+ internationale Währungen inklusive EUR, USD, GBP, CHF, JPY und viele weitere',
+        },        // Keywords for SEO  
         keywords: [
+            // Primary German keywords
             'währungsrechner',
-            'currency calculator',
-            'wechselkurs',
-            'exchange rate',
-            'euro umrechner',
-            'dollar rechner',
-            'pfund sterling',
             'währung umrechnen',
-            'currency conversion',
-            'kostenlos',
-            'online rechner',
-            'PWA',
+            'wechselkurs rechner',
+            'kostenloser währungsrechner',
+            'currency calculator deutsch',
+
+            // Specific German currency pairs
+            'euro dollar rechner',
+            'eur usd rechner',
+            'euro in dollar umrechnen',
+            'dollar in euro rechnen',
+            'pfund euro rechner',
+            'schweizer franken euro rechner',
+            'chf eur rechner',
+            'euro pfund rechner',
+
+            // Long-tail German keywords
+            'euro in dollar umwandeln',
+            'währung online umrechnen',
+            'aktueller wechselkurs rechner',
+            'devisen rechner',
+            'geld umrechnen',
+            'währungsumrechnung online',
+            'devisenrechner kostenlos',
+
+            // German feature keywords
+            'währungsrechner offline',
+            'mobiler währungsrechner',
+            'genauer währungsrechner',
+            'schneller currency calculator',
+            'währungsrechner app',
+
+            // German geographic/use-case
+            'reise währungsrechner',
+            'urlaub geld umrechnen',
+            'währungsrechner deutschland',
+            'business währungsrechner',
+            'wechselkurs heute',
+            'aktuelle wechselkurse',
+
+            // Mixed German-English (common searches)
+            'euro to dollar rechner',
+            'currency converter deutsch',
+            'exchange rate deutschland',
+            'währung calculator',
+            'forex rechner',
+            'bitcoin euro rechner',
+            'krypto währungsrechner',
+
+            // Progressive Web App German
+            'PWA währungsrechner',
+            'offline rechner',
+            'mobile first',
             'progressive web app',
-            'offline',
-            'mobil',
-            'real-time rates',
-            'aktuell',
-            'finanzen',
-            'reise',
-            'business',
+            'finanzen rechner',
         ],
 
         // Schema.org features

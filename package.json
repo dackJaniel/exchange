@@ -13,13 +13,17 @@
     "generate-icons": "node scripts/generate-icons.js",
     "update-version": "node scripts/update-version.js",
     "prebuild": "npm run generate-icons",
-    "deploy": "npm run build:production && echo 'Ready for deployment with updated version!'"
+    "deploy": "npm run build:production && echo 'Ready for deployment with updated version!'",
+    "seo:audit": "lighthouse --output-path=./seo-audit.html --output=html --chrome-flags=\"--headless\" https://exchange.danielhilmer.de",
+    "seo:analyze": "next-bundle-analyzer",
+    "seo:sitemap": "next build && next export && next-sitemap"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-popover": "^1.1.15",
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slot": "^1.2.3",
+    "@socialgouv/matomo-next": "^1.9.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",

@@ -2,7 +2,13 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Toaster } from '@/components/ui/sonner';
 import { I18nProvider } from '@/lib/i18n/provider';
+import {
+  organizationSchema,
+  webApplicationSchema,
+  financialServiceSchema,
+} from '@/lib/schema';
 import './globals.css';
+import Matomo from '@/components/Matomo';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -161,6 +167,18 @@ export default function RootLayout({
   return (
     <html lang='en' className='dark'>
       <head>
+        {/* JSON-LD Structured Data */}
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              organizationSchema,
+              webApplicationSchema,
+              financialServiceSchema,
+            ]),
+          }}
+        />
+
         {/* Additional PWA Meta Tags */}
         <meta name='mobile-web-app-capable' content='yes' />
         <meta name='apple-mobile-web-app-capable' content='yes' />
@@ -352,6 +370,7 @@ export default function RootLayout({
           />
         </I18nProvider>
       </body>
+      <Matomo />
     </html>
   );
 }

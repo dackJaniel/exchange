@@ -1,0 +1,9 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Currency Calculator - Free Currency Converter",
+  "description": "Free currency calculator with live exchange rates for 170+ currencies",
+  "url": "https://exchange.danielhilmer.de",
+  "inLanguage": "en",
+  "applicationCategory": "FinanceApplication"
+}

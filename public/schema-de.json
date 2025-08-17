@@ -1,0 +1,9 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Währungsrechner - Kostenloser Currency Calculator",
+  "description": "Kostenloser Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen",
+  "url": "https://exchange.danielhilmer.de/de",
+  "inLanguage": "de",
+  "applicationCategory": "FinanceApplication"
+}
