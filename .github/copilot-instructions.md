@@ -140,7 +140,10 @@ npm run deploy
 
 - **Full Internationalization System**: English/German with automatic detection and localStorage persistence
 - **PWA Implementation**: Service worker, manifest, offline support with proper fallback handling
-- **SEO Optimization**: Multilingual sitemaps, hreflang tags, robots.txt
+- **SEO Optimization**: Multilingual sitemaps, hreflang tags, robots.txt, structured data, dynamic landing pages
+- **SEO Strategy**: Comprehensive keyword optimization, FAQ sections, currency pair landing pages, monitoring dashboard
+- **Structured Data**: Schema.org markup for Organization, WebApplication, FinancialService, FAQPage, HowTo, BreadcrumbList
+- **Landing Pages**: SEO-optimized pages for major currency pairs (EUR/USD, EUR/GBP, EUR/CHF) in both languages
 - **Component Architecture**: All major UI components implemented and translated
 - **State Management**: Zustand stores for calculator and currency operations with offline caching
 - **Responsive Design**: Mobile-first with touch optimization
@@ -151,6 +154,7 @@ npm run deploy
 - **Pull-to-Refresh**: Smart refresh with offline detection and appropriate messaging
 - **Automatic Background Updates**: Fully automated update system with single success notification
 - **Enhanced PWA Features**: Push notifications, background sync, and automatic rate updates
+- **SEO Monitoring**: Dashboard for tracking Core Web Vitals, search performance, and SEO KPIs
 
 ## File Patterns
 
@@ -183,12 +187,13 @@ npm run deploy
 4. **Offline-First Architecture**: Conservative online detection, cached data prioritization, graceful degradation
 5. **Performance**: Optimized re-renders, efficient state management, minimal API calls
 6. **Accessibility**: Screen reader support, proper ARIA labels for calculator
-7. **SEO**: Multilingual support with proper hreflang tags and sitemaps
+7. **SEO**: Multilingual support with proper hreflang tags, sitemaps, structured data, and dynamic landing pages
 8. **i18n**: Full internationalization with automatic detection and localStorage persistence
 9. **Error Handling**: Context-specific error messages, offline-aware UI states
 10. **UX Optimization**: Language selector in hamburger menu, clear offline indicators
 11. **Automatic Updates**: Fully automated background updates with intelligent duplicate prevention
 12. **PWA Features**: Push notifications, background sync, and enhanced service worker capabilities
+13. **SEO Strategy**: Comprehensive keyword optimization, FAQ sections, monitoring dashboard
 
 ## Development Guidelines
 
@@ -210,6 +215,15 @@ npm run deploy
 - **SEO metadata**: Include both languages in meta tags and manifests
 - **PWA manifest**: Use dynamic generation based on locale
 - **Navigation**: Language selector is located in hamburger menu
+
+### SEO Development
+
+- **Structured Data**: Use Schema.org markup for Organization, WebApplication, FinancialService, FAQPage, HowTo, BreadcrumbList
+- **Landing Pages**: Create SEO-optimized pages for major currency pairs with proper keywords and meta descriptions
+- **FAQ Sections**: Implement dynamic FAQ components for enhanced user experience and SEO
+- **Monitoring**: Use SEO monitoring dashboard for tracking Core Web Vitals and search performance
+- **Keywords**: Focus on high-volume and long-tail keywords like "Währungsrechner", "Currency Calculator", "EUR USD"
+- **Hreflang**: Ensure proper multilingual SEO with hreflang tags for English and German versions
 
 ### Offline-First Development
 
@@ -318,6 +332,14 @@ EXCHANGE_RATE_API_URL=https://api.exchangerate-api.com/v4/latest
 - Cache validity limited to 15 minutes for exchange rates
 - Browser offline detection can sometimes be delayed
 - Update system only functions when online (by design)
+
+## Next.js Client-Komponenten Fehler & Lessons Learned
+
+- **Fehlerursache:** Next.js benötigt die Direktive `'use client'` am Anfang von Komponenten, die React-Hooks wie `useState` verwenden. Wird diese Direktive vergessen oder durch manuelle Änderungen entfernt, erscheint ein Fehler: "You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the 'use client' directive."
+- **Lösung:** Sicherstellen, dass alle betroffenen Komponenten (z.B. SEOFAQSection, SEOMonitoringDashboard) mit `'use client'` am Anfang der Datei versehen sind. Nach manuellen Änderungen oder Merge-Konflikten immer die Direktive prüfen.
+- **Build-Verhalten:** Fehler können trotz korrekter Direktive bestehen bleiben, wenn der Next.js-Cache nicht geleert wurde oder Parent-Komponenten betroffen sind. In diesem Fall: `.next`-Ordner löschen, Build erneut ausführen und Import-Kette prüfen.
+- **Best Practice:** Bei allen Komponenten, die Hooks verwenden und als Client-Komponenten gedacht sind, die Direktive explizit setzen und nach Änderungen validieren.
+- **SEO-Komponenten:** Besonders betroffen sind interaktive SEO-Komponenten wie FAQ-Bereiche und Monitoring-Dashboards, die State-Management für Benutzerinteraktionen benötigen.
 
 ## Next Steps for Enhancement
 
