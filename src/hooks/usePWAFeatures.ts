@@ -94,7 +94,8 @@ export function usePWAFeatures(): PWAFeatures {
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error";
       setError(errorMessage);
-      toast.error(t.ui.notifications.error);
+      // toast.error(t.ui.notifications.error); // Disabled to prevent startup errors
+      console.debug("Notification enable failed:", error);
       throw error;
     } finally {
       setIsLoading(false);
@@ -118,7 +119,8 @@ export function usePWAFeatures(): PWAFeatures {
         const errorMessage =
           error instanceof Error ? error.message : "Unknown error";
         setError(errorMessage);
-        toast.error(t.ui.notifications.error);
+        // toast.error(t.ui.notifications.error); // Disabled to prevent startup errors
+        console.debug("Notification disable failed:", error);
         throw error;
       } finally {
         setIsLoading(false);
@@ -131,7 +133,8 @@ export function usePWAFeatures(): PWAFeatures {
 
     try {
       if (notificationPermission !== "granted") {
-        toast.error(t.ui.notifications.permissionRequired);
+        // toast.error(t.ui.notifications.permissionRequired); // Disabled to prevent startup errors
+        console.debug("Notification permission not granted");
         return;
       }
 
@@ -147,7 +150,8 @@ export function usePWAFeatures(): PWAFeatures {
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error";
       setError(errorMessage);
-      toast.error(t.ui.notifications.testError);
+      // toast.error(t.ui.notifications.testError); // Disabled to prevent startup errors
+      console.debug("Test notification failed:", error);
       throw error;
     } finally {
       setIsLoading(false);
@@ -188,7 +192,8 @@ export function usePWAFeatures(): PWAFeatures {
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error";
       setError(errorMessage);
-      toast.error("Failed to sync offline actions");
+      // toast.error("Failed to sync offline actions"); // Disabled to prevent startup errors
+      console.debug("Offline actions sync failed:", error);
       throw error;
     } finally {
       setIsLoading(false);

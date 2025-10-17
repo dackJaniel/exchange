@@ -11,8 +11,8 @@ export function ServiceWorkerRegistration() {
   const setOnlineStatus = useCurrencyStore((state) => state.setOnlineStatus);
   const t = useTranslation();
 
-  // Initialize PWA event listeners
-  usePWAEventListeners();
+  // Initialize PWA event listeners (disabled to prevent startup errors)
+  // usePWAEventListeners();
 
   useEffect(() => {
     if ('serviceWorker' in navigator) {
@@ -21,9 +21,9 @@ export function ServiceWorkerRegistration() {
         .then((reg) => {
           console.log('SW registered: ', reg);
 
-          // Initialize PWA manager
+          // Initialize PWA manager (silently, no error toasts)
           pwaManager.initialize().catch((error) => {
-            console.error('Failed to initialize PWA manager:', error);
+            console.debug('PWA manager initialization skipped:', error);
           });
 
           // Listen for messages from service worker
