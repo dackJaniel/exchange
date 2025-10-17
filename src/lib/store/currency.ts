@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { CurrencyState, Currency } from "@/types/calculator";
 import { currencyLogger } from "@/lib/debug";
+import { useConversionHistoryStore } from "./conversion-history";
 
 // Popular currencies with their symbols and flags
 const CURRENCIES: Currency[] = [
@@ -460,6 +461,9 @@ export const useCurrencyStore = create<CurrencyStore>()(
           return amount;
         }
 
+        let convertedAmount = 0;
+        let usedRate = 0;
+
         // Strategy: Try multiple approaches to find a conversion rate
 
         // 1. Try direct conversion using cached rates for the base currency
@@ -468,27 +472,35 @@ export const useCurrencyStore = create<CurrencyStore>()(
           state.targetCurrency.code,
         );
         if (directRate !== null) {
-          return amount * directRate;
+          convertedAmount = amount * directRate;
+          usedRate = directRate;
         }
 
         // 2. Try using current rates
-        const currentBaseRate = state.rates[state.baseCurrency.code] || 1;
-        const currentTargetRate = state.rates[state.targetCurrency.code];
-        if (currentTargetRate && currentBaseRate) {
-          return amount * (currentTargetRate / currentBaseRate);
+        if (convertedAmount === 0) {
+          const currentBaseRate = state.rates[state.baseCurrency.code] || 1;
+          const currentTargetRate = state.rates[state.targetCurrency.code];
+          if (currentTargetRate && currentBaseRate) {
+            usedRate = currentTargetRate / currentBaseRate;
+            convertedAmount = amount * usedRate;
+          }
         }
 
         // 3. Try reverse conversion (target as base currency)
-        const reverseRate = state.getRatesFromCache(
-          state.targetCurrency.code,
-          state.baseCurrency.code,
-        );
-        if (reverseRate !== null && reverseRate !== 0) {
-          return amount / reverseRate;
+        if (convertedAmount === 0) {
+          const reverseRate = state.getRatesFromCache(
+            state.targetCurrency.code,
+            state.baseCurrency.code,
+          );
+          if (reverseRate !== null && reverseRate !== 0) {
+            usedRate = 1 / reverseRate;
+            convertedAmount = amount / reverseRate;
+          }
         }
 
         // 4. Try using EUR as intermediary (most cached rates are EUR-based)
         if (
+          convertedAmount === 0 &&
           state.baseCurrency.code !== "EUR" &&
           state.targetCurrency.code !== "EUR"
         ) {
@@ -503,12 +515,14 @@ export const useCurrencyStore = create<CurrencyStore>()(
 
           if (baseToEUR && eurToTarget && baseToEUR !== 0) {
             // Convert: amount / baseToEUR * eurToTarget
-            return (amount / baseToEUR) * eurToTarget;
+            usedRate = eurToTarget / baseToEUR;
+            convertedAmount = (amount / baseToEUR) * eurToTarget;
           }
         }
 
         // 5. Try using USD as intermediary
         if (
+          convertedAmount === 0 &&
           state.baseCurrency.code !== "USD" &&
           state.targetCurrency.code !== "USD"
         ) {
@@ -522,14 +536,35 @@ export const useCurrencyStore = create<CurrencyStore>()(
           );
 
           if (baseToUSD && usdToTarget && baseToUSD !== 0) {
-            return (amount / baseToUSD) * usdToTarget;
+            usedRate = usdToTarget / baseToUSD;
+            convertedAmount = (amount / baseToUSD) * usdToTarget;
           }
         }
 
-        console.warn(
-          `No conversion path found for ${state.baseCurrency.code} -> ${state.targetCurrency.code}`,
-        );
-        return 0;
+        // Log conversion to history if successful and online
+        if (convertedAmount > 0 && usedRate > 0 && state.isOnline) {
+          try {
+            const historyStore = useConversionHistoryStore.getState();
+            historyStore.addConversion(
+              state.baseCurrency,
+              state.targetCurrency,
+              amount,
+              convertedAmount,
+              usedRate,
+              state.isOnline,
+            );
+          } catch (error) {
+            console.warn("Failed to log conversion to history:", error);
+          }
+        }
+
+        if (convertedAmount === 0) {
+          console.warn(
+            `No conversion path found for ${state.baseCurrency.code} -> ${state.targetCurrency.code}`,
+          );
+        }
+
+        return convertedAmount;
       },
 
       getCurrencyByCode: (code: string): Currency | undefined => {

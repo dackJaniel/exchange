@@ -228,6 +228,37 @@ export const translations = {
         backgroundSyncError: "Failed to enable auto-sync",
         enableBackgroundSync: "Enable Auto-Sync",
       },
+
+      // Conversion History
+      conversionHistory: {
+        title: "Conversion History",
+        recent: "Recent",
+        statistics: "Statistics",
+        settings: "Settings",
+        noConversions: "No conversions yet",
+        allTime: "All Time",
+        last24h: "Last 24 Hours",
+        last7d: "Last 7 Days",
+        last30d: "Last 30 Days",
+        export: "Export",
+        clear: "Clear All",
+        exported: "History exported successfully",
+        exportFailed: "Export failed",
+        historyCleared: "History cleared",
+        totalConversions: "Total Conversions",
+        averageAmount: "Average Amount",
+        popularPairs: "Most Used Currency Pairs",
+        offline: "Offline",
+        enableLogging: "Enable Conversion Logging",
+        loggingDescription: "Automatically save all conversions when online",
+        privacyNotice: "Privacy Notice",
+        privacyDescription:
+          "All conversion data is stored locally on your device and never sent to external servers.",
+        enable: "Enable",
+        disable: "Disable",
+        loggingEnabled: "Conversion logging enabled",
+        loggingDisabled: "Conversion logging disabled",
+      },
     },
   },
   de: {
@@ -467,156 +498,40 @@ export const translations = {
         backgroundSyncError: "Fehler beim Aktivieren",
         enableBackgroundSync: "Auto-Sync aktivieren",
       },
+
+      // Conversion History
+      conversionHistory: {
+        title: "Umrechnungs-Verlauf",
+        recent: "Kürzlich",
+        statistics: "Statistiken",
+        settings: "Einstellungen",
+        noConversions: "Noch keine Umrechnungen",
+        allTime: "Alle Zeit",
+        last24h: "Letzte 24 Stunden",
+        last7d: "Letzte 7 Tage",
+        last30d: "Letzte 30 Tage",
+        export: "Exportieren",
+        clear: "Alle löschen",
+        exported: "Verlauf erfolgreich exportiert",
+        exportFailed: "Export fehlgeschlagen",
+        historyCleared: "Verlauf gelöscht",
+        totalConversions: "Gesamt-Umrechnungen",
+        averageAmount: "Durchschnittlicher Betrag",
+        popularPairs: "Meist genutzte Währungspaare",
+        offline: "Offline",
+        enableLogging: "Umrechnungs-Protokollierung aktivieren",
+        loggingDescription:
+          "Alle Umrechnungen automatisch speichern wenn online",
+        privacyNotice: "Datenschutz-Hinweis",
+        privacyDescription:
+          "Alle Umrechnungsdaten werden lokal auf Ihrem Gerät gespeichert und niemals an externe Server gesendet.",
+        enable: "Aktivieren",
+        disable: "Deaktivieren",
+        loggingEnabled: "Umrechnungs-Protokollierung aktiviert",
+        loggingDisabled: "Umrechnungs-Protokollierung deaktiviert",
+      },
     },
   },
 } as const;
 
-export type TranslationKeys = {
-  meta: {
-    title: string;
-    description: string;
-    manifestName: string;
-    manifestDescription: string;
-    openGraphTitle: string;
-    openGraphDescription: string;
-    twitterTitle: string;
-    twitterDescription: string;
-    schemaDescription: string;
-  };
-  keywords: readonly string[];
-  features: readonly string[];
-  ui: {
-    // Navigation & Menu
-    menu: string;
-    navigationDescription: string;
-    language: string;
-    install: string;
-    installApp: string;
-
-    // Currency & Calculator
-    calculator: string;
-    conversion: string;
-    exchangeRate: string;
-    from: string;
-    to: string;
-    amount: string;
-    result: string;
-    swapCurrencies: string;
-    selectCurrency: string;
-    searchCurrency: string;
-
-    // Status messages
-    loading: string;
-    updating: string;
-    cached: string;
-    justNow: string;
-    minutesAgo: (minutes: number) => string;
-    hoursAgo: (hours: number) => string;
-    never: string;
-
-    // Error messages
-    networkError: string;
-    offlineUpdate: string;
-    refreshRates: string;
-
-    // Legal pages
-    privacy: string;
-    dataProtection: string;
-    imprint: string;
-    siteNotice: string;
-
-    // Share functionality
-    shareApp: string;
-    shareTitle: string;
-    shareDescription: string;
-    shareText: string;
-    shareNativeTitle: string;
-    shareNativeDescription: string;
-    shareWhatsApp: string;
-    shareWhatsAppDescription: string;
-    shareCopyLink: string;
-    shareCopyLinkCopied: string;
-    shareCopyDescription: string;
-    shareFooter: string;
-
-    // Offline notice
-    offlineTitle: string;
-    offlineDescription: string;
-    offlineMode: string;
-    offlineCachedData: string;
-    unknown: string;
-
-    // Pull to refresh
-    pullToRefreshRelease: string;
-    pullToRefreshPull: string;
-    pullToRefreshUpdating: string;
-    pullToRefreshChecking: string;
-    pullToRefreshOffline: string;
-
-    // Coffee donation
-    buyMeACoffee: string;
-
-    // Service Worker
-    updateAvailable: string;
-    updateDescription: string;
-    updateButton: string;
-    updateLater: string;
-    ratesUpdated: string;
-    ratesUpdatedDescription: string;
-
-    // Exchange rates
-    online: string;
-    offline: string;
-    noRatesOffline: string;
-    updateFailed: string;
-    offlineNoData: string;
-
-    // Currency grouping
-    majorCurrencies: string;
-    europeanCurrencies: string;
-    otherCurrencies: string;
-    searchCurrencies: string;
-
-    // Currency search
-    noCurrencyFound: string;
-    noCurrencyMatching: string;
-
-    // 404 page
-    notFoundTitle: string;
-    notFoundDescription: string;
-    notFoundButton: string;
-
-    // Notifications and PWA features
-    notifications: {
-      settings: string;
-      title: string;
-      description: string;
-      permission: string;
-      granted: string;
-      denied: string;
-      notRequested: string;
-      enable: string;
-      disable: string;
-      enabled: string;
-      enabledDescription: string;
-      disabled: string;
-      permissionDenied: string;
-      permissionRequired: string;
-      error: string;
-      test: string;
-      testTitle: string;
-      testBody: string;
-      testSent: string;
-      testError: string;
-      pushNotifications: string;
-      pushDescription: string;
-      active: string;
-      inactive: string;
-      backgroundSync: string;
-      backgroundSyncDescription: string;
-      backgroundSyncEnabled: string;
-      backgroundSyncError: string;
-      enableBackgroundSync: string;
-    };
-  };
-};
+export type TranslationKeys = typeof translations.en;
