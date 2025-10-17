@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Check, ChevronDown, Search } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Popover,
@@ -22,7 +22,9 @@ interface OfflineFirstCurrencySelectorProps {
   type: "base" | "target";
 }
 
-export function OfflineFirstCurrencySelector({ type }: OfflineFirstCurrencySelectorProps) {
+export function OfflineFirstCurrencySelector({
+  type,
+}: OfflineFirstCurrencySelectorProps) {
   const [open, setOpen] = useState(false);
   const t = useTranslation();
 
@@ -39,18 +41,23 @@ export function OfflineFirstCurrencySelector({ type }: OfflineFirstCurrencySelec
   // Group currencies by region for better UX
   const groupedCurrencies = useMemo(() => {
     const major = currencies.filter((c) =>
-      ["EUR", "USD", "GBP", "CHF", "JPY"].includes(c.code)
+      ["EUR", "USD", "GBP", "CHF", "JPY"].includes(c.code),
     );
     const european = currencies.filter((c) =>
-      ["CZK", "PLN", "SEK", "NOK", "DKK", "HUF", "RON", "BGN", "HRK"].includes(c.code)
+      ["CZK", "PLN", "SEK", "NOK", "DKK", "HUF", "RON", "BGN", "HRK"].includes(
+        c.code,
+      ),
     );
     const others = currencies.filter(
-      (c) => !major.includes(c) && !european.includes(c)
+      (c) => !major.includes(c) && !european.includes(c),
     );
 
     return [
       { label: t.ui.majorCurrencies || "Major Currencies", currencies: major },
-      { label: t.ui.europeanCurrencies || "European Currencies", currencies: european },
+      {
+        label: t.ui.europeanCurrencies || "European Currencies",
+        currencies: european,
+      },
       { label: t.ui.otherCurrencies || "Other Currencies", currencies: others },
     ];
   }, [currencies, t.ui]);
@@ -71,12 +78,14 @@ export function OfflineFirstCurrencySelector({ type }: OfflineFirstCurrencySelec
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between bg-zinc-800 border-zinc-700 hover:bg-zinc-700 text-left"
+          className="w-full justify-between bg-zinc-800 border-zinc-700 hover:bg-zinc-700 text-left h-auto min-h-[60px] py-3 px-4"
         >
           <div className="flex items-center gap-2">
             <span className="text-lg">{selectedCurrency.flag}</span>
             <div>
-              <div className="font-medium text-white">{selectedCurrency.code}</div>
+              <div className="font-medium text-white">
+                {selectedCurrency.code}
+              </div>
               <div className="text-xs text-zinc-400 truncate">
                 {selectedCurrency.name}
               </div>
@@ -87,13 +96,10 @@ export function OfflineFirstCurrencySelector({ type }: OfflineFirstCurrencySelec
       </PopoverTrigger>
       <PopoverContent className="w-80 p-0 bg-zinc-900 border-zinc-700">
         <Command className="bg-zinc-900">
-          <div className="flex items-center border-b border-zinc-700 px-3">
-            <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
-            <CommandInput
-              placeholder={t.ui.searchCurrencies || "Search currencies..."}
-              className="border-0 bg-transparent focus:ring-0 text-white placeholder:text-zinc-500"
-            />
-          </div>
+          <CommandInput
+            placeholder={t.ui.searchCurrencies || "Search currencies..."}
+            className="border-0 bg-transparent focus:ring-0 text-white placeholder:text-zinc-500 border-b border-zinc-700 rounded-none"
+          />
           <CommandEmpty className="py-6 text-center text-sm text-zinc-500">
             {t.ui.noCurrencyFound || "No currency found."}
           </CommandEmpty>
