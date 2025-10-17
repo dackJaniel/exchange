@@ -2,7 +2,7 @@ const CACHE_NAME = "currency-calculator-v1_2_3"; // Increment for new versions
 const STATIC_CACHE = "currency-calc-static-v1_2_3";
 const DYNAMIC_CACHE = "currency-calc-dynamic-v1_2_3";
 const API_CACHE = "currency-calc-api-v1_2_3";
-const VERSION = "1.2.37"; // App version
+const VERSION = "1.2.48"; // App version
 
 // Critical assets for offline functionality
 const urlsToCache = [

@@ -1,6 +1,6 @@
 {
   "name": "exchange",
-  "version": "1.2.37",
+  "version": "1.2.48",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -16,7 +16,9 @@
     "deploy": "npm run build:production && echo 'Ready for deployment with updated version!'",
     "seo:audit": "lighthouse --output-path=./seo-audit.html --output=html --chrome-flags=\"--headless\" https://exchange.danielhilmer.de",
     "seo:analyze": "next-bundle-analyzer",
-    "seo:sitemap": "next build && next export && next-sitemap"
+    "seo:sitemap": "next build && next export && next-sitemap",
+    "seo:generate-pages": "node scripts/generate-seo-pages.mjs",
+    "seo:full-setup": "npm run seo:generate-pages && npm run build"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Clock, Zap, Wifi, WifiOff } from "lucide-react";
+import { useState } from "react";
+import { Clock, Zap, WifiOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTranslation } from "@/lib/i18n/provider";
 
 interface PerformanceTest {
   name: string;
@@ -16,33 +15,32 @@ export function PerformanceComparison() {
   const [isRunning, setIsRunning] = useState(false);
   const [currentTest, setCurrentTest] = useState<string | null>(null);
   const [results, setResults] = useState<PerformanceTest[]>([]);
-  const t = useTranslation();
 
   const performanceTests: PerformanceTest[] = [
     {
       name: "App Startup (Cold)",
       originalTime: 8500, // 0-15 seconds average: 8.5s
       offlineFirstTime: 45, // < 50ms
-      description: "Time from page load to interactive state with data"
+      description: "Time from page load to interactive state with data",
     },
     {
       name: "Currency Switch",
       originalTime: 5200, // 0-10 seconds average: 5.2s
       offlineFirstTime: 30, // < 50ms
-      description: "Time from currency selection to rate display"
+      description: "Time from currency selection to rate display",
     },
     {
       name: "Offline Detection",
       originalTime: 6500, // 5-8 seconds average: 6.5s
       offlineFirstTime: 0, // Instant browser event
-      description: "Time to detect and show offline status"
+      description: "Time to detect and show offline status",
     },
     {
       name: "Conversion Update",
       originalTime: 3800, // After API call
       offlineFirstTime: 15, // Instant calculation
-      description: "Time to update converted amount"
-    }
+      description: "Time to update converted amount",
+    },
   ];
 
   const runPerformanceTest = async () => {
@@ -53,16 +51,19 @@ export function PerformanceComparison() {
       setCurrentTest(test.name);
 
       // Simulate test running
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await new Promise((resolve) => setTimeout(resolve, 800));
 
-      setResults(prev => [...prev, test]);
+      setResults((prev) => [...prev, test]);
     }
 
     setCurrentTest(null);
     setIsRunning(false);
   };
 
-  const calculateImprovement = (original: number, optimized: number): number => {
+  const calculateImprovement = (
+    original: number,
+    optimized: number,
+  ): number => {
     if (original === 0) return 0;
     return Math.round(((original - optimized) / original) * 100);
   };
@@ -113,7 +114,7 @@ export function PerformanceComparison() {
         <div className="space-y-4">
           <h3 className="text-lg font-medium text-white mb-4">Test Results</h3>
 
-          {results.map((test, index) => (
+          {results.map((test) => (
             <div
               key={test.name}
               className="bg-zinc-800 border border-zinc-600 rounded-lg p-4"
@@ -122,7 +123,11 @@ export function PerformanceComparison() {
                 <h4 className="font-medium text-white">{test.name}</h4>
                 <div className="flex items-center gap-2">
                   <span className="text-green-400 font-mono">
-                    {calculateImprovement(test.originalTime, test.offlineFirstTime)}% faster
+                    {calculateImprovement(
+                      test.originalTime,
+                      test.offlineFirstTime,
+                    )}
+                    % faster
                   </span>
                 </div>
               </div>
@@ -133,7 +138,9 @@ export function PerformanceComparison() {
                 <div className="bg-red-500/10 border border-red-500/20 rounded p-3">
                   <div className="flex items-center gap-2 mb-1">
                     <WifiOff className="h-4 w-4 text-red-500" />
-                    <span className="text-sm font-medium text-red-400">Original App</span>
+                    <span className="text-sm font-medium text-red-400">
+                      Original App
+                    </span>
                   </div>
                   <div className="text-lg font-mono text-red-300">
                     {formatTime(test.originalTime)}
@@ -143,7 +150,9 @@ export function PerformanceComparison() {
                 <div className="bg-green-500/10 border border-green-500/20 rounded p-3">
                   <div className="flex items-center gap-2 mb-1">
                     <Zap className="h-4 w-4 text-green-500" />
-                    <span className="text-sm font-medium text-green-400">Offline-First</span>
+                    <span className="text-sm font-medium text-green-400">
+                      Offline-First
+                    </span>
                   </div>
                   <div className="text-lg font-mono text-green-300">
                     {formatTime(test.offlineFirstTime)}
@@ -156,26 +165,37 @@ export function PerformanceComparison() {
           <div className="bg-gradient-to-r from-orange-500/10 to-green-500/10 border border-orange-500/20 rounded-lg p-4 mt-6">
             <div className="flex items-center gap-2 mb-2">
               <Zap className="h-5 w-5 text-orange-500" />
-              <h4 className="font-semibold text-white">Overall Performance Improvement</h4>
+              <h4 className="font-semibold text-white">
+                Overall Performance Improvement
+              </h4>
             </div>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
                 <span className="text-zinc-400">Average Time Reduction:</span>
                 <div className="text-lg font-bold text-green-400">
                   {Math.round(
-                    results.reduce((acc, test) =>
-                      acc + calculateImprovement(test.originalTime, test.offlineFirstTime), 0
-                    ) / results.length
-                  )}%
+                    results.reduce(
+                      (acc, test) =>
+                        acc +
+                        calculateImprovement(
+                          test.originalTime,
+                          test.offlineFirstTime,
+                        ),
+                      0,
+                    ) / results.length,
+                  )}
+                  %
                 </div>
               </div>
               <div>
                 <span className="text-zinc-400">Loading Time Saved:</span>
                 <div className="text-lg font-bold text-green-400">
                   {formatTime(
-                    results.reduce((acc, test) =>
-                      acc + (test.originalTime - test.offlineFirstTime), 0
-                    )
+                    results.reduce(
+                      (acc, test) =>
+                        acc + (test.originalTime - test.offlineFirstTime),
+                      0,
+                    ),
                   )}
                 </div>
               </div>
