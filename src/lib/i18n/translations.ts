@@ -1,554 +1,622 @@
 export const translations = {
-    en: {
-        // App metadata
-        meta: {
-            title: 'Free Currency Calculator - Live Exchange Rates for 170+ Currencies',
-            description: 'Convert currencies instantly with live exchange rates. Free currency calculator supporting EUR, USD, GBP, JPY and 170+ currencies. Works offline as PWA. Fast, accurate, and mobile-optimized for travel and business.',
-            manifestName: 'Currency Calculator - Free Currency Converter',
-            manifestDescription: 'Professional currency calculator with live exchange rates for 170+ currencies. Works offline with PWA technology.',
-            openGraphTitle: 'Free Currency Calculator - Convert EUR, USD, GBP + 170 More',
-            openGraphDescription: 'Professional currency calculator with real-time exchange rates. Convert between EUR, USD, GBP, JPY and 170+ currencies. Free, fast, and works offline as Progressive Web App.',
-            twitterTitle: 'Currency Calculator - Live Exchange Rates',
-            twitterDescription: 'Convert currencies with live rates for EUR, USD, GBP + 170 more. Free PWA works offline.',
-            schemaDescription: 'Professional currency calculator with live exchange rates for 170+ international currencies including EUR, USD, GBP, JPY, CHF and many more',
-        },
-
-        // Keywords for SEO
-        keywords: [
-            // Primary high-volume keywords
-            'currency calculator',
-            'currency converter',
-            'exchange rate calculator',
-            'free currency converter',
-            'currency exchange calculator',
-
-            // Specific currency pairs
-            'euro to dollar converter',
-            'eur to usd calculator',
-            'euro dollar calculator',
-            'pound to euro converter',
-            'gbp eur calculator',
-            'usd eur converter',
-            'dollar to euro',
-            'euro to pound',
-            'swiss franc euro calculator',
-            'chf eur converter',
-
-            // Long-tail transactional
-            'convert euro to dollar',
-            'currency conversion online',
-            'real time exchange rates',
-            'live currency rates',
-            'forex calculator',
-            'money converter',
-            'international currency calculator',
-
-            // Feature-based keywords
-            'offline currency converter',
-            'PWA currency calculator',
-            'mobile currency converter',
-            'free exchange rate calculator',
-            'accurate currency converter',
-            'fast currency calculator',
-
-            // Geographic and use-case
-            'travel currency converter',
-            'business currency calculator',
-            'international money transfer calculator',
-            'currency rates today',
-            'current exchange rates',
-
-            // Technical SEO
-            'progressive web app',
-            'offline calculator',
-            'mobile first',
-            'real-time rates',
-            'finance calculator',
-            'crypto currency converter',
-            'bitcoin calculator',
-        ],
-
-        // Schema.org features
-        features: [
-            'Live exchange rates',
-            'Offline functionality',
-            'Progressive Web App',
-            '170+ currencies',
-            'Free to use',
-            'Mobile optimized',
-            'Fast calculations',
-        ],
-
-        // UI translations
-        ui: {
-            // Navigation & Menu
-            menu: 'Menu',
-            navigationDescription: 'Navigation and legal information',
-            language: 'Language',
-            install: 'Install',
-            installApp: 'Install App',
-
-            // Currency & Calculator
-            calculator: 'Calculator',
-            conversion: 'Conversion',
-            exchangeRate: 'Exchange Rate',
-            from: 'From',
-            to: 'To',
-            amount: 'Amount',
-            result: 'Result',
-            swapCurrencies: 'Swap currencies',
-            selectCurrency: 'Select currency',
-            searchCurrency: 'Search currency...',
-
-            // Status messages
-            loading: 'Loading...',
-            updating: 'Updating...',
-            cached: 'cached',
-            justNow: 'Just now',
-            minutesAgo: (minutes: number) => `${minutes}m ago`,
-            hoursAgo: (hours: number) => `${hours}h ago`,
-            never: 'Never',
-
-            // Error messages
-            networkError: 'Network error',
-            offlineUpdate: 'Offline - no update possible',
-            refreshRates: 'Refresh exchange rates',
-
-            // Legal pages
-            privacy: 'Privacy Policy',
-            dataProtection: 'Data Protection',
-            imprint: 'Imprint',
-            siteNotice: 'Site Notice',
-
-            // Share functionality
-            shareApp: 'Share App',
-            shareTitle: 'Share App',
-            shareDescription: 'Share the free currency calculator with your friends',
-            shareText: 'Check out this free currency calculator! 170+ currencies with live exchange rates. 📱💱',
-            shareNativeTitle: 'Share',
-            shareNativeDescription: 'Share with friends',
-            shareWhatsApp: 'WhatsApp',
-            shareWhatsAppDescription: 'Share with friends',
-            shareCopyLink: 'Copy link',
-            shareCopyLinkCopied: 'Copied!',
-            shareCopyDescription: 'Copy to clipboard',
-            shareFooter: '💱 Free currency calculator for everyone!',
-
-            // Offline notice
-            offlineTitle: 'Internet connection required',
-            offlineDescription: 'For first use, an online connection is needed to load current exchange rates. Afterwards, the app works offline too.',
-            offlineMode: 'Offline Mode',
-            offlineCachedData: 'Working with cached data. Last updated:',
-            unknown: 'Unknown',
-
-            // Pull to refresh
-            pullToRefreshRelease: 'Release to refresh',
-            pullToRefreshPull: 'Pull down to refresh',
-            pullToRefreshUpdating: 'Updating app...',
-            pullToRefreshChecking: 'Checking for updates...',
-            pullToRefreshOffline: 'Offline - no update possible',
-
-            // Service Worker
-            updateAvailable: 'App update available! 🚀',
-            updateDescription: 'A new version of the app is available. Update now?',
-            updateButton: 'Update',
-            updateLater: 'Later',
-            ratesUpdated: 'Exchange rates updated',
-            ratesUpdatedDescription: 'The latest exchange rates have been loaded.',
-
-            // Exchange rates
-            online: 'Online',
-            offline: 'Offline',
-            noRatesOffline: 'No rates - Online connection required',
-
-            // Currency search
-            noCurrencyFound: 'No currency found.',
-            noCurrencyMatching: 'No matching currency found.',
-
-            // 404 page
-            notFoundTitle: 'Page Not Found',
-            notFoundDescription: 'The requested page could not be found.',
-            notFoundButton: 'Back to Calculator',
-
-            // Notifications and PWA features
-            notifications: {
-                settings: 'Notifications',
-                title: 'Push Notifications',
-                description: 'Configure notifications and auto-sync for rate updates.',
-                permission: 'Permission',
-                granted: 'Granted',
-                denied: 'Denied',
-                notRequested: 'Not requested',
-                enable: 'Enable',
-                disable: 'Disable',
-                enabled: 'Notifications enabled!',
-                enabledDescription: 'You will receive rate update notifications.',
-                disabled: 'Notifications disabled',
-                permissionDenied: 'Permission denied',
-                permissionRequired: 'Permission required',
-                error: 'Failed to update settings',
-                test: 'Test',
-                testTitle: 'Test Notification',
-                testBody: 'This is a test notification from the Currency Calculator',
-                testSent: 'Test notification sent',
-                testError: 'Failed to send test',
-                pushNotifications: 'Push Notifications',
-                pushDescription: 'Get notifications even when app is closed.',
-                active: 'Active',
-                inactive: 'Inactive',
-                backgroundSync: 'Auto-Sync',
-                backgroundSyncDescription: 'Automatically sync rates in the background.',
-                backgroundSyncEnabled: 'Auto-sync enabled!',
-                backgroundSyncError: 'Failed to enable auto-sync',
-                enableBackgroundSync: 'Enable Auto-Sync',
-            },
-        },
+  en: {
+    // App metadata
+    meta: {
+      title:
+        "Free Currency Calculator - Live Exchange Rates for 170+ Currencies",
+      description:
+        "Convert currencies instantly with live exchange rates. Free currency calculator supporting EUR, USD, GBP, JPY and 170+ currencies. Works offline as PWA. Fast, accurate, and mobile-optimized for travel and business.",
+      manifestName: "Currency Calculator - Free Currency Converter",
+      manifestDescription:
+        "Professional currency calculator with live exchange rates for 170+ currencies. Works offline with PWA technology.",
+      openGraphTitle:
+        "Free Currency Calculator - Convert EUR, USD, GBP + 170 More",
+      openGraphDescription:
+        "Professional currency calculator with real-time exchange rates. Convert between EUR, USD, GBP, JPY and 170+ currencies. Free, fast, and works offline as Progressive Web App.",
+      twitterTitle: "Currency Calculator - Live Exchange Rates",
+      twitterDescription:
+        "Convert currencies with live rates for EUR, USD, GBP + 170 more. Free PWA works offline.",
+      schemaDescription:
+        "Professional currency calculator with live exchange rates for 170+ international currencies including EUR, USD, GBP, JPY, CHF and many more",
     },
-    de: {
-        // App metadata
-        meta: {
-            title: 'Währungsrechner Kostenlos - Aktuelle Wechselkurse für 170+ Währungen',
-            description: 'Währungen sofort umrechnen mit aktuellen Wechselkursen. Kostenloser Währungsrechner für EUR, USD, GBP, CHF und 170+ Währungen. Funktioniert offline als PWA. Schnell, genau und mobil-optimiert für Reisen und Business.',
-            manifestName: 'Währungsrechner - Kostenloser Currency Calculator',
-            manifestDescription: 'Professioneller Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen. Funktioniert offline mit PWA-Technologie.',
-            openGraphTitle: 'Kostenloser Währungsrechner - EUR, USD, CHF + 170 weitere Währungen',
-            openGraphDescription: 'Professioneller Währungsrechner mit Echtzeit-Wechselkursen. Umrechnung zwischen EUR, USD, GBP, CHF und 170+ Währungen. Kostenlos, schnell und funktioniert offline als Progressive Web App.',
-            twitterTitle: 'Währungsrechner - Aktuelle Wechselkurse',
-            twitterDescription: 'Währungen umrechnen mit Live-Kursen für EUR, USD, CHF + 170 weitere. Kostenlose PWA funktioniert offline.',
-            schemaDescription: 'Professioneller Währungsrechner mit aktuellen Wechselkursen für 170+ internationale Währungen inklusive EUR, USD, GBP, CHF, JPY und viele weitere',
-        },        // Keywords for SEO  
-        keywords: [
-            // Primary German keywords
-            'währungsrechner',
-            'währung umrechnen',
-            'wechselkurs rechner',
-            'kostenloser währungsrechner',
-            'currency calculator deutsch',
 
-            // Specific German currency pairs
-            'euro dollar rechner',
-            'eur usd rechner',
-            'euro in dollar umrechnen',
-            'dollar in euro rechnen',
-            'pfund euro rechner',
-            'schweizer franken euro rechner',
-            'chf eur rechner',
-            'euro pfund rechner',
+    // Keywords for SEO
+    keywords: [
+      // Primary high-volume keywords
+      "currency calculator",
+      "currency converter",
+      "exchange rate calculator",
+      "free currency converter",
+      "currency exchange calculator",
 
-            // Long-tail German keywords
-            'euro in dollar umwandeln',
-            'währung online umrechnen',
-            'aktueller wechselkurs rechner',
-            'devisen rechner',
-            'geld umrechnen',
-            'währungsumrechnung online',
-            'devisenrechner kostenlos',
+      // Specific currency pairs
+      "euro to dollar converter",
+      "eur to usd calculator",
+      "euro dollar calculator",
+      "pound to euro converter",
+      "gbp eur calculator",
+      "usd eur converter",
+      "dollar to euro",
+      "euro to pound",
+      "swiss franc euro calculator",
+      "chf eur converter",
 
-            // German feature keywords
-            'währungsrechner offline',
-            'mobiler währungsrechner',
-            'genauer währungsrechner',
-            'schneller currency calculator',
-            'währungsrechner app',
+      // Long-tail transactional
+      "convert euro to dollar",
+      "currency conversion online",
+      "real time exchange rates",
+      "live currency rates",
+      "forex calculator",
+      "money converter",
+      "international currency calculator",
 
-            // German geographic/use-case
-            'reise währungsrechner',
-            'urlaub geld umrechnen',
-            'währungsrechner deutschland',
-            'business währungsrechner',
-            'wechselkurs heute',
-            'aktuelle wechselkurse',
+      // Feature-based keywords
+      "offline currency converter",
+      "PWA currency calculator",
+      "mobile currency converter",
+      "free exchange rate calculator",
+      "accurate currency converter",
+      "fast currency calculator",
 
-            // Mixed German-English (common searches)
-            'euro to dollar rechner',
-            'currency converter deutsch',
-            'exchange rate deutschland',
-            'währung calculator',
-            'forex rechner',
-            'bitcoin euro rechner',
-            'krypto währungsrechner',
+      // Geographic and use-case
+      "travel currency converter",
+      "business currency calculator",
+      "international money transfer calculator",
+      "currency rates today",
+      "current exchange rates",
 
-            // Progressive Web App German
-            'PWA währungsrechner',
-            'offline rechner',
-            'mobile first',
-            'progressive web app',
-            'finanzen rechner',
-        ],
+      // Technical SEO
+      "progressive web app",
+      "offline calculator",
+      "mobile first",
+      "real-time rates",
+      "finance calculator",
+      "crypto currency converter",
+      "bitcoin calculator",
+    ],
 
-        // Schema.org features
-        features: [
-            'Aktuelle Wechselkurse',
-            'Offline-Funktionalität',
-            'Progressive Web App',
-            'Über 170 Währungen',
-            'Kostenlose Nutzung',
-            'Mobile optimiert',
-            'Schnelle Berechnungen',
-        ],
+    // Schema.org features
+    features: [
+      "Live exchange rates",
+      "Offline functionality",
+      "Progressive Web App",
+      "170+ currencies",
+      "Free to use",
+      "Mobile optimized",
+      "Fast calculations",
+    ],
 
-        // UI translations
-        ui: {
-            // Navigation & Menu
-            menu: 'Menü',
-            navigationDescription: 'Navigation und rechtliche Informationen',
-            language: 'Sprache',
-            install: 'Installieren',
-            installApp: 'App installieren',
+    // UI translations
+    ui: {
+      // Navigation & Menu
+      menu: "Menu",
+      navigationDescription: "Navigation and legal information",
+      language: "Language",
+      install: "Install",
+      installApp: "Install App",
 
-            // Currency & Calculator
-            calculator: 'Rechner',
-            conversion: 'Umrechnung',
-            exchangeRate: 'Wechselkurs',
-            from: 'Von',
-            to: 'Nach',
-            amount: 'Betrag',
-            result: 'Ergebnis',
-            swapCurrencies: 'Währungen tauschen',
-            selectCurrency: 'Währung auswählen',
-            searchCurrency: 'Währung suchen...',
+      // Currency & Calculator
+      calculator: "Calculator",
+      conversion: "Conversion",
+      exchangeRate: "Exchange Rate",
+      from: "From",
+      to: "To",
+      amount: "Amount",
+      result: "Result",
+      swapCurrencies: "Swap currencies",
+      selectCurrency: "Select currency",
+      searchCurrency: "Search currency...",
 
-            // Status messages
-            loading: 'Lädt...',
-            updating: 'Aktualisiert...',
-            cached: 'gespeichert',
-            justNow: 'Gerade eben',
-            minutesAgo: (minutes: number) => `vor ${minutes}m`,
-            hoursAgo: (hours: number) => `vor ${hours}h`,
-            never: 'Nie',
+      // Status messages
+      loading: "Loading...",
+      updating: "Updating...",
+      cached: "cached",
+      justNow: "Just now",
+      minutesAgo: (minutes: number) => `${minutes}m ago`,
+      hoursAgo: (hours: number) => `${hours}h ago`,
+      never: "Never",
 
-            // Error messages
-            networkError: 'Netzwerkfehler',
-            offlineUpdate: 'Offline - keine Aktualisierung möglich',
-            refreshRates: 'Wechselkurse aktualisieren',
+      // Error messages
+      networkError: "Network error",
+      offlineUpdate: "Offline - no update possible",
+      refreshRates: "Refresh exchange rates",
 
-            // Legal pages
-            privacy: 'Privacy Policy',
-            dataProtection: 'Datenschutz',
-            imprint: 'Impressum',
-            siteNotice: 'Site Notice',
+      // Legal pages
+      privacy: "Privacy Policy",
+      dataProtection: "Data Protection",
+      imprint: "Imprint",
+      siteNotice: "Site Notice",
 
-            // Share functionality
-            shareApp: 'App teilen',
-            shareTitle: 'App teilen',
-            shareDescription: 'Teile den kostenlosen Währungsrechner mit deinen Freunden',
-            shareText: 'Schau dir diesen kostenlosen Währungsrechner an! Über 170 Währungen mit aktuellen Wechselkursen. 📱💱',
-            shareNativeTitle: 'Teilen',
-            shareNativeDescription: 'Mit Freunden teilen',
-            shareWhatsApp: 'WhatsApp',
-            shareWhatsAppDescription: 'Mit Freunden teilen',
-            shareCopyLink: 'Link kopieren',
-            shareCopyLinkCopied: 'Kopiert!',
-            shareCopyDescription: 'Link in Zwischenablage',
-            shareFooter: '💱 Kostenloser Währungsrechner für alle!',
+      // Share functionality
+      shareApp: "Share App",
+      shareTitle: "Share App",
+      shareDescription: "Share the free currency calculator with your friends",
+      shareText:
+        "Check out this free currency calculator! 170+ currencies with live exchange rates. 📱💱",
+      shareNativeTitle: "Share",
+      shareNativeDescription: "Share with friends",
+      shareWhatsApp: "WhatsApp",
+      shareWhatsAppDescription: "Share with friends",
+      shareCopyLink: "Copy link",
+      shareCopyLinkCopied: "Copied!",
+      shareCopyDescription: "Copy to clipboard",
+      shareFooter: "💱 Free currency calculator for everyone!",
 
-            // Offline notice
-            offlineTitle: 'Internet-Verbindung erforderlich',
-            offlineDescription: 'Für die erste Nutzung ist eine Online-Verbindung nötig, um aktuelle Wechselkurse zu laden. Danach funktioniert die App auch offline.',
-            offlineMode: 'Offline-Modus',
-            offlineCachedData: 'Arbeitet mit zwischengespeicherten Daten. Zuletzt aktualisiert:',
-            unknown: 'Unbekannt',
+      // Offline notice
+      offlineTitle: "Internet connection required",
+      offlineDescription:
+        "For first use, an online connection is needed to load current exchange rates. Afterwards, the app works offline too.",
+      offlineMode: "Offline Mode",
+      offlineCachedData: "Working with cached data. Last updated:",
+      unknown: "Unknown",
 
-            // Pull to refresh
-            pullToRefreshRelease: 'Loslassen zum Aktualisieren',
-            pullToRefreshPull: 'Zum Aktualisieren herunterziehen',
-            pullToRefreshUpdating: 'App wird aktualisiert...',
-            pullToRefreshChecking: 'Suche nach Updates...',
-            pullToRefreshOffline: 'Offline - keine Aktualisierung möglich',
+      // Pull to refresh
+      pullToRefreshRelease: "Release to refresh",
+      pullToRefreshPull: "Pull down to refresh",
+      pullToRefreshUpdating: "Updating app...",
+      pullToRefreshChecking: "Checking for updates...",
+      pullToRefreshOffline: "Offline - no update possible",
 
-            // Service Worker
-            updateAvailable: 'App-Update verfügbar! 🚀',
-            updateDescription: 'Eine neue Version der App ist verfügbar. Jetzt aktualisieren?',
-            updateButton: 'Aktualisieren',
-            updateLater: 'Später',
-            ratesUpdated: 'Wechselkurse aktualisiert',
-            ratesUpdatedDescription: 'Die neuesten Wechselkurse wurden geladen.',
+      // Coffee donation
+      buyMeACoffee: "Buy me a Coffee",
 
-            // Exchange rates
-            online: 'Online',
-            offline: 'Offline',
-            noRatesOffline: 'Keine Kurse - Online-Verbindung erforderlich',
+      // Service Worker
+      updateAvailable: "App update available! 🚀",
+      updateDescription: "A new version of the app is available. Update now?",
+      updateButton: "Update",
+      updateLater: "Later",
+      ratesUpdated: "Exchange rates updated",
+      ratesUpdatedDescription: "The latest exchange rates have been loaded.",
 
-            // Currency search
-            noCurrencyFound: 'Keine Währung gefunden.',
-            noCurrencyMatching: 'Keine passende Währung gefunden.',
+      // App updates
+      updateSuccess: "App successfully updated! ✨",
+      updateSuccessDescription: "The newest version is now available.",
 
-            // 404 page
-            notFoundTitle: 'Seite nicht gefunden',
-            notFoundDescription: 'Die angeforderte Seite konnte nicht gefunden werden.',
-            notFoundButton: 'Zurück zum Calculator',
+      // Exchange rates
+      online: "Online",
+      offline: "Offline",
+      noRatesOffline: "No rates - Online connection required",
+      updateFailed: "Update failed",
+      offlineNoData:
+        "No exchange rate data available offline. Connect to internet to load initial data.",
 
-            // Notifications and PWA features
-            notifications: {
-                settings: 'Benachrichtigungen',
-                title: 'Push-Mitteilungen',
-                description: 'Mitteilungen und Auto-Sync für Wechselkurse konfigurieren.',
-                permission: 'Berechtigung',
-                granted: 'Erlaubt',
-                denied: 'Verweigert',
-                notRequested: 'Nicht angefragt',
-                enable: 'Aktivieren',
-                disable: 'Deaktivieren',
-                enabled: 'Mitteilungen aktiviert!',
-                enabledDescription: 'Sie erhalten Updates über Kursänderungen.',
-                disabled: 'Mitteilungen deaktiviert',
-                permissionDenied: 'Berechtigung verweigert',
-                permissionRequired: 'Berechtigung erforderlich',
-                error: 'Fehler beim Aktualisieren',
-                test: 'Test',
-                testTitle: 'Test-Mitteilung',
-                testBody: 'Dies ist eine Test-Mitteilung vom Währungsrechner',
-                testSent: 'Test-Mitteilung gesendet',
-                testError: 'Fehler beim Test senden',
-                pushNotifications: 'Push-Mitteilungen',
-                pushDescription: 'Mitteilungen auch bei geschlossener App erhalten.',
-                active: 'Aktiv',
-                inactive: 'Inaktiv',
-                backgroundSync: 'Auto-Sync',
-                backgroundSyncDescription: 'Kurse automatisch im Hintergrund aktualisieren.',
-                backgroundSyncEnabled: 'Auto-Sync aktiviert!',
-                backgroundSyncError: 'Fehler beim Aktivieren',
-                enableBackgroundSync: 'Auto-Sync aktivieren',
-            },
-        },
+      // Currency grouping
+      majorCurrencies: "Major Currencies",
+      europeanCurrencies: "European Currencies",
+      otherCurrencies: "Other Currencies",
+      searchCurrencies: "Search currencies...",
+
+      // Currency search
+      noCurrencyFound: "No currency found.",
+      noCurrencyMatching: "No matching currency found.",
+
+      // 404 page
+      notFoundTitle: "Page Not Found",
+      notFoundDescription: "The requested page could not be found.",
+      notFoundButton: "Back to Calculator",
+
+      // Notifications and PWA features
+      notifications: {
+        settings: "Notifications",
+        title: "Push Notifications",
+        description: "Configure notifications and auto-sync for rate updates.",
+        permission: "Permission",
+        granted: "Granted",
+        denied: "Denied",
+        notRequested: "Not requested",
+        enable: "Enable",
+        disable: "Disable",
+        enabled: "Notifications enabled!",
+        enabledDescription: "You will receive rate update notifications.",
+        disabled: "Notifications disabled",
+        permissionDenied: "Permission denied",
+        permissionRequired: "Permission required",
+        error: "Failed to update settings",
+        test: "Test",
+        testTitle: "Test Notification",
+        testBody: "This is a test notification from the Currency Calculator",
+        testSent: "Test notification sent",
+        testError: "Failed to send test",
+        pushNotifications: "Push Notifications",
+        pushDescription: "Get notifications even when app is closed.",
+        active: "Active",
+        inactive: "Inactive",
+        backgroundSync: "Auto-Sync",
+        backgroundSyncDescription:
+          "Automatically sync rates in the background.",
+        backgroundSyncEnabled: "Auto-sync enabled!",
+        backgroundSyncError: "Failed to enable auto-sync",
+        enableBackgroundSync: "Enable Auto-Sync",
+      },
     },
+  },
+  de: {
+    // App metadata
+    meta: {
+      title:
+        "Währungsrechner Kostenlos - Aktuelle Wechselkurse für 170+ Währungen",
+      description:
+        "Währungen sofort umrechnen mit aktuellen Wechselkursen. Kostenloser Währungsrechner für EUR, USD, GBP, CHF und 170+ Währungen. Funktioniert offline als PWA. Schnell, genau und mobil-optimiert für Reisen und Business.",
+      manifestName: "Währungsrechner - Kostenloser Currency Calculator",
+      manifestDescription:
+        "Professioneller Währungsrechner mit aktuellen Wechselkursen für 170+ Währungen. Funktioniert offline mit PWA-Technologie.",
+      openGraphTitle:
+        "Kostenloser Währungsrechner - EUR, USD, CHF + 170 weitere Währungen",
+      openGraphDescription:
+        "Professioneller Währungsrechner mit Echtzeit-Wechselkursen. Umrechnung zwischen EUR, USD, GBP, CHF und 170+ Währungen. Kostenlos, schnell und funktioniert offline als Progressive Web App.",
+      twitterTitle: "Währungsrechner - Aktuelle Wechselkurse",
+      twitterDescription:
+        "Währungen umrechnen mit Live-Kursen für EUR, USD, CHF + 170 weitere. Kostenlose PWA funktioniert offline.",
+      schemaDescription:
+        "Professioneller Währungsrechner mit aktuellen Wechselkursen für 170+ internationale Währungen inklusive EUR, USD, GBP, CHF, JPY und viele weitere",
+    }, // Keywords for SEO
+    keywords: [
+      // Primary German keywords
+      "währungsrechner",
+      "währung umrechnen",
+      "wechselkurs rechner",
+      "kostenloser währungsrechner",
+      "currency calculator deutsch",
+
+      // Specific German currency pairs
+      "euro dollar rechner",
+      "eur usd rechner",
+      "euro in dollar umrechnen",
+      "dollar in euro rechnen",
+      "pfund euro rechner",
+      "schweizer franken euro rechner",
+      "chf eur rechner",
+      "euro pfund rechner",
+
+      // Long-tail German keywords
+      "euro in dollar umwandeln",
+      "währung online umrechnen",
+      "aktueller wechselkurs rechner",
+      "devisen rechner",
+      "geld umrechnen",
+      "währungsumrechnung online",
+      "devisenrechner kostenlos",
+
+      // German feature keywords
+      "währungsrechner offline",
+      "mobiler währungsrechner",
+      "genauer währungsrechner",
+      "schneller currency calculator",
+      "währungsrechner app",
+
+      // German geographic/use-case
+      "reise währungsrechner",
+      "urlaub geld umrechnen",
+      "währungsrechner deutschland",
+      "business währungsrechner",
+      "wechselkurs heute",
+      "aktuelle wechselkurse",
+
+      // Mixed German-English (common searches)
+      "euro to dollar rechner",
+      "currency converter deutsch",
+      "exchange rate deutschland",
+      "währung calculator",
+      "forex rechner",
+      "bitcoin euro rechner",
+      "krypto währungsrechner",
+
+      // Progressive Web App German
+      "PWA währungsrechner",
+      "offline rechner",
+      "mobile first",
+      "progressive web app",
+      "finanzen rechner",
+    ],
+
+    // Schema.org features
+    features: [
+      "Aktuelle Wechselkurse",
+      "Offline-Funktionalität",
+      "Progressive Web App",
+      "Über 170 Währungen",
+      "Kostenlose Nutzung",
+      "Mobile optimiert",
+      "Schnelle Berechnungen",
+    ],
+
+    // UI translations
+    ui: {
+      // Navigation & Menu
+      menu: "Menü",
+      navigationDescription: "Navigation und rechtliche Informationen",
+      language: "Sprache",
+      install: "Installieren",
+      installApp: "App installieren",
+
+      // Currency & Calculator
+      calculator: "Rechner",
+      conversion: "Umrechnung",
+      exchangeRate: "Wechselkurs",
+      from: "Von",
+      to: "Nach",
+      amount: "Betrag",
+      result: "Ergebnis",
+      swapCurrencies: "Währungen tauschen",
+      selectCurrency: "Währung auswählen",
+      searchCurrency: "Währung suchen...",
+
+      // Status messages
+      loading: "Lädt...",
+      updating: "Aktualisiert...",
+      cached: "gespeichert",
+      justNow: "Gerade eben",
+      minutesAgo: (minutes: number) => `vor ${minutes}m`,
+      hoursAgo: (hours: number) => `vor ${hours}h`,
+      never: "Nie",
+
+      // Error messages
+      networkError: "Netzwerkfehler",
+      offlineUpdate: "Offline - keine Aktualisierung möglich",
+      refreshRates: "Wechselkurse aktualisieren",
+
+      // Legal pages
+      privacy: "Privacy Policy",
+      dataProtection: "Datenschutz",
+      imprint: "Impressum",
+      siteNotice: "Site Notice",
+
+      // Share functionality
+      shareApp: "App teilen",
+      shareTitle: "App teilen",
+      shareDescription:
+        "Teile den kostenlosen Währungsrechner mit deinen Freunden",
+      shareText:
+        "Schau dir diesen kostenlosen Währungsrechner an! Über 170 Währungen mit aktuellen Wechselkursen. 📱💱",
+      shareNativeTitle: "Teilen",
+      shareNativeDescription: "Mit Freunden teilen",
+      shareWhatsApp: "WhatsApp",
+      shareWhatsAppDescription: "Mit Freunden teilen",
+      shareCopyLink: "Link kopieren",
+      shareCopyLinkCopied: "Kopiert!",
+      shareCopyDescription: "Link in Zwischenablage",
+      shareFooter: "💱 Kostenloser Währungsrechner für alle!",
+
+      // Offline notice
+      offlineTitle: "Internet-Verbindung erforderlich",
+      offlineDescription:
+        "Für die erste Nutzung ist eine Online-Verbindung nötig, um aktuelle Wechselkurse zu laden. Danach funktioniert die App auch offline.",
+      offlineMode: "Offline-Modus",
+      offlineCachedData:
+        "Arbeitet mit zwischengespeicherten Daten. Zuletzt aktualisiert:",
+      unknown: "Unbekannt",
+
+      // Pull to refresh
+      pullToRefreshRelease: "Loslassen zum Aktualisieren",
+      pullToRefreshPull: "Zum Aktualisieren herunterziehen",
+      pullToRefreshUpdating: "App wird aktualisiert...",
+      pullToRefreshChecking: "Suche nach Updates...",
+      pullToRefreshOffline: "Offline - keine Aktualisierung möglich",
+
+      // Coffee donation
+      buyMeACoffee: "Kauf mir einen Kaffee",
+
+      // Service Worker
+      updateAvailable: "App-Update verfügbar! 🚀",
+      updateDescription:
+        "Eine neue Version der App ist verfügbar. Jetzt aktualisieren?",
+      updateButton: "Aktualisieren",
+      updateLater: "Später",
+      ratesUpdated: "Wechselkurse aktualisiert",
+      ratesUpdatedDescription: "Die neuesten Wechselkurse wurden geladen.",
+
+      // App updates
+      updateSuccess: "App erfolgreich aktualisiert! ✨",
+      updateSuccessDescription: "Die neueste Version ist jetzt verfügbar.",
+
+      // Exchange rates
+      online: "Online",
+      offline: "Offline",
+      noRatesOffline: "Keine Kurse - Online-Verbindung erforderlich",
+      updateFailed: "Aktualisierung fehlgeschlagen",
+      offlineNoData:
+        "Keine Wechselkursdaten offline verfügbar. Internetverbindung für das Laden der ersten Daten erforderlich.",
+
+      // Currency grouping
+      majorCurrencies: "Hauptwährungen",
+      europeanCurrencies: "Europäische Währungen",
+      otherCurrencies: "Andere Währungen",
+      searchCurrencies: "Währungen suchen...",
+
+      // Currency search
+      noCurrencyFound: "Keine Währung gefunden.",
+      noCurrencyMatching: "Keine passende Währung gefunden.",
+
+      // 404 page
+      notFoundTitle: "Seite nicht gefunden",
+      notFoundDescription:
+        "Die angeforderte Seite konnte nicht gefunden werden.",
+      notFoundButton: "Zurück zum Calculator",
+
+      // Notifications and PWA features
+      notifications: {
+        settings: "Benachrichtigungen",
+        title: "Push-Mitteilungen",
+        description:
+          "Mitteilungen und Auto-Sync für Wechselkurse konfigurieren.",
+        permission: "Berechtigung",
+        granted: "Erlaubt",
+        denied: "Verweigert",
+        notRequested: "Nicht angefragt",
+        enable: "Aktivieren",
+        disable: "Deaktivieren",
+        enabled: "Mitteilungen aktiviert!",
+        enabledDescription: "Sie erhalten Updates über Kursänderungen.",
+        disabled: "Mitteilungen deaktiviert",
+        permissionDenied: "Berechtigung verweigert",
+        permissionRequired: "Berechtigung erforderlich",
+        error: "Fehler beim Aktualisieren",
+        test: "Test",
+        testTitle: "Test-Mitteilung",
+        testBody: "Dies ist eine Test-Mitteilung vom Währungsrechner",
+        testSent: "Test-Mitteilung gesendet",
+        testError: "Fehler beim Test senden",
+        pushNotifications: "Push-Mitteilungen",
+        pushDescription: "Mitteilungen auch bei geschlossener App erhalten.",
+        active: "Aktiv",
+        inactive: "Inaktiv",
+        backgroundSync: "Auto-Sync",
+        backgroundSyncDescription:
+          "Kurse automatisch im Hintergrund aktualisieren.",
+        backgroundSyncEnabled: "Auto-Sync aktiviert!",
+        backgroundSyncError: "Fehler beim Aktivieren",
+        enableBackgroundSync: "Auto-Sync aktivieren",
+      },
+    },
+  },
 } as const;
 
 export type TranslationKeys = {
-    meta: {
-        title: string;
-        description: string;
-        manifestName: string;
-        manifestDescription: string;
-        openGraphTitle: string;
-        openGraphDescription: string;
-        twitterTitle: string;
-        twitterDescription: string;
-        schemaDescription: string;
+  meta: {
+    title: string;
+    description: string;
+    manifestName: string;
+    manifestDescription: string;
+    openGraphTitle: string;
+    openGraphDescription: string;
+    twitterTitle: string;
+    twitterDescription: string;
+    schemaDescription: string;
+  };
+  keywords: readonly string[];
+  features: readonly string[];
+  ui: {
+    // Navigation & Menu
+    menu: string;
+    navigationDescription: string;
+    language: string;
+    install: string;
+    installApp: string;
+
+    // Currency & Calculator
+    calculator: string;
+    conversion: string;
+    exchangeRate: string;
+    from: string;
+    to: string;
+    amount: string;
+    result: string;
+    swapCurrencies: string;
+    selectCurrency: string;
+    searchCurrency: string;
+
+    // Status messages
+    loading: string;
+    updating: string;
+    cached: string;
+    justNow: string;
+    minutesAgo: (minutes: number) => string;
+    hoursAgo: (hours: number) => string;
+    never: string;
+
+    // Error messages
+    networkError: string;
+    offlineUpdate: string;
+    refreshRates: string;
+
+    // Legal pages
+    privacy: string;
+    dataProtection: string;
+    imprint: string;
+    siteNotice: string;
+
+    // Share functionality
+    shareApp: string;
+    shareTitle: string;
+    shareDescription: string;
+    shareText: string;
+    shareNativeTitle: string;
+    shareNativeDescription: string;
+    shareWhatsApp: string;
+    shareWhatsAppDescription: string;
+    shareCopyLink: string;
+    shareCopyLinkCopied: string;
+    shareCopyDescription: string;
+    shareFooter: string;
+
+    // Offline notice
+    offlineTitle: string;
+    offlineDescription: string;
+    offlineMode: string;
+    offlineCachedData: string;
+    unknown: string;
+
+    // Pull to refresh
+    pullToRefreshRelease: string;
+    pullToRefreshPull: string;
+    pullToRefreshUpdating: string;
+    pullToRefreshChecking: string;
+    pullToRefreshOffline: string;
+
+    // Coffee donation
+    buyMeACoffee: string;
+
+    // Service Worker
+    updateAvailable: string;
+    updateDescription: string;
+    updateButton: string;
+    updateLater: string;
+    ratesUpdated: string;
+    ratesUpdatedDescription: string;
+
+    // Exchange rates
+    online: string;
+    offline: string;
+    noRatesOffline: string;
+    updateFailed: string;
+    offlineNoData: string;
+
+    // Currency grouping
+    majorCurrencies: string;
+    europeanCurrencies: string;
+    otherCurrencies: string;
+    searchCurrencies: string;
+
+    // Currency search
+    noCurrencyFound: string;
+    noCurrencyMatching: string;
+
+    // 404 page
+    notFoundTitle: string;
+    notFoundDescription: string;
+    notFoundButton: string;
+
+    // Notifications and PWA features
+    notifications: {
+      settings: string;
+      title: string;
+      description: string;
+      permission: string;
+      granted: string;
+      denied: string;
+      notRequested: string;
+      enable: string;
+      disable: string;
+      enabled: string;
+      enabledDescription: string;
+      disabled: string;
+      permissionDenied: string;
+      permissionRequired: string;
+      error: string;
+      test: string;
+      testTitle: string;
+      testBody: string;
+      testSent: string;
+      testError: string;
+      pushNotifications: string;
+      pushDescription: string;
+      active: string;
+      inactive: string;
+      backgroundSync: string;
+      backgroundSyncDescription: string;
+      backgroundSyncEnabled: string;
+      backgroundSyncError: string;
+      enableBackgroundSync: string;
     };
-    keywords: readonly string[];
-    features: readonly string[];
-    ui: {
-        // Navigation & Menu
-        menu: string;
-        navigationDescription: string;
-        language: string;
-        install: string;
-        installApp: string;
-
-        // Currency & Calculator
-        calculator: string;
-        conversion: string;
-        exchangeRate: string;
-        from: string;
-        to: string;
-        amount: string;
-        result: string;
-        swapCurrencies: string;
-        selectCurrency: string;
-        searchCurrency: string;
-
-        // Status messages
-        loading: string;
-        updating: string;
-        cached: string;
-        justNow: string;
-        minutesAgo: (minutes: number) => string;
-        hoursAgo: (hours: number) => string;
-        never: string;
-
-        // Error messages
-        networkError: string;
-        offlineUpdate: string;
-        refreshRates: string;
-
-        // Legal pages
-        privacy: string;
-        dataProtection: string;
-        imprint: string;
-        siteNotice: string;
-
-        // Share functionality
-        shareApp: string;
-        shareTitle: string;
-        shareDescription: string;
-        shareText: string;
-        shareNativeTitle: string;
-        shareNativeDescription: string;
-        shareWhatsApp: string;
-        shareWhatsAppDescription: string;
-        shareCopyLink: string;
-        shareCopyLinkCopied: string;
-        shareCopyDescription: string;
-        shareFooter: string;
-
-        // Offline notice
-        offlineTitle: string;
-        offlineDescription: string;
-        offlineMode: string;
-        offlineCachedData: string;
-        unknown: string;
-
-        // Pull to refresh
-        pullToRefreshRelease: string;
-        pullToRefreshPull: string;
-        pullToRefreshUpdating: string;
-        pullToRefreshChecking: string;
-        pullToRefreshOffline: string;
-
-        // Service Worker
-        updateAvailable: string;
-        updateDescription: string;
-        updateButton: string;
-        updateLater: string;
-        ratesUpdated: string;
-        ratesUpdatedDescription: string;
-
-        // Exchange rates
-        online: string;
-        offline: string;
-        noRatesOffline: string;
-
-        // Currency search
-        noCurrencyFound: string;
-        noCurrencyMatching: string;
-
-        // 404 page
-        notFoundTitle: string;
-        notFoundDescription: string;
-        notFoundButton: string;
-
-        // Notifications and PWA features
-        notifications: {
-            settings: string;
-            title: string;
-            description: string;
-            permission: string;
-            granted: string;
-            denied: string;
-            notRequested: string;
-            enable: string;
-            disable: string;
-            enabled: string;
-            enabledDescription: string;
-            disabled: string;
-            permissionDenied: string;
-            permissionRequired: string;
-            error: string;
-            test: string;
-            testTitle: string;
-            testBody: string;
-            testSent: string;
-            testError: string;
-            pushNotifications: string;
-            pushDescription: string;
-            active: string;
-            inactive: string;
-            backgroundSync: string;
-            backgroundSyncDescription: string;
-            backgroundSyncEnabled: string;
-            backgroundSyncError: string;
-            enableBackgroundSync: string;
-        };
-    };
+  };
 };

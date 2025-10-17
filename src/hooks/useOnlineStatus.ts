@@ -1,137 +1,67 @@
-import { useEffect, useState, useCallback } from 'react';
-import { useCurrencyStore } from '@/lib/store/currency';
-import { onlineLogger } from '@/lib/debug';
+import { useEffect, useState, useCallback } from "react";
+import { useCurrencyStore } from "@/lib/store/currency";
+import { onlineLogger } from "@/lib/debug";
 
-// Simple connectivity test using the actual API we use for rates
-const testConnectivity = async (): Promise<boolean> => {
-    try {
-        // Create a timeout promise with shorter timeout
-        const timeoutPromise = new Promise<never>((_, reject) =>
-            setTimeout(() => reject(new Error('Timeout')), 5000) // Reduced from 8s to 5s
-        );
-
-        // Test with our actual API endpoint using HEAD request
-        const fetchPromise = fetch('https://api.exchangerate-api.com/v4/latest/EUR', {
-            method: 'HEAD',
-            cache: 'no-cache',
-        });
-
-        const response = await Promise.race([fetchPromise, timeoutPromise]);
-        return response.ok;
-    } catch (error) {
-        onlineLogger.debug('Connectivity test failed:', error);
-        return false;
-    }
-};
-
+/**
+ * Simplified offline-first online status hook
+ * - Always starts with navigator.onLine (no connectivity tests)
+ * - Only listens to browser events (online/offline)
+ * - No network requests or timeouts that block the UI
+ */
 export const useOnlineStatus = () => {
-    // Initialize with browser's actual status
-    const [isOnline, setIsOnline] = useState<boolean>(() => {
-        if (typeof navigator !== 'undefined') {
-            return navigator.onLine;
-        }
-        return true; // Fallback for SSR
-    });
+  // Initialize with browser's status - trust the browser immediately
+  const [isOnline, setIsOnline] = useState<boolean>(() => {
+    if (typeof navigator !== "undefined") {
+      return navigator.onLine;
+    }
+    return false; // Default to offline for SSR - safer assumption
+  });
 
-    const [isTestingConnectivity, setIsTestingConnectivity] = useState<boolean>(false);
-    const [lastConnectivityCheck, setLastConnectivityCheck] = useState<number>(0);
-    const setOnlineStatus = useCurrencyStore((state) => state.setOnlineStatus);
+  const setOnlineStatus = useCurrencyStore((state) => state.setOnlineStatus);
 
-    // Function to verify actual connectivity
-    const verifyConnectivity = useCallback(async () => {
-        // Don't test if already testing, tested recently, or browser says offline
-        if (isTestingConnectivity || !navigator.onLine) {
-            return;
-        }
+  // Simple update function - no testing, just trust browser events
+  const updateOnlineStatus = useCallback(
+    (browserOnline: boolean) => {
+      onlineLogger.debug(
+        `Browser event: ${browserOnline ? "online" : "offline"}`,
+      );
+      setIsOnline(browserOnline);
+      setOnlineStatus(browserOnline);
+    },
+    [setOnlineStatus],
+  );
 
-        const now = Date.now();
-        if (now - lastConnectivityCheck < 20000) { // Reduced from 30s to 20s
-            return;
-        }
+  useEffect(() => {
+    // Don't run in SSR
+    if (typeof navigator === "undefined") {
+      return;
+    }
 
-        setIsTestingConnectivity(true);
-        setLastConnectivityCheck(now);
+    // Set initial status - trust browser immediately
+    const initialStatus = navigator.onLine;
+    onlineLogger.debug(`Initial browser status: ${initialStatus}`);
+    setIsOnline(initialStatus);
+    setOnlineStatus(initialStatus);
 
-        try {
-            const actuallyOnline = await testConnectivity();
+    const handleOnline = () => {
+      onlineLogger.debug("Browser online event");
+      updateOnlineStatus(true);
+    };
 
-            // Only update state if there's a meaningful difference
-            if (actuallyOnline !== isOnline) {
-                onlineLogger.info(`Connectivity verified: Browser=${navigator.onLine}, Test=${actuallyOnline}, Setting=${actuallyOnline}`);
-                setIsOnline(actuallyOnline);
-                setOnlineStatus(actuallyOnline);
-            }
-        } catch (error) {
-            onlineLogger.warn('Connectivity test failed:', error);
-            // On test failure, trust browser status but prioritize offline state
-            const browserStatus = navigator.onLine;
-            const finalStatus = browserStatus && isOnline; // Be more conservative
-            if (finalStatus !== isOnline) {
-                setIsOnline(finalStatus);
-                setOnlineStatus(finalStatus);
-            }
-        } finally {
-            setIsTestingConnectivity(false);
-        }
-    }, [isTestingConnectivity, lastConnectivityCheck, isOnline, setOnlineStatus]);
+    const handleOffline = () => {
+      onlineLogger.debug("Browser offline event");
+      updateOnlineStatus(false);
+    };
 
-    // Update status based on browser events
-    const updateOnlineStatus = useCallback((browserOnline: boolean) => {
-        onlineLogger.debug(`Browser event: ${browserOnline ? 'online' : 'offline'}`);
-        setIsOnline(browserOnline);
-        setOnlineStatus(browserOnline);
+    // Only listen to browser events - no connectivity testing
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
 
-        // If coming back online, verify with connectivity test after short delay
-        if (browserOnline) {
-            setTimeout(verifyConnectivity, 1000); // Reduced delay
-        }
-    }, [setOnlineStatus, verifyConnectivity]);
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, [setOnlineStatus, updateOnlineStatus]);
 
-    useEffect(() => {
-        // Don't run in SSR
-        if (typeof navigator === 'undefined') {
-            return;
-        }
-
-        // Set initial status
-        const initialStatus = navigator.onLine;
-        onlineLogger.debug(`Initial browser status: ${initialStatus}`);
-        setIsOnline(initialStatus);
-        setOnlineStatus(initialStatus);
-
-        // Test actual connectivity on mount if browser says online
-        if (initialStatus) {
-            setTimeout(verifyConnectivity, 2000); // Reduced delay
-        }
-
-        const handleOnline = () => {
-            onlineLogger.debug('Browser online event');
-            updateOnlineStatus(true);
-        };
-
-        const handleOffline = () => {
-            onlineLogger.debug('Browser offline event');
-            updateOnlineStatus(false);
-        };
-
-        // Also check when page becomes visible (PWA focus)
-        const handleVisibilityChange = () => {
-            if (!document.hidden && navigator.onLine) {
-                onlineLogger.debug('PWA focused and browser online - verifying connectivity');
-                verifyConnectivity();
-            }
-        };
-
-        window.addEventListener('online', handleOnline);
-        window.addEventListener('offline', handleOffline);
-        document.addEventListener('visibilitychange', handleVisibilityChange);
-
-        return () => {
-            window.removeEventListener('online', handleOnline);
-            window.removeEventListener('offline', handleOffline);
-            document.removeEventListener('visibilitychange', handleVisibilityChange);
-        };
-    }, [setOnlineStatus, updateOnlineStatus, verifyConnectivity]);
-
-    return isOnline;
+  return isOnline;
 };

@@ -12,6 +12,7 @@ import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistratio
 import { AutomaticRateUpdates } from "@/components/AutomaticRateUpdates";
 import { AutoBackgroundUpdates } from "@/components/AutoBackgroundUpdates";
 import { OnlineStatusDebug } from "@/components/OnlineStatusDebug";
+import { PerformanceComparison } from "@/components/PerformanceComparison";
 import { useHydrated } from "@/hooks/useHydrated";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useCalculatorStore } from "@/lib/store/calculator";
@@ -24,7 +25,7 @@ import {
 } from "@/lib/pwa";
 import { currencyLogger } from "@/lib/debug";
 
-export default function Home() {
+export default function OfflineFirstPage() {
   const isHydrated = useHydrated();
   const isOnline = useOnlineStatus();
   const t = useTranslation();
@@ -44,7 +45,9 @@ export default function Home() {
   useEffect(() => {
     // Initialize PWA features after hydration
     if (isHydrated) {
-      currencyLogger.info("🚀 OFFLINE-FIRST: App hydrated - initializing PWA features");
+      currencyLogger.info(
+        "Offline-First Page: App hydrated - initializing PWA features",
+      );
 
       // PWA setup (no network dependency)
       registerServiceWorker();
@@ -53,16 +56,20 @@ export default function Home() {
 
       // Start initial background update if online
       if (isOnline) {
-        currencyLogger.info("🚀 OFFLINE-FIRST: Online at startup - triggering background update");
+        currencyLogger.info(
+          "Offline-First Page: Online at startup - triggering background update",
+        );
         setTimeout(() => {
           updateRatesInBackground();
         }, 500);
       } else if (!hasInitialData) {
         currencyLogger.info(
-          "🚀 OFFLINE-FIRST: Offline at startup, no initial data - will update when online",
+          "Offline-First Page: Offline at startup, no initial data - will update when online",
         );
       } else {
-        currencyLogger.info("🚀 OFFLINE-FIRST: Offline at startup, using cached data");
+        currencyLogger.info(
+          "Offline-First Page: Offline at startup, using cached data",
+        );
       }
     }
   }, [isHydrated, isOnline, updateRatesInBackground, hasInitialData]);
@@ -88,12 +95,24 @@ export default function Home() {
         {/* Navigation Header */}
         <NavigationHeader />
 
+        {/* Offline-First Indicator */}
+        <div className="bg-green-500/20 border border-green-500 rounded-lg p-2 mx-2 mb-2">
+          <div className="text-green-400 text-sm font-medium text-center">
+            🚀 OFFLINE-FIRST DEMO - No Loading Times!
+          </div>
+        </div>
+
+        {/* Performance Comparison */}
+        <div className="mx-2 mb-2">
+          <PerformanceComparison />
+        </div>
+
         <PullToRefreshWrapper>
           <div className="p-2 h-full flex flex-col justify-between flex-1">
-            {/* Offline Notice - Now with Offline-First approach */}
+            {/* Offline Notice */}
             <OfflineFirstOfflineNotice />
 
-            {/* Currency Selectors - Now Offline-First */}
+            {/* Currency Selectors */}
             <div className="grid grid-cols-2 gap-2 mb-2">
               <div>
                 <label className="text-zinc-400 text-xs mb-1 block">
@@ -109,10 +128,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Exchange Rate Display - Now Offline-First */}
+            {/* Exchange Rate Display */}
             <OfflineFirstExchangeRateDisplay />
 
-            {/* Display Panel - Now Offline-First */}
+            {/* Display Panel */}
             <OfflineFirstDisplayPanel
               display={display}
               previousValue={previousValue}

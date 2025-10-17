@@ -2,7 +2,7 @@
 export const webVitalsConfig = {
   // Google Analytics 4 measurement ID
   GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
-  
+
   // Core Web Vitals thresholds
   thresholds: {
     LCP: { good: 2500, needsImprovement: 4000 },
@@ -11,10 +11,10 @@ export const webVitalsConfig = {
     FCP: { good: 1800, needsImprovement: 3000 },
     TTFB: { good: 800, needsImprovement: 1800 },
   },
-  
+
   // Performance monitoring
   enablePerformanceMonitoring: process.env.NODE_ENV === 'production',
-  
+
   // SEO monitoring endpoints
   endpoints: {
     seo: '/api/seo-metrics',

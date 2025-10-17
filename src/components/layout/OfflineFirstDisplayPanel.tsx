@@ -1,32 +1,36 @@
-import { useCurrencyStore } from "@/lib/store/currency";
-import { ArrowUpDown, Loader2 } from "lucide-react";
+import { useOfflineFirstCurrencyStore } from "@/lib/store/currency-offline-first";
+import { ArrowUpDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation, useI18n } from "@/lib/i18n/provider";
 
-interface DisplayPanelProps {
+interface OfflineFirstDisplayPanelProps {
   display: string;
   previousValue: number | null;
   operation: string | null;
+  conversionRate?: number | null;
 }
 
-export function DisplayPanel({
+export function OfflineFirstDisplayPanel({
   display,
   previousValue,
   operation,
-}: DisplayPanelProps) {
+  conversionRate,
+}: OfflineFirstDisplayPanelProps) {
   const {
     baseCurrency,
     targetCurrency,
-    convertAmount,
     swapCurrencies,
-    isLoading,
-  } = useCurrencyStore();
+    getCurrentRate,
+  } = useOfflineFirstCurrencyStore();
 
   const { locale } = useI18n();
   const t = useTranslation();
 
   const displayValue = parseFloat(display) || 0;
-  const convertedValue = convertAmount(displayValue);
+
+  // Use provided conversionRate or get current rate
+  const rate = conversionRate !== undefined ? conversionRate : getCurrentRate();
+  const convertedValue = rate ? displayValue * rate : 0;
 
   const formatNumber = (num: number): string => {
     if (isNaN(num)) return "0";
@@ -82,17 +86,19 @@ export function DisplayPanel({
       {/* Secondary Currency Display - left aligned, same size */}
       <div className="text-left">
         <div className="display-primary text-2xl sm:text-3xl mb-1">
-          {isLoading ? (
-            <div className="flex items-center gap-2">
-              <Loader2 className="h-4 w-4 animate-spin" />
-              <span className="text-sm">{t.ui.loading}</span>
-            </div>
-          ) : (
+          {rate ? (
             formatNumber(convertedValue)
+          ) : (
+            <span className="text-zinc-500 text-sm">{t.ui.noRatesOffline}</span>
           )}
         </div>
         <div className="text-zinc-500 text-xs uppercase tracking-wide">
           {targetCurrency.flag} {targetCurrency.code}
+          {!rate && (
+            <span className="text-red-500 ml-2 text-xs">
+              ● {t.ui.offline}
+            </span>
+          )}
         </div>
       </div>
     </div>
