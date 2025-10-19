@@ -39,6 +39,8 @@ const CURRENCIES: Currency[] = [
   { code: "COP", name: "Colombian Peso", symbol: "$", flag: "🇨🇴" },
   { code: "PEN", name: "Peruvian Sol", symbol: "S/", flag: "🇵🇪" },
   { code: "UYU", name: "Uruguayan Peso", symbol: "$U", flag: "🇺🇾" },
+  { code: "GTQ", name: "Guatemalan Quetzal", symbol: "Q", flag: "🇬🇹" },
+  { code: "BZD", name: "Belize Dollar", symbol: "BZ$", flag: "🇧🇿" },
   { code: "ZAR", name: "South African Rand", symbol: "R", flag: "🇿🇦" },
   { code: "EGP", name: "Egyptian Pound", symbol: "£", flag: "🇪🇬" },
   { code: "MAD", name: "Moroccan Dirham", symbol: "MAD", flag: "🇲🇦" },
