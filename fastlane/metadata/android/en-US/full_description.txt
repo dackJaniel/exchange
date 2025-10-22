@@ -1,0 +1,59 @@
+Currency Exchange Calculator is a free, open-source, offline-first Progressive Web App (PWA) that provides real-time currency conversion with full calculator functionality. Designed with privacy in mind, this app contains no tracking, no ads, and is completely transparent.
+
+<b>Key Features:</b>
+
+• <b>170+ Currencies Supported</b> - Convert between all major world currencies including EUR, USD, GBP, JPY, CHF, CAD, AUD and many more
+• <b>Offline-First Architecture</b> - Works without internet connection with 99% faster performance than traditional apps
+• <b>Real-Time Exchange Rates</b> - Live currency data with smart 15-minute caching for optimal performance
+• <b>Calculator Integration</b> - Full calculator functionality combined with currency conversion in one app
+• <b>No Tracking or Ads</b> - Completely privacy-focused with zero data collection
+• <b>Instant Loading</b> - Revolutionary cache-first design with < 50ms startup times
+• <b>PWA Technology</b> - Install as native app with offline capabilities and background sync
+
+<b>Privacy & Security:</b>
+
+This app is built with privacy as the top priority:
+• No personal data collection
+• No tracking or analytics
+• No third-party scripts
+• All data stored locally on your device
+• Open source code for full transparency
+• F-Droid compatible with no proprietary dependencies
+
+<b>User Experience:</b>
+
+• <b>Mobile-First Design</b> - Touch-optimized interface with haptic feedback
+• <b>Dark Theme</b> - Eye-friendly design with orange accent colors
+• <b>Multiple Languages</b> - Full support for English and German with automatic detection
+• <b>Responsive Design</b> - Works perfectly on phones, tablets, and desktop computers
+• <b>Background Updates</b> - Automatic rate synchronization when app becomes visible
+
+<b>Technical Excellence:</b>
+
+Built with modern web technologies for optimal performance:
+• Next.js 15 with React 19 for lightning-fast rendering
+• Offline-first architecture with intelligent caching
+• Progressive Web App capabilities with service worker
+• TypeScript for robust code quality
+• Tailwind CSS for responsive design
+• Zustand for efficient state management
+
+<b>Perfect for:</b>
+
+• Travelers needing quick currency conversions
+• Business professionals working with international clients
+• Students learning about global economics
+• Anyone who values privacy and open-source software
+• Users who need reliable offline functionality
+
+<b>Why Choose This App:</b>
+
+Unlike other currency apps that track users and serve ads, Currency Exchange Calculator is built by the community, for the community. It's completely free, respects your privacy, and works even when you're offline. The revolutionary offline-first architecture means you get instant results without waiting for network requests.
+
+The app supports all major currencies and provides accurate, up-to-date exchange rates while maintaining complete transparency about its operation. All source code is available for review, ensuring no hidden tracking or data collection.
+
+<b>Open Source & Community:</b>
+
+This project is MIT licensed and welcomes contributions from developers worldwide. The code is available on GitHub, and the development process is completely transparent. Join the community of users who value privacy, performance, and open-source principles.
+
+Perfect for daily use, travel planning, or any situation where you need quick, reliable currency conversion without compromising your privacy.

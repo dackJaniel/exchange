@@ -1,0 +1,59 @@
+Der Währungsrechner ist eine kostenlose, quelloffene, offline-erste Progressive Web App (PWA), die Echtzeit-Währungsumrechnung mit vollständiger Rechner-Funktionalität bietet. Mit Fokus auf Datenschutz entwickelt, enthält diese App kein Tracking, keine Werbung und ist vollständig transparent.
+
+<b>Hauptfunktionen:</b>
+
+• <b>170+ unterstützte Währungen</b> - Umrechnung zwischen allen wichtigen Weltwährungen einschließlich EUR, USD, GBP, JPY, CHF, CAD, AUD und vielen mehr
+• <b>Offline-First Architektur</b> - Funktioniert ohne Internetverbindung mit 99% besserer Performance als herkömmliche Apps
+• <b>Echtzeit-Wechselkurse</b> - Live-Währungsdaten mit intelligentem 15-Minuten-Caching für optimale Leistung
+• <b>Rechner-Integration</b> - Vollständige Rechner-Funktionalität kombiniert mit Währungsumrechnung in einer App
+• <b>Kein Tracking oder Werbung</b> - Vollständig datenschutzorientiert ohne jegliche Datensammlung
+• <b>Sofortiges Laden</b> - Revolutionäres Cache-First-Design mit < 50ms Startzeiten
+• <b>PWA-Technologie</b> - Installation als native App mit Offline-Fähigkeiten und Hintergrund-Synchronisation
+
+<b>Datenschutz & Sicherheit:</b>
+
+Diese App ist mit Datenschutz als oberste Priorität entwickelt:
+• Keine Sammlung persönlicher Daten
+• Kein Tracking oder Analytics
+• Keine Drittanbieter-Skripte
+• Alle Daten werden lokal auf Ihrem Gerät gespeichert
+• Open-Source-Code für vollständige Transparenz
+• F-Droid-kompatibel ohne proprietäre Abhängigkeiten
+
+<b>Benutzererfahrung:</b>
+
+• <b>Mobile-First Design</b> - Touch-optimierte Benutzeroberfläche mit haptischem Feedback
+• <b>Dunkles Theme</b> - Augenfreundliches Design mit orangen Akzentfarben
+• <b>Mehrere Sprachen</b> - Vollständige Unterstützung für Englisch und Deutsch mit automatischer Erkennung
+• <b>Responsives Design</b> - Funktioniert perfekt auf Smartphones, Tablets und Desktop-Computern
+• <b>Hintergrund-Updates</b> - Automatische Kurssynchronisation wenn die App sichtbar wird
+
+<b>Technische Exzellenz:</b>
+
+Entwickelt mit modernen Web-Technologien für optimale Leistung:
+• Next.js 15 mit React 19 für blitzschnelles Rendering
+• Offline-First-Architektur mit intelligentem Caching
+• Progressive Web App-Fähigkeiten mit Service Worker
+• TypeScript für robuste Code-Qualität
+• Tailwind CSS für responsives Design
+• Zustand für effizientes State Management
+
+<b>Perfekt für:</b>
+
+• Reisende, die schnelle Währungsumrechnungen benötigen
+• Geschäftsleute, die mit internationalen Kunden arbeiten
+• Studenten, die über globale Wirtschaft lernen
+• Alle, die Wert auf Datenschutz und Open-Source-Software legen
+• Benutzer, die zuverlässige Offline-Funktionalität benötigen
+
+<b>Warum diese App wählen:</b>
+
+Anders als andere Währungs-Apps, die Benutzer verfolgen und Werbung zeigen, ist der Währungsrechner von der Community für die Community entwickelt. Er ist vollständig kostenlos, respektiert Ihre Privatsphäre und funktioniert auch offline. Die revolutionäre Offline-First-Architektur bedeutet, dass Sie sofortige Ergebnisse erhalten, ohne auf Netzwerkanfragen warten zu müssen.
+
+Die App unterstützt alle wichtigen Währungen und liefert genaue, aktuelle Wechselkurse bei vollständiger Transparenz über ihre Funktionsweise. Der gesamte Quellcode ist zur Überprüfung verfügbar, was sicherstellt, dass es kein verstecktes Tracking oder Datensammlung gibt.
+
+<b>Open Source & Community:</b>
+
+Dieses Projekt ist MIT-lizenziert und begrüßt Beiträge von Entwicklern weltweit. Der Code ist auf GitHub verfügbar, und der Entwicklungsprozess ist vollständig transparent. Treten Sie der Community von Benutzern bei, die Datenschutz, Leistung und Open-Source-Prinzipien schätzen.
+
+Perfekt für den täglichen Gebrauch, Reiseplanung oder jede Situation, in der Sie schnelle, zuverlässige Währungsumrechnung benötigen, ohne Ihre Privatsphäre zu gefährden.

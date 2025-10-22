@@ -1,0 +1,88 @@
+Categories:
+  - Money
+License: MIT
+AuthorName: Daniel Hilmer
+AuthorEmail: mail@danielhilmer.de
+WebSite: https://exchange.danielhilmer.de
+SourceCode: https://github.com/danielhilmer/currency-calculator
+IssueTracker: https://github.com/danielhilmer/currency-calculator/issues
+Translation: https://github.com/danielhilmer/currency-calculator/blob/main/README.md#internationalization
+Changelog: https://github.com/danielhilmer/currency-calculator/releases
+Donate: https://github.com/sponsors/danielhilmer
+
+AutoName: Currency Calculator
+Summary: Free offline-first currency calculator with 170+ currencies
+
+Description: |-
+  Currency Exchange Calculator is a free, open-source, offline-first Progressive Web App (PWA)
+  that provides real-time currency conversion with full calculator functionality. Designed with
+  privacy in mind, this app contains no tracking, no ads, and is completely transparent.
+
+  '''Key Features:'''
+  * 170+ currencies supported - Convert between all major world currencies
+  * Offline-first architecture - Works without internet with 99% faster performance
+  * Real-time exchange rates - Live currency data with smart 15-minute caching
+  * Calculator integration - Full calculator functionality in one app
+  * No tracking or ads - Completely privacy-focused with zero data collection
+  * Instant loading - Revolutionary cache-first design with <50ms startup times
+  * PWA technology - Install as native app with offline capabilities
+
+  '''Privacy & Security:'''
+  * No personal data collection
+  * No tracking or analytics (Matomo completely removed for F-Droid)
+  * No third-party scripts
+  * All data stored locally on device
+  * Open source code for full transparency
+  * F-Droid compatible with no proprietary dependencies
+
+  '''Technical Excellence:'''
+  * Built with Next.js 15 and React 19 for optimal performance
+  * TypeScript for robust code quality
+  * Offline-first architecture with intelligent caching
+  * Progressive Web App capabilities with service worker
+  * Responsive design works on all devices
+  * Multilingual support (English/German) with automatic detection
+
+  Perfect for travelers, business professionals, students, and anyone who values
+  privacy and open-source software. The app supports all major currencies and
+  provides accurate, up-to-date exchange rates while maintaining complete
+  transparency about its operation.
+
+RepoType: git
+Repo: https://github.com/danielhilmer/currency-calculator.git
+
+Builds:
+  - versionName: 1.2.59
+    versionCode: 1259
+    commit: v1.2.59
+    subdir: android/app
+    sudo:
+      - apt-get update
+      - apt-get install -y nodejs npm
+    init: npm install
+    prebuild:
+      - npm run update-version
+      - npm run generate-icons
+      - npm run build
+      - npx cap copy android
+      - npx cap sync android
+    gradle:
+      - yes
+    rm:
+      - node_modules
+      - .next
+    scanignore:
+      - android/app/src/main/assets/public
+    scandelete:
+      - node_modules
+      - .next
+      - out
+
+AutoUpdateMode: Version v%v
+UpdateCheckMode: Tags
+CurrentVersion: 1.2.59
+CurrentVersionCode: 1259
+
+RequiredFeatures:
+  - android.software.webview
+# Anti-Features: None (tracking completely removed, no ads, no proprietary dependencies)

@@ -1,100 +1,91 @@
-import { translations } from '@/lib/i18n/translations';
-import { Locale } from '@/lib/i18n/config';
+import { translations } from "@/lib/i18n/translations";
 
-export async function GET(request: Request) {
-    // Get language from URL query parameter or header
-    const url = new URL(request.url);
-    const lang = (url.searchParams.get('lang') as Locale) || 'en';
+export const dynamic = "force-static";
 
-    // Validate locale
-    const locale = lang in translations ? lang : 'en';
+export async function GET() {
+  // Use default English locale for static generation
+  const locale = "en";
+  const t = translations[locale];
 
-    const t = translations[locale];
+  const manifest = {
+    name: t.meta.manifestName,
+    short_name: "Currency Calc",
+    description: t.meta.manifestDescription,
+    start_url: "/",
+    display: "standalone",
+    orientation: "portrait-primary",
+    theme_color: "#000000",
+    background_color: "#000000",
+    lang: "en-US",
+    dir: "ltr",
+    scope: "/",
+    id: "currency-exchange-calculator",
+    categories: ["finance", "utilities", "productivity", "business"],
+    iarc_rating_id: "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+    prefer_related_applications: false,
+    related_applications: [],
+    icons: [
+      {
+        src: "/icons/icon-72x72.png",
+        sizes: "72x72",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icons/icon-96x96.png",
+        sizes: "96x96",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icons/icon-128x128.png",
+        sizes: "128x128",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icons/icon-144x144.png",
+        sizes: "144x144",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icons/icon-152x152.png",
+        sizes: "152x152",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icons/icon-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icons/icon-384x384.png",
+        sizes: "384x384",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icons/icon-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/icons/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+        purpose: "any",
+      },
+    ],
+  };
 
-    const manifest = {
-        name: t.meta.manifestName,
-        short_name: 'Currency Calc',
-        description: t.meta.manifestDescription,
-        start_url: '/',
-        display: 'standalone',
-        orientation: 'portrait-primary',
-        theme_color: '#000000',
-        background_color: '#000000',
-        lang: locale === 'de' ? 'de-DE' : 'en-US',
-        dir: 'ltr',
-        scope: '/',
-        id: 'currency-exchange-calculator',
-        categories: [
-            'finance',
-            'utilities',
-            'productivity',
-            'business',
-        ],
-        iarc_rating_id: 'e84b072d-71b3-4d3e-86ae-31a8ce4e53b7',
-        prefer_related_applications: false,
-        related_applications: [],
-        icons: [
-            {
-                src: '/icons/icon-72x72.png',
-                sizes: '72x72',
-                type: 'image/png',
-                purpose: 'any',
-            },
-            {
-                src: '/icons/icon-96x96.png',
-                sizes: '96x96',
-                type: 'image/png',
-                purpose: 'any',
-            },
-            {
-                src: '/icons/icon-128x128.png',
-                sizes: '128x128',
-                type: 'image/png',
-                purpose: 'any',
-            },
-            {
-                src: '/icons/icon-144x144.png',
-                sizes: '144x144',
-                type: 'image/png',
-                purpose: 'any',
-            },
-            {
-                src: '/icons/icon-152x152.png',
-                sizes: '152x152',
-                type: 'image/png',
-                purpose: 'any',
-            },
-            {
-                src: '/icons/icon-192x192.png',
-                sizes: '192x192',
-                type: 'image/png',
-                purpose: 'any',
-            },
-            {
-                src: '/icons/icon-384x384.png',
-                sizes: '384x384',
-                type: 'image/png',
-                purpose: 'any',
-            },
-            {
-                src: '/icons/icon-512x512.png',
-                sizes: '512x512',
-                type: 'image/png',
-                purpose: 'any',
-            },
-            {
-                src: '/icons/apple-touch-icon.png',
-                sizes: '180x180',
-                type: 'image/png',
-                purpose: 'any',
-            },
-        ],
-    };
-
-    return new Response(JSON.stringify(manifest), {
-        headers: {
-            'Content-Type': 'application/manifest+json',
-            'Cache-Control': 'public, max-age=86400', // 24 hours
-        },
-    });
+  return new Response(JSON.stringify(manifest), {
+    headers: {
+      "Content-Type": "application/manifest+json",
+      "Cache-Control": "public, max-age=86400", // 24 hours
+    },
+  });
 }

@@ -1,7 +1,39 @@
 {
-  "name": "exchange",
-  "version": "1.2.59",
-  "private": true,
+  "name": "currency-calculator",
+  "version": "1.2.69",
+  "description": "Free offline-first currency exchange calculator PWA with support for 170+ currencies. No tracking, no ads, completely open source.",
+  "keywords": [
+    "currency",
+    "calculator",
+    "exchange",
+    "converter",
+    "pwa",
+    "offline",
+    "free",
+    "open-source",
+    "f-droid"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Daniel Hilmer",
+    "email": "mail@danielhilmer.de",
+    "url": "https://danielhilmer.de"
+  },
+  "homepage": "https://exchange.danielhilmer.de",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielhilmer/currency-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielhilmer/currency-calculator/issues"
+  },
+  "funding": [
+    {
+      "type": "paypal",
+      "url": "https://paypal.me/danielhilmer"
+    }
+  ],
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "dev:turbo": "next dev --turbopack",
@@ -14,19 +46,22 @@
     "update-version": "node scripts/update-version.mjs",
     "prebuild": "npm run generate-icons",
     "deploy": "npm run build:production && echo 'Ready for deployment with updated version!'",
-    "seo:audit": "lighthouse --output-path=./seo-audit.html --output=html --chrome-flags=\"--headless\" https://exchange.danielhilmer.de",
-    "seo:analyze": "next-bundle-analyzer",
-    "seo:sitemap": "next build && next export && next-sitemap",
-    "seo:generate-pages": "node scripts/generate-seo-pages.mjs",
-    "seo:full-setup": "npm run seo:generate-pages && npm run build"
+    "android:build": "npm run build && npx cap copy android",
+    "android:open": "npx cap open android",
+    "android:sync": "npx cap sync android",
+    "android:run": "npx cap run android",
+    "capacitor:update": "npx cap update",
+    "fdroid:prepare": "npm run build && npx cap copy android && npx cap sync android"
   },
   "dependencies": {
+    "@capacitor/android": "^7.4.4",
+    "@capacitor/cli": "^7.4.4",
+    "@capacitor/core": "^7.4.4",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-popover": "^1.1.15",
     "@radix-ui/react-scroll-area": "^1.2.10",
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-slot": "^1.2.3",
-    "@socialgouv/matomo-next": "^1.9.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",

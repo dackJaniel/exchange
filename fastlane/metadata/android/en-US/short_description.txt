@@ -1,0 +1,1 @@
+Free offline-first currency calculator with 170+ currencies. No tracking, open source.
