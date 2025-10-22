@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
-import { OfflineFirstDisplayPanel } from "@/components/layout/OfflineFirstDisplayPanel";
+import { DisplayPanel } from "@/components/layout/DisplayPanel";
 import { KeypadGrid } from "@/components/layout/KeypadGrid";
-import { OfflineFirstCurrencySelector } from "@/components/currency/OfflineFirstCurrencySelector";
-import { OfflineFirstExchangeRateDisplay } from "@/components/currency/OfflineFirstExchangeRateDisplay";
-import { OfflineFirstOfflineNotice } from "@/components/currency/OfflineFirstOfflineNotice";
+import { CurrencySelector } from "@/components/currency/CurrencySelector";
+import { ExchangeRateDisplay } from "@/components/currency/ExchangeRateDisplay";
+import { OfflineNotice } from "@/components/currency/OfflineNotice";
 import { PullToRefreshWrapper } from "@/components/layout/PullToRefreshWrapper";
 import { NavigationHeader } from "@/components/layout/NavigationHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
@@ -16,7 +16,7 @@ import { PerformanceComparison } from "@/components/PerformanceComparison";
 import { useHydrated } from "@/hooks/useHydrated";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useCalculatorStore } from "@/lib/store/calculator";
-import { useOfflineFirstCurrencyStore } from "@/lib/store/currency-offline-first";
+import { useCurrencyStore } from "@/lib/store/currency";
 import { useTranslation } from "@/lib/i18n/provider";
 import {
   registerServiceWorker,
@@ -35,7 +35,7 @@ export default function OfflineFirstPage() {
     updateRatesInBackground,
     hasInitialData,
     getCurrentRate,
-  } = useOfflineFirstCurrencyStore();
+  } = useCurrencyStore();
 
   useEffect(() => {
     // Update store with online status immediately
@@ -110,7 +110,7 @@ export default function OfflineFirstPage() {
         <PullToRefreshWrapper>
           <div className="p-2 h-full flex flex-col justify-between flex-1">
             {/* Offline Notice */}
-            <OfflineFirstOfflineNotice />
+            <OfflineNotice />
 
             {/* Currency Selectors */}
             <div className="grid grid-cols-2 gap-2 mb-2">
@@ -118,21 +118,21 @@ export default function OfflineFirstPage() {
                 <label className="text-zinc-400 text-xs mb-1 block">
                   {t.ui.from}
                 </label>
-                <OfflineFirstCurrencySelector type="base" />
+                <CurrencySelector type="base" />
               </div>
               <div>
                 <label className="text-zinc-400 text-xs mb-1 block">
                   {t.ui.to}
                 </label>
-                <OfflineFirstCurrencySelector type="target" />
+                <CurrencySelector type="target" />
               </div>
             </div>
 
             {/* Exchange Rate Display */}
-            <OfflineFirstExchangeRateDisplay />
+            <ExchangeRateDisplay />
 
             {/* Display Panel */}
-            <OfflineFirstDisplayPanel
+            <DisplayPanel
               display={display}
               previousValue={previousValue}
               operation={operation}

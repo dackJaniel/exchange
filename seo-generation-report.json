@@ -1,0 +1,60 @@
+{
+  "timestamp": "2025-10-22T15:12:20.858Z",
+  "total_pages": 1368,
+  "locales": {
+    "en": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "de": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "es": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "fr": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "it": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "pt": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "ru": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "ja": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "zh-cn": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "ar": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "hi": {
+      "pages": 114,
+      "pairs": 19
+    },
+    "nl": {
+      "pages": 114,
+      "pairs": 19
+    }
+  },
+  "pairs": 19,
+  "stats": {
+    "successful": 1368,
+    "skipped": 0,
+    "errors": []
+  }
+}

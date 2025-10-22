@@ -1,0 +1,71 @@
+{
+  "timestamp": "2025-10-22T14:49:14.416Z",
+  "total_pages": 2160,
+  "locales": {
+    "en": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "de": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "es": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "fr": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "it": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "pt": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "ru": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "ja": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "zh-cn": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "ar": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "hi": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    },
+    "nl": {
+      "pages": 180,
+      "currency_pairs": 30,
+      "amounts_per_pair": 6
+    }
+  },
+  "validation_report": {
+    "successful": 2160,
+    "skipped": 0,
+    "errors": []
+  }
+}

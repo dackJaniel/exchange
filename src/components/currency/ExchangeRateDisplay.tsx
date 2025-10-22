@@ -1,9 +1,11 @@
-import { useCurrencyStore } from "@/lib/store/currency";
+"use client";
+
 import { useHydrated } from "@/hooks/useHydrated";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { RefreshCw, Wifi, WifiOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/lib/i18n/provider";
+import { useCurrencyStore } from "@/lib/store/currency";
 
 export function ExchangeRateDisplay() {
   const isHydrated = useHydrated();
@@ -13,53 +15,25 @@ export function ExchangeRateDisplay() {
   const {
     baseCurrency,
     targetCurrency,
-    rates,
-    lastUpdated,
-    isLoading,
-    fetchExchangeRates,
-    getRatesFromCache,
-    hasEverBeenOnline,
-    error,
+    getDisplayRate,
+    isUpdating,
+    updateRatesInBackground,
+    hasInitialData,
+    updateError,
   } = useCurrencyStore();
 
-  // Try to get rate from current rates, fallback to cache
-  let rate = rates[targetCurrency.code];
-  let isFromCache = false;
-
-  if (!rate) {
-    const cachedRate = getRatesFromCache(
-      baseCurrency.code,
-      targetCurrency.code,
-    );
-    if (cachedRate !== null) {
-      rate = cachedRate;
-      isFromCache = true;
-    }
-  }
-
-  const formatLastUpdated = (date: Date | string | null) => {
-    if (!date || !isHydrated) return t.ui.never;
-
-    const dateObj = typeof date === "string" ? new Date(date) : date;
-
-    if (isNaN(dateObj.getTime())) return t.ui.never;
-
-    const now = new Date();
-    const diffInMinutes = Math.floor(
-      (now.getTime() - dateObj.getTime()) / (1000 * 60),
-    );
-
-    if (diffInMinutes < 1) return t.ui.justNow;
-    if (diffInMinutes < 60) return t.ui.minutesAgo(diffInMinutes);
-    if (diffInMinutes < 1440)
-      return t.ui.hoursAgo(Math.floor(diffInMinutes / 60));
-    return dateObj.toLocaleDateString();
-  };
+  const { rate, isFromCache, age } = getDisplayRate();
 
   const handleRefresh = () => {
-    if (isOnline) {
-      fetchExchangeRates(true); // Force refresh
+    if (isOnline && !isUpdating) {
+      updateRatesInBackground();
     }
+  };
+
+  const formatDisplayAge = (ageString: string) => {
+    if (ageString === "now") return t.ui.justNow;
+    if (ageString === "unknown") return t.ui.never;
+    return ageString; // "5m ago", "2h ago", etc.
   };
 
   return (
@@ -80,7 +54,7 @@ export function ExchangeRateDisplay() {
           )}
         </div>
 
-        {/* Exchange Rate */}
+        {/* Exchange Rate - Always show if available */}
         {rate && (
           <span>
             | 1 {baseCurrency.code} = {rate.toFixed(4)} {targetCurrency.code}
@@ -88,31 +62,33 @@ export function ExchangeRateDisplay() {
           </span>
         )}
 
-        {/* Show warning if no rate available and never been online */}
-        {!rate && !hasEverBeenOnline && !isOnline && (
+        {/* Show status messages */}
+        {!rate && !hasInitialData && (
           <span className="text-orange-500">| {t.ui.noRatesOffline}</span>
         )}
 
-        {/* Show loading when online and fetching */}
-        {!rate && isOnline && isLoading && (
-          <span className="text-blue-500">| {t.ui.loading}</span>
+        {isUpdating && (
+          <span className="text-blue-500">| {t.ui.updating}...</span>
         )}
 
-        {/* Show error message if any */}
-        {error && <span className="text-orange-500">| {error}</span>}
+        {updateError && !rate && (
+          <span className="text-red-500">| {t.ui.updateFailed}</span>
+        )}
       </div>
 
       <div className="flex items-center gap-1">
-        <span>{formatLastUpdated(lastUpdated)}</span>
+        <span>{formatDisplayAge(age)}</span>
         <Button
           variant="ghost"
           size="sm"
           className="h-5 w-5 p-0 text-zinc-500 hover:text-white disabled:opacity-30"
           onClick={handleRefresh}
-          disabled={isLoading || !isOnline}
+          disabled={isUpdating || !isOnline}
           title={!isOnline ? t.ui.offlineUpdate : t.ui.refreshRates}
         >
-          <RefreshCw className={`h-2 w-2 ${isLoading ? "animate-spin" : ""}`} />
+          <RefreshCw
+            className={`h-2 w-2 ${isUpdating ? "animate-spin" : ""}`}
+          />
         </Button>
       </div>
     </div>

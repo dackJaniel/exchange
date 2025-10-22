@@ -1,21 +1,21 @@
 "use client";
 
-import { useEffect } from "react";
-import { OfflineFirstDisplayPanel } from "@/components/layout/OfflineFirstDisplayPanel";
+import { useEffect, useRef, useState } from "react";
+import { DisplayPanel } from "@/components/layout/DisplayPanel";
 import { KeypadGrid } from "@/components/layout/KeypadGrid";
-import { OfflineFirstCurrencySelector } from "@/components/currency/OfflineFirstCurrencySelector";
-import { OfflineFirstExchangeRateDisplay } from "@/components/currency/OfflineFirstExchangeRateDisplay";
-import { OfflineFirstOfflineNotice } from "@/components/currency/OfflineFirstOfflineNotice";
+import { CurrencySelector } from "@/components/currency/CurrencySelector";
+import { ExchangeRateDisplay } from "@/components/currency/ExchangeRateDisplay";
+import { OfflineNotice } from "@/components/currency/OfflineNotice";
 import { PullToRefreshWrapper } from "@/components/layout/PullToRefreshWrapper";
 import { NavigationHeader } from "@/components/layout/NavigationHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { AutomaticRateUpdates } from "@/components/AutomaticRateUpdates";
 import { AutoBackgroundUpdates } from "@/components/AutoBackgroundUpdates";
-import { OnlineStatusDebug } from "@/components/OnlineStatusDebug";
+
 import { useHydrated } from "@/hooks/useHydrated";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useCalculatorStore } from "@/lib/store/calculator";
-import { useOfflineFirstCurrencyStore } from "@/lib/store/currency-offline-first";
+import { useCurrencyStore } from "@/lib/store/currency";
 import { useTranslation } from "@/lib/i18n/provider";
 import {
   registerServiceWorker,
@@ -34,17 +34,63 @@ export default function Home() {
     updateRatesInBackground,
     hasInitialData,
     getCurrentRate,
-  } = useOfflineFirstCurrencyStore();
+  } = useCurrencyStore();
+
+  // Touch navigation state
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
 
   useEffect(() => {
     // Update store with online status immediately
     setOnlineStatus(isOnline);
   }, [isOnline, setOnlineStatus]);
 
+  // Touch handlers for swipe navigation
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      // Left swipe - could navigate to guides or settings
+      currencyLogger.info("Left swipe detected");
+    }
+
+    if (isRightSwipe) {
+      // Right swipe - could refresh rates or navigate back
+      currencyLogger.info("Right swipe detected - refreshing rates");
+      updateRatesInBackground();
+    }
+  };
+
+  // Add haptic feedback for iOS
+  const triggerHapticFeedback = () => {
+    if ("vibrate" in navigator) {
+      navigator.vibrate(50);
+    }
+  };
+
   useEffect(() => {
     // Initialize PWA features after hydration
     if (isHydrated) {
-      currencyLogger.info("🚀 OFFLINE-FIRST: App hydrated - initializing PWA features");
+      currencyLogger.info(
+        "🚀 OFFLINE-FIRST: App hydrated - initializing PWA features",
+      );
 
       // PWA setup (no network dependency)
       registerServiceWorker();
@@ -53,7 +99,9 @@ export default function Home() {
 
       // Start initial background update if online
       if (isOnline) {
-        currencyLogger.info("🚀 OFFLINE-FIRST: Online at startup - triggering background update");
+        currencyLogger.info(
+          "🚀 OFFLINE-FIRST: Online at startup - triggering background update",
+        );
         setTimeout(() => {
           updateRatesInBackground();
         }, 500);
@@ -62,7 +110,9 @@ export default function Home() {
           "🚀 OFFLINE-FIRST: Offline at startup, no initial data - will update when online",
         );
       } else {
-        currencyLogger.info("🚀 OFFLINE-FIRST: Offline at startup, using cached data");
+        currencyLogger.info(
+          "🚀 OFFLINE-FIRST: Offline at startup, using cached data",
+        );
       }
     }
   }, [isHydrated, isOnline, updateRatesInBackground, hasInitialData]);
@@ -80,18 +130,23 @@ export default function Home() {
 
   return (
     <>
-      <OnlineStatusDebug />
       <ServiceWorkerRegistration />
       <AutomaticRateUpdates />
       <AutoBackgroundUpdates />
-      <div className="max-h-screen min-h-[90vh] bg-black flex flex-col">
+      <div
+        ref={containerRef}
+        className="max-h-screen min-h-[90vh] bg-black flex flex-col touch-pan-y"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         {/* Navigation Header */}
         <NavigationHeader />
 
         <PullToRefreshWrapper>
           <div className="p-2 h-full flex flex-col justify-between flex-1">
             {/* Offline Notice - Now with Offline-First approach */}
-            <OfflineFirstOfflineNotice />
+            <OfflineNotice />
 
             {/* Currency Selectors - Now Offline-First */}
             <div className="grid grid-cols-2 gap-2 mb-2">
@@ -99,21 +154,21 @@ export default function Home() {
                 <label className="text-zinc-400 text-xs mb-1 block">
                   {t.ui.from}
                 </label>
-                <OfflineFirstCurrencySelector type="base" />
+                <CurrencySelector type="base" />
               </div>
               <div>
                 <label className="text-zinc-400 text-xs mb-1 block">
                   {t.ui.to}
                 </label>
-                <OfflineFirstCurrencySelector type="target" />
+                <CurrencySelector type="target" />
               </div>
             </div>
 
             {/* Exchange Rate Display - Now Offline-First */}
-            <OfflineFirstExchangeRateDisplay />
+            <ExchangeRateDisplay />
 
             {/* Display Panel - Now Offline-First */}
-            <OfflineFirstDisplayPanel
+            <DisplayPanel
               display={display}
               previousValue={previousValue}
               operation={operation}
@@ -124,6 +179,15 @@ export default function Home() {
             <div className="flex-1 flex items-end">
               <KeypadGrid />
             </div>
+
+            {/* Touch Navigation Hint */}
+            {isHydrated && (
+              <div className="text-center py-2">
+                <p className="text-zinc-600 text-xs">
+                  {t.ui.swipeHint || "Swipe right to refresh rates"}
+                </p>
+              </div>
+            )}
           </div>
         </PullToRefreshWrapper>
       </div>

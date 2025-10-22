@@ -7,6 +7,7 @@ import {
   useEffect,
   ReactNode,
 } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { Locale, detectLocale, saveLocale, defaultLocale } from "./config";
 import { translations } from "./translations";
 
@@ -24,6 +25,8 @@ interface I18nProviderProps {
 
 export function I18nProvider({ children }: I18nProviderProps) {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const detectedLocale = detectLocale();
@@ -34,9 +37,24 @@ export function I18nProvider({ children }: I18nProviderProps) {
     setLocaleState(newLocale);
     saveLocale(newLocale);
 
-    // Update document language and meta tags
+    // Set cookie for middleware
     if (typeof document !== "undefined") {
-      document.documentElement.lang = newLocale === "de" ? "de-DE" : "en-US";
+      document.cookie = `language=${newLocale}; path=/; max-age=${365 * 24 * 60 * 60}; samesite=lax`;
+
+      // Update document language
+      const langCode =
+        newLocale === "zh-cn"
+          ? "zh-CN"
+          : newLocale === "pt"
+            ? "pt-BR"
+            : newLocale === "en"
+              ? "en-US"
+              : newLocale === "de"
+                ? "de-DE"
+                : `${newLocale}-${newLocale.toUpperCase()}`;
+
+      document.documentElement.lang = langCode;
+      document.documentElement.dir = newLocale === "ar" ? "rtl" : "ltr";
 
       // Update meta description
       const metaDescription = document.querySelector(
@@ -70,6 +88,15 @@ export function I18nProvider({ children }: I18nProviderProps) {
 
       // Update page title
       document.title = translations[newLocale].meta.title;
+
+      // Handle routing for German locale
+      if (newLocale === "de" && pathname === "/") {
+        // Don't redirect if already on main page, just update language state
+        // The middleware will handle future navigation
+      } else if (newLocale === "en" && pathname.startsWith("/de")) {
+        // Navigate back to English version
+        router.push("/");
+      }
     }
   };
 

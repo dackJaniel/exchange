@@ -1,0 +1,7664 @@
+[
+  {
+    "url": "/convert/1-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-dollar-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-dollar-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-dollar-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-dollar-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-dollar-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-dollar-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-dollar-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-dollar-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-dollar-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-dollar-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-dollar-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-dollar-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-dollar-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-dollar-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-dollar-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-dollar-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-euro-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-euro-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-euro-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-euro-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-euro-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-euro-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-euro-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-euro-to-pound",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-euro-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-euro-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-euro-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-euro-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-euro-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-euro-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-euro-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-euro-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-pound-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-pound-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-pound-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-pound-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-pound-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-pound-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-pound-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-pound-to-franc",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-dollar-to-yen",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-dollar-to-yen",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-dollar-to-yen",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-dollar-to-yen",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-dollar-to-yen",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-dollar-to-yen",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-dollar-to-yen",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-dollar-to-yen",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-dollar-to-yuan",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-dollar-to-yuan",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-dollar-to-yuan",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-dollar-to-yuan",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-dollar-to-yuan",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-dollar-to-yuan",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-dollar-to-yuan",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-dollar-to-yuan",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-dollar-to-rupee",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-dollar-to-rupee",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-dollar-to-rupee",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-dollar-to-rupee",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-dollar-to-rupee",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-dollar-to-rupee",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-dollar-to-rupee",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-dollar-to-rupee",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-euro-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-euro-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-euro-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-euro-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-euro-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-euro-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-euro-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-euro-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-pound-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-pound-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-pound-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/20-pound-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/50-pound-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/100-pound-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/200-pound-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/500-pound-to-dollar",
+    "locale": "convert",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-euro-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-euro-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-euro-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-euro-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-euro-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-euro-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-pound-to-euro",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-pound-to-euro",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-pound-to-euro",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-pound-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-pound-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-pound-to-canadian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-pound-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-pound-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-pound-to-australian-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-canadian-dollar-to-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-canadian-dollar-to-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-canadian-dollar-to-dollar",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-canadian-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-canadian-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-canadian-dollar-to-euro",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/1-canadian-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/5-canadian-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/convert/10-canadian-dollar-to-pound",
+    "locale": "convert",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-euro-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-euro-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-euro-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-euro-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-euro-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-euro-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-euro-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-euro-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-euro-in-franken",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-euro-in-franken",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-euro-in-franken",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-euro-in-franken",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-euro-in-franken",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-euro-in-franken",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-euro-in-franken",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-euro-in-franken",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-euro-in-pfund",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-euro-in-pfund",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-euro-in-pfund",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-euro-in-pfund",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-euro-in-pfund",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-euro-in-pfund",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-euro-in-pfund",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-euro-in-pfund",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-franken-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-franken-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-franken-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-franken-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-franken-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-franken-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-franken-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-franken-in-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-franken-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-franken-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-franken-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-franken-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-franken-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-franken-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-franken-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-franken-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-dollar-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-dollar-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-dollar-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-dollar-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-dollar-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-dollar-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-dollar-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-dollar-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-pfund-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-pfund-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-pfund-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-pfund-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-pfund-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-pfund-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-pfund-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-pfund-in-euro",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-euro-in-yen",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-euro-in-yen",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-euro-in-yen",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-euro-in-yen",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-euro-in-yen",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-euro-in-yen",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-euro-in-yen",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-euro-in-yen",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-euro-in-kanadischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-euro-in-kanadischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-euro-in-kanadischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-euro-in-kanadischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-euro-in-kanadischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-euro-in-kanadischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-euro-in-kanadischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-euro-in-kanadischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-euro-in-australischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-euro-in-australischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-euro-in-australischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-euro-in-australischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-euro-in-australischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-euro-in-australischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-euro-in-australischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-euro-in-australischer-dollar",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/20-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/50-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/100-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/200-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/500-euro-in-krone",
+    "locale": "de",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-franken-in-pfund",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-franken-in-pfund",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-franken-in-pfund",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-dollar-in-franken",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-dollar-in-franken",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-dollar-in-franken",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-dollar-in-pfund",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-dollar-in-pfund",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-dollar-in-pfund",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-pfund-in-franken",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-pfund-in-franken",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-pfund-in-franken",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/1-pfund-in-dollar",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/5-pfund-in-dollar",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/de/umrechnen/10-pfund-in-dollar",
+    "locale": "de",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-euro-a-dolar",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-euro-a-dolar",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-euro-a-dolar",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-euro-a-dolar",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-euro-a-dolar",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-euro-a-dolar",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-euro-a-dolar",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-euro-a-dolar",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-dolar-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-euro-a-peso",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-libra-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-libra-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-libra-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-libra-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-libra-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-libra-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-libra-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-libra-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-dolar-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-dolar-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-dolar-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/25-dolar-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/50-dolar-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/100-dolar-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/250-dolar-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/500-dolar-a-euro",
+    "locale": "es",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-euro",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-euro",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-peso-a-euro",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-dolar",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-dolar",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-peso-a-dolar",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-euro",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-euro",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-peso-a-euro",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-dolar",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-dolar",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-peso-a-dolar",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/10-peso-a-peso",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/1-peso-a-euro",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/es/convertir/5-peso-a-euro",
+    "locale": "es",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-euro-en-dollar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-euro-en-dollar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-euro-en-dollar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/20-euro-en-dollar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/50-euro-en-dollar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/100-euro-en-dollar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/200-euro-en-dollar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/500-euro-en-dollar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-euro-en-franc",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-euro-en-franc",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-euro-en-franc",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/20-euro-en-franc",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/50-euro-en-franc",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/100-euro-en-franc",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/200-euro-en-franc",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/500-euro-en-franc",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-euro-en-livre",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-euro-en-livre",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-euro-en-livre",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/20-euro-en-livre",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/50-euro-en-livre",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/100-euro-en-livre",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/200-euro-en-livre",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/500-euro-en-livre",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-euro-en-dollar-canadien",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-euro-en-dollar-canadien",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-euro-en-dollar-canadien",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/20-euro-en-dollar-canadien",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/50-euro-en-dollar-canadien",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/100-euro-en-dollar-canadien",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/200-euro-en-dollar-canadien",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/500-euro-en-dollar-canadien",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-dollar-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-dollar-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-dollar-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/20-dollar-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/50-dollar-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/100-dollar-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/200-dollar-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/500-dollar-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-franc-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-franc-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-franc-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/20-franc-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/50-franc-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/100-franc-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/200-franc-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/500-franc-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-livre-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-livre-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-livre-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/20-livre-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/50-livre-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/100-livre-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/200-livre-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/500-livre-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-dollar-canadien-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-dollar-canadien-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-dollar-canadien-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/20-dollar-canadien-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/50-dollar-canadien-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/100-dollar-canadien-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/200-dollar-canadien-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/500-dollar-canadien-en-euro",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-euro-en-dirham",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-euro-en-dirham",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-euro-en-dirham",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/20-euro-en-dirham",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/50-euro-en-dirham",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/100-euro-en-dirham",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/200-euro-en-dirham",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/500-euro-en-dirham",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-euro-en-dinar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-euro-en-dinar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-euro-en-dinar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/20-euro-en-dinar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/50-euro-en-dinar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/100-euro-en-dinar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/200-euro-en-dinar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/500-euro-en-dinar",
+    "locale": "fr",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-dollar-en-franc",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-dollar-en-franc",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-dollar-en-franc",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-dollar-en-livre",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-dollar-en-livre",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-dollar-en-livre",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-franc-en-dollar",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-franc-en-dollar",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-franc-en-dollar",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-franc-en-livre",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-franc-en-livre",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-franc-en-livre",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-livre-en-dollar",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-livre-en-dollar",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-livre-en-dollar",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/1-livre-en-franc",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/5-livre-en-franc",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/fr/convertir/10-livre-en-franc",
+    "locale": "fr",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-euro-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-euro-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-euro-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-euro-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-euro-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-euro-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-euro-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-euro-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-euro-in-sterlina",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-euro-in-sterlina",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-euro-in-sterlina",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-euro-in-sterlina",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-euro-in-sterlina",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-euro-in-sterlina",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-euro-in-sterlina",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-euro-in-sterlina",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-euro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-euro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-euro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-euro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-euro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-euro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-euro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-euro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-dollaro-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-dollaro-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-dollaro-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-dollaro-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-dollaro-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-dollaro-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-dollaro-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-dollaro-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-sterlina-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-sterlina-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-sterlina-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-sterlina-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-sterlina-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-sterlina-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-sterlina-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-sterlina-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-franco-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-franco-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-franco-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-franco-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-franco-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-franco-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-franco-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-franco-in-euro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-euro-in-yen",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-euro-in-yen",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-euro-in-yen",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-euro-in-yen",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-euro-in-yen",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-euro-in-yen",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-euro-in-yen",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-euro-in-yen",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-euro-in-lira",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-euro-in-lira",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-euro-in-lira",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-euro-in-lira",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-euro-in-lira",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-euro-in-lira",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-euro-in-lira",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-euro-in-lira",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-euro-in-dollaro-canadese",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-euro-in-dollaro-canadese",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-euro-in-dollaro-canadese",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-euro-in-dollaro-canadese",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-euro-in-dollaro-canadese",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-euro-in-dollaro-canadese",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-euro-in-dollaro-canadese",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-euro-in-dollaro-canadese",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-euro-in-dollaro-australiano",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-euro-in-dollaro-australiano",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-euro-in-dollaro-australiano",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-euro-in-dollaro-australiano",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-euro-in-dollaro-australiano",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-euro-in-dollaro-australiano",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-euro-in-dollaro-australiano",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-euro-in-dollaro-australiano",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-dollaro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-dollaro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-dollaro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-dollaro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-dollaro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-dollaro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-dollaro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-dollaro-in-franco",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-sterlina-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-sterlina-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-sterlina-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/20-sterlina-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/50-sterlina-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/100-sterlina-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/200-sterlina-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/500-sterlina-in-dollaro",
+    "locale": "it",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-dollaro-in-sterlina",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-dollaro-in-sterlina",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-dollaro-in-sterlina",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-sterlina-in-franco",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-sterlina-in-franco",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-sterlina-in-franco",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-franco-in-dollaro",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-franco-in-dollaro",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-franco-in-dollaro",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/1-franco-in-sterlina",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/5-franco-in-sterlina",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/it/convertire/10-franco-in-sterlina",
+    "locale": "it",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-euro-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-euro-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-euro-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/25-euro-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/50-euro-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/100-euro-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/250-euro-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/500-euro-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-dolar-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-dolar-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-dolar-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/25-dolar-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/50-dolar-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/100-dolar-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/250-dolar-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/500-dolar-para-real",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-real-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-real-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-real-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/25-real-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/50-real-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/100-real-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/250-real-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/500-real-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-real-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-real-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-real-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/25-real-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/50-real-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/100-real-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/250-real-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/500-real-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-euro-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-euro-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-euro-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/25-euro-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/50-euro-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/100-euro-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/250-euro-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/500-euro-para-dolar",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-euro-para-libra",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-euro-para-libra",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-euro-para-libra",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/25-euro-para-libra",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/50-euro-para-libra",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/100-euro-para-libra",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/250-euro-para-libra",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/500-euro-para-libra",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-dolar-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-dolar-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-dolar-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/25-dolar-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/50-dolar-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/100-dolar-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/250-dolar-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/500-dolar-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-libra-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-libra-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-libra-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/25-libra-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/50-libra-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/100-libra-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/250-libra-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/500-libra-para-euro",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-real-para-peso",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-real-para-peso",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-real-para-peso",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/25-real-para-peso",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/50-real-para-peso",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/100-real-para-peso",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/250-real-para-peso",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/500-real-para-peso",
+    "locale": "pt",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-real-para-libra",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-real-para-libra",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-real-para-libra",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-dolar-para-libra",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-dolar-para-libra",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-dolar-para-libra",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-libra-para-real",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-libra-para-real",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-libra-para-real",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/1-libra-para-dolar",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/5-libra-para-dolar",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/pt/converter/10-libra-para-dolar",
+    "locale": "pt",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-dollar-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-dollar-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-dollar-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/100-dollar-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/500-dollar-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1000-dollar-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/5000-dollar-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10000-dollar-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-evro-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-evro-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-evro-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/100-evro-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/500-evro-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1000-evro-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/5000-evro-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10000-evro-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-rubl-v-dollar",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-rubl-v-dollar",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-rubl-v-dollar",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/100-rubl-v-dollar",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/500-rubl-v-dollar",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1000-rubl-v-dollar",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/5000-rubl-v-dollar",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10000-rubl-v-dollar",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-rubl-v-evro",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-rubl-v-evro",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-rubl-v-evro",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/100-rubl-v-evro",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/500-rubl-v-evro",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1000-rubl-v-evro",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/5000-rubl-v-evro",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10000-rubl-v-evro",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-juan-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-juan-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-juan-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/100-juan-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/500-juan-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1000-juan-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/5000-juan-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10000-juan-v-rubl",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-rubl-v-juan",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-rubl-v-juan",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-rubl-v-juan",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/100-rubl-v-juan",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/500-rubl-v-juan",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1000-rubl-v-juan",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/5000-rubl-v-juan",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10000-rubl-v-juan",
+    "locale": "ru",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-dollar-v-evro",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-dollar-v-evro",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-dollar-v-evro",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-dollar-v-juan",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-dollar-v-juan",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-dollar-v-juan",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-evro-v-dollar",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-evro-v-dollar",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-evro-v-dollar",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-evro-v-juan",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-evro-v-juan",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-evro-v-juan",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-juan-v-dollar",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-juan-v-dollar",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-juan-v-dollar",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/1-juan-v-evro",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/10-juan-v-evro",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ru/konverter/50-juan-v-evro",
+    "locale": "ru",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-doru-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-doru-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-doru-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-doru-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-doru-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-doru-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-doru-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-doru-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-yuro-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-yuro-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-yuro-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-yuro-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-yuro-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-yuro-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-yuro-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-yuro-kara-en",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-en-kara-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-en-kara-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-en-kara-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-en-kara-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-en-kara-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-en-kara-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-en-kara-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-en-kara-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-en-kara-yuro",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-en-kara-yuro",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-en-kara-yuro",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-en-kara-yuro",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-en-kara-yuro",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-en-kara-yuro",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-en-kara-yuro",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-en-kara-yuro",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-en-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-en-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-en-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-en-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-en-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-en-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-en-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-en-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-en-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-en-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-en-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-en-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-en-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-en-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-en-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-en-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-doru-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-doru-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-doru-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-doru-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-doru-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-doru-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-doru-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-doru-kara-gan",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-doru-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-doru-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-doru-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-doru-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-doru-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-doru-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-doru-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-doru-kara-uon",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-en-kara-goshu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-en-kara-goshu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-en-kara-goshu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-en-kara-goshu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-en-kara-goshu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-en-kara-goshu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-en-kara-goshu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-en-kara-goshu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-en-kara-pondo",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-en-kara-pondo",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-en-kara-pondo",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-en-kara-pondo",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-en-kara-pondo",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-en-kara-pondo",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-en-kara-pondo",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-en-kara-pondo",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-en-kara-honkon-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-en-kara-honkon-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-en-kara-honkon-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-en-kara-honkon-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-en-kara-honkon-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-en-kara-honkon-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-en-kara-honkon-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-en-kara-honkon-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-en-kara-shingaporu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-en-kara-shingaporu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-en-kara-shingaporu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/5000-en-kara-shingaporu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/10000-en-kara-shingaporu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/50000-en-kara-shingaporu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100000-en-kara-shingaporu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500000-en-kara-shingaporu-doru",
+    "locale": "ja",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-doru-kara-yuro",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-doru-kara-yuro",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-doru-kara-yuro",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-yuro-kara-doru",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-yuro-kara-doru",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-yuro-kara-doru",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-yuro-kara-gan",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-yuro-kara-gan",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-yuro-kara-gan",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-yuro-kara-uon",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-yuro-kara-uon",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-yuro-kara-uon",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-gan-kara-en",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-gan-kara-en",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-gan-kara-en",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-gan-kara-doru",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-gan-kara-doru",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-gan-kara-doru",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-gan-kara-yuro",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-gan-kara-yuro",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-gan-kara-yuro",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/100-gan-kara-uon",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/500-gan-kara-uon",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ja/henkan/1000-gan-kara-uon",
+    "locale": "ja",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-meiyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-meiyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-meiyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-meiyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-meiyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-meiyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-meiyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-meiyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-ouyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-ouyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-ouyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-ouyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-ouyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-ouyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-ouyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-ouyuan-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-renminbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-renminbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-renminbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-renminbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-renminbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-renminbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-renminbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-renminbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-renminbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-renminbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-renminbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-renminbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-renminbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-renminbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-renminbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-renminbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-renminbi-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-renminbi-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-renminbi-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-renminbi-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-renminbi-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-renminbi-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-renminbi-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-renminbi-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-renminbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-renminbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-renminbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-renminbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-renminbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-renminbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-renminbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-renminbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-renminbi-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-renminbi-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-renminbi-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-renminbi-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-renminbi-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-renminbi-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-renminbi-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-renminbi-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-meiyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-meiyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-meiyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-meiyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-meiyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-meiyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-meiyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-meiyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-ouyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-ouyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-ouyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-ouyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-ouyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-ouyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-ouyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-ouyuan-dao-gangbi",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-renminbi-dao-xinjiapo-yuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-renminbi-dao-xinjiapo-yuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-renminbi-dao-xinjiapo-yuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-renminbi-dao-xinjiapo-yuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-renminbi-dao-xinjiapo-yuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-renminbi-dao-xinjiapo-yuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-renminbi-dao-xinjiapo-yuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-renminbi-dao-xinjiapo-yuan",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-renminbi-dao-zhu",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-renminbi-dao-zhu",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-renminbi-dao-zhu",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-renminbi-dao-zhu",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-renminbi-dao-zhu",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-renminbi-dao-zhu",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-renminbi-dao-zhu",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-renminbi-dao-zhu",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-meiyuan-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-meiyuan-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-meiyuan-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/100-meiyuan-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/500-meiyuan-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1000-meiyuan-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/5000-meiyuan-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10000-meiyuan-dao-won",
+    "locale": "zh-cn",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-meiyuan-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-meiyuan-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-meiyuan-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-meiyuan-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-meiyuan-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-meiyuan-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-ouyuan-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-ouyuan-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-ouyuan-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-ouyuan-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-ouyuan-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-ouyuan-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-gangbi-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-gangbi-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-gangbi-dao-renminbi",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-gangbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-gangbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-gangbi-dao-meiyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-gangbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-gangbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-gangbi-dao-ouyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/1-gangbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/10-gangbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/zh-cn/zhuanhuan/50-gangbi-dao-riyuan",
+    "locale": "zh-cn",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-yuro-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-yuro-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-yuro-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-yuro-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-yuro-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-yuro-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-yuro-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-yuro-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-dolar-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-dolar-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-dolar-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-dolar-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-dolar-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-dolar-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-dolar-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-dolar-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-yuro-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-yuro-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-yuro-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-yuro-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-yuro-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-yuro-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-yuro-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-yuro-ila-dirham",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-riyal-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-riyal-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-riyal-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-riyal-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-riyal-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-riyal-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-riyal-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-riyal-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-dirham-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-dirham-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-dirham-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-dirham-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-dirham-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-dirham-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-dirham-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-dirham-ila-dolar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-dolar-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-dolar-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-dolar-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-dolar-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-dolar-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-dolar-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-dolar-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-dolar-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-yuro-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-yuro-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-yuro-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-yuro-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-yuro-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-yuro-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-yuro-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-yuro-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-riyal-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-riyal-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-riyal-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-riyal-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-riyal-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-riyal-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-riyal-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-riyal-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-dirham-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-dirham-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-dirham-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-dirham-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-dirham-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-dirham-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-dirham-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-dirham-ila-junayh",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-dolar-ila-dinar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-dolar-ila-dinar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-dolar-ila-dinar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-dolar-ila-dinar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-dolar-ila-dinar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-dolar-ila-dinar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-dolar-ila-dinar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-dolar-ila-dinar",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/25-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/50-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/100-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/500-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1000-dolar-ila-riyal",
+    "locale": "ar",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-riyal-ila-dirham",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-riyal-ila-dirham",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-riyal-ila-dirham",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-riyal-ila-yuro",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-riyal-ila-yuro",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-riyal-ila-yuro",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-dirham-ila-riyal",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-dirham-ila-riyal",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-dirham-ila-riyal",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-dirham-ila-yuro",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-dirham-ila-yuro",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-dirham-ila-yuro",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-dolar-ila-yuro",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-dolar-ila-yuro",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-dolar-ila-yuro",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-yuro-ila-dolar",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-yuro-ila-dolar",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-yuro-ila-dolar",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-junayh-ila-riyal",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-junayh-ila-riyal",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-junayh-ila-riyal",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/1-junayh-ila-dirham",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/5-junayh-ila-dirham",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/ar/tahweel/10-junayh-ila-dirham",
+    "locale": "ar",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-yuro-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-yuro-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-yuro-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-yuro-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-yuro-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-yuro-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-yuro-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-yuro-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-paund-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-paund-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-paund-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-paund-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-paund-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-paund-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-paund-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-paund-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-rupaya-mein-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-rupaya-mein-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-rupaya-mein-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-rupaya-mein-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-rupaya-mein-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-rupaya-mein-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-rupaya-mein-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-rupaya-mein-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-rupaya-mein-yuro",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-rupaya-mein-yuro",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-rupaya-mein-yuro",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-rupaya-mein-yuro",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-rupaya-mein-yuro",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-rupaya-mein-yuro",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-rupaya-mein-yuro",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-rupaya-mein-yuro",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-rupaya-mein-paund",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-rupaya-mein-paund",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-rupaya-mein-paund",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-rupaya-mein-paund",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-rupaya-mein-paund",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-rupaya-mein-paund",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-rupaya-mein-paund",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-rupaya-mein-paund",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-dirham-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-dirham-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-dirham-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-dirham-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-dirham-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-dirham-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-dirham-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-dirham-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-riyal-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-riyal-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-riyal-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-riyal-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-riyal-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-riyal-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-riyal-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-riyal-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-rupaya-mein-dirham",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-rupaya-mein-dirham",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-rupaya-mein-dirham",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-rupaya-mein-dirham",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-rupaya-mein-dirham",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-rupaya-mein-dirham",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-rupaya-mein-dirham",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-rupaya-mein-dirham",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-rupaya-mein-riyal",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-rupaya-mein-riyal",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-rupaya-mein-riyal",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-rupaya-mein-riyal",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-rupaya-mein-riyal",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-rupaya-mein-riyal",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-rupaya-mein-riyal",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-rupaya-mein-riyal",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-dolar-mein-rupaya",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-rupaya-mein-singapore-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-rupaya-mein-singapore-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-rupaya-mein-singapore-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/100-rupaya-mein-singapore-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/500-rupaya-mein-singapore-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1000-rupaya-mein-singapore-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/5000-rupaya-mein-singapore-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10000-rupaya-mein-singapore-dolar",
+    "locale": "hi",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-dolar-mein-yuro",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-dolar-mein-yuro",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-dolar-mein-yuro",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-dolar-mein-paund",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-dolar-mein-paund",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-dolar-mein-paund",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-dolar-mein-dirham",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-dolar-mein-dirham",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-dolar-mein-dirham",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-yuro-mein-dolar",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-yuro-mein-dolar",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-yuro-mein-dolar",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-yuro-mein-paund",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-yuro-mein-paund",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-yuro-mein-paund",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-yuro-mein-dirham",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-yuro-mein-dirham",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-yuro-mein-dirham",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-paund-mein-dolar",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-paund-mein-dolar",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-paund-mein-dolar",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/1-paund-mein-yuro",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/10-paund-mein-yuro",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/hi/badalna/50-paund-mein-yuro",
+    "locale": "hi",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-euro-naar-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-euro-naar-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-euro-naar-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/20-euro-naar-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/50-euro-naar-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/100-euro-naar-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/200-euro-naar-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/500-euro-naar-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-euro-naar-pond",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-euro-naar-pond",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-euro-naar-pond",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/20-euro-naar-pond",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/50-euro-naar-pond",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/100-euro-naar-pond",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/200-euro-naar-pond",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/500-euro-naar-pond",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-euro-naar-frank",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-euro-naar-frank",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-euro-naar-frank",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/20-euro-naar-frank",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/50-euro-naar-frank",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/100-euro-naar-frank",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/200-euro-naar-frank",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/500-euro-naar-frank",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-dollar-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-dollar-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-dollar-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/20-dollar-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/50-dollar-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/100-dollar-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/200-dollar-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/500-dollar-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-pond-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-pond-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-pond-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/20-pond-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/50-pond-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/100-pond-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/200-pond-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/500-pond-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-frank-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-frank-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-frank-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/20-frank-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/50-frank-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/100-frank-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/200-frank-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/500-frank-naar-euro",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-euro-naar-canadese-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-euro-naar-canadese-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-euro-naar-canadese-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/20-euro-naar-canadese-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/50-euro-naar-canadese-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/100-euro-naar-canadese-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/200-euro-naar-canadese-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/500-euro-naar-canadese-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-euro-naar-australische-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-euro-naar-australische-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-euro-naar-australische-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/20-euro-naar-australische-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/50-euro-naar-australische-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/100-euro-naar-australische-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/200-euro-naar-australische-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/500-euro-naar-australische-dollar",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-euro-naar-yen",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-euro-naar-yen",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-euro-naar-yen",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/20-euro-naar-yen",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/50-euro-naar-yen",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/100-euro-naar-yen",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/200-euro-naar-yen",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/500-euro-naar-yen",
+    "locale": "nl",
+    "priority": 0.8,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-dollar-naar-pond",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-dollar-naar-pond",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-dollar-naar-pond",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-dollar-naar-frank",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-dollar-naar-frank",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-dollar-naar-frank",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-pond-naar-dollar",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-pond-naar-dollar",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-pond-naar-dollar",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-pond-naar-frank",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-pond-naar-frank",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-pond-naar-frank",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-frank-naar-dollar",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-frank-naar-dollar",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-frank-naar-dollar",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/1-frank-naar-pond",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/5-frank-naar-pond",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  },
+  {
+    "url": "/nl/omrekenen/10-frank-naar-pond",
+    "locale": "nl",
+    "priority": 0.7,
+    "changefreq": "daily"
+  }
+]

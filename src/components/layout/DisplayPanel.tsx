@@ -7,26 +7,29 @@ interface DisplayPanelProps {
   display: string;
   previousValue: number | null;
   operation: string | null;
+  conversionRate?: number | null;
 }
 
 export function DisplayPanel({
   display,
   previousValue,
   operation,
+  conversionRate,
 }: DisplayPanelProps) {
   const {
     baseCurrency,
     targetCurrency,
-    convertAmount,
     swapCurrencies,
-    isLoading,
+    getCurrentRate,
+    isUpdating,
   } = useCurrencyStore();
 
   const { locale } = useI18n();
   const t = useTranslation();
 
   const displayValue = parseFloat(display) || 0;
-  const convertedValue = convertAmount(displayValue);
+  const rate = getCurrentRate();
+  const convertedValue = rate ? displayValue * rate : null;
 
   const formatNumber = (num: number): string => {
     if (isNaN(num)) return "0";
@@ -82,13 +85,13 @@ export function DisplayPanel({
       {/* Secondary Currency Display - left aligned, same size */}
       <div className="text-left">
         <div className="display-primary text-2xl sm:text-3xl mb-1">
-          {isLoading ? (
+          {isUpdating ? (
             <div className="flex items-center gap-2">
               <Loader2 className="h-4 w-4 animate-spin" />
               <span className="text-sm">{t.ui.loading}</span>
             </div>
           ) : (
-            formatNumber(convertedValue)
+            formatNumber(convertedValue || 0)
           )}
         </div>
         <div className="text-zinc-500 text-xs uppercase tracking-wide">

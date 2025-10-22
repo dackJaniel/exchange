@@ -3,32 +3,42 @@
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useCurrencyStore } from "@/lib/store/currency";
 import { useTranslation, useI18n } from "@/lib/i18n/provider";
-import { WifiOff } from "lucide-react";
+import { WifiOff, Database } from "lucide-react";
 
 export function OfflineNotice() {
   const isOnline = useOnlineStatus();
-  const hasEverBeenOnline = useCurrencyStore(
-    (state) => state.hasEverBeenOnline,
-  );
-  const lastUpdated = useCurrencyStore((state) => state.lastUpdated);
+  const { hasInitialData, getDisplayRate, lastUpdated } = useCurrencyStore();
   const t = useTranslation();
   const { locale } = useI18n();
 
-  // Show different notices based on state
+  const { rate } = getDisplayRate();
+
+  // Only show notice when offline
   if (isOnline) {
-    return null; // No notice when online
+    return null;
   }
 
-  // If user has never been online or no cached data available
-  if (!hasEverBeenOnline || !lastUpdated) {
+  // If offline but we have data available
+  if (hasInitialData && rate) {
     return (
-      <div className="bg-red-500/20 border border-red-500 rounded-lg p-3 mx-2 mb-3">
-        <div className="flex items-center gap-2 text-red-500">
-          <WifiOff className="h-4 w-4" />
+      <div className="bg-blue-500/20 border border-blue-500 rounded-lg p-3 mx-2 mb-3">
+        <div className="flex items-center gap-2 text-blue-400">
+          <Database className="h-4 w-4" />
           <div className="flex-1">
-            <h3 className="font-medium text-sm">{t.ui.offlineTitle}</h3>
-            <p className="text-xs text-red-400 mt-1">
-              {t.ui.offlineDescription}
+            <h3 className="font-medium text-sm">{t.ui.offlineMode}</h3>
+            <p className="text-xs text-blue-300 mt-1">
+              {t.ui.offlineCachedData}{" "}
+              {lastUpdated
+                ? new Date(lastUpdated).toLocaleString(
+                    locale === "de" ? "de-DE" : "en-US",
+                    {
+                      day: "2-digit",
+                      month: "2-digit",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    },
+                  )
+                : t.ui.unknown}
             </p>
           </div>
         </div>
@@ -36,26 +46,16 @@ export function OfflineNotice() {
     );
   }
 
-  // User is offline but has cached data
+  // If offline and no data available
   return (
     <div className="bg-orange-500/20 border border-orange-500 rounded-lg p-3 mx-2 mb-3">
       <div className="flex items-center gap-2 text-orange-500">
         <WifiOff className="h-4 w-4" />
         <div className="flex-1">
-          <h3 className="font-medium text-sm">{t.ui.offlineMode}</h3>
+          <h3 className="font-medium text-sm">{t.ui.offlineTitle}</h3>
           <p className="text-xs text-orange-400 mt-1">
-            {t.ui.offlineCachedData}{" "}
-            {lastUpdated
-              ? new Date(lastUpdated).toLocaleString(
-                  locale === "de" ? "de-DE" : "en-US",
-                  {
-                    day: "2-digit",
-                    month: "2-digit",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  },
-                )
-              : t.ui.unknown}
+            {t.ui.offlineNoData ||
+              "No exchange rate data available offline. Connect to internet to load initial data."}
           </p>
         </div>
       </div>

@@ -1,80 +1,72 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslation } from "@/lib/i18n/provider";
+import { useI18n } from "@/lib/i18n/provider";
+import { generateCurrencyUrl } from "@/lib/utils";
+import { type Locale } from "@/lib/i18n/config";
 
 export default function SEONavigationFooter() {
+  const { locale } = useI18n();
+
   const currencyPairs = [
     {
       from: "EUR",
       to: "USD",
-      url: "currency-calculator-eur-usd",
       label: "Euro to US Dollar",
     },
     {
       from: "USD",
       to: "EUR",
-      url: "currency-calculator-usd-eur",
       label: "US Dollar to Euro",
     },
     {
       from: "EUR",
       to: "GBP",
-      url: "currency-calculator-eur-gbp",
       label: "Euro to British Pound",
     },
     {
       from: "GBP",
       to: "EUR",
-      url: "currency-calculator-gbp-eur",
       label: "British Pound to Euro",
     },
     {
       from: "USD",
       to: "GBP",
-      url: "currency-calculator-usd-gbp",
       label: "US Dollar to British Pound",
     },
     {
       from: "GBP",
       to: "USD",
-      url: "currency-calculator-gbp-usd",
       label: "British Pound to US Dollar",
     },
     {
       from: "EUR",
       to: "CHF",
-      url: "currency-calculator-eur-chf",
       label: "Euro to Swiss Franc",
     },
     {
       from: "CHF",
       to: "EUR",
-      url: "currency-calculator-chf-eur",
       label: "Swiss Franc to Euro",
     },
     {
       from: "USD",
       to: "JPY",
-      url: "currency-calculator-usd-jpy",
       label: "US Dollar to Japanese Yen",
     },
     {
       from: "JPY",
       to: "USD",
-      url: "currency-calculator-jpy-usd",
       label: "Japanese Yen to US Dollar",
     },
     {
       from: "EUR",
       to: "JPY",
-      url: "currency-calculator-eur-jpy",
       label: "Euro to Japanese Yen",
     },
     {
       from: "JPY",
       to: "EUR",
-      url: "currency-calculator-jpy-eur",
       label: "Japanese Yen to Euro",
     },
   ];
@@ -243,7 +235,11 @@ export default function SEONavigationFooter() {
               {currencyPairs.slice(0, 8).map((pair, index) => (
                 <li key={index}>
                   <Link
-                    href={`/${pair.url}`}
+                    href={generateCurrencyUrl(
+                      locale as Locale,
+                      pair.from,
+                      pair.to,
+                    )}
                     className="text-gray-300 hover:text-orange-400 transition-colors text-sm"
                   >
                     {pair.from}/{pair.to} Calculator
@@ -259,16 +255,36 @@ export default function SEONavigationFooter() {
               Popular Conversions
             </h3>
             <ul className="space-y-2">
-              {popularConversions.slice(0, 8).map((conversion, index) => (
-                <li key={index}>
-                  <Link
-                    href={`/convert/${conversion.amount}-${conversion.from}-to-${conversion.to}`}
-                    className="text-gray-300 hover:text-orange-400 transition-colors text-sm"
-                  >
-                    {conversion.label}
-                  </Link>
-                </li>
-              ))}
+              {popularConversions.slice(0, 8).map((conversion, index) => {
+                // Map currency names to codes
+                const currencyMap: Record<string, string> = {
+                  euro: "EUR",
+                  dollar: "USD",
+                  pound: "GBP",
+                  franken: "CHF",
+                };
+
+                const fromCode =
+                  currencyMap[conversion.from] || conversion.from.toUpperCase();
+                const toCode =
+                  currencyMap[conversion.to] || conversion.to.toUpperCase();
+
+                return (
+                  <li key={index}>
+                    <Link
+                      href={generateCurrencyUrl(
+                        locale as Locale,
+                        fromCode,
+                        toCode,
+                        parseInt(conversion.amount),
+                      )}
+                      className="text-gray-300 hover:text-orange-400 transition-colors text-sm"
+                    >
+                      {conversion.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

@@ -12,30 +12,69 @@ import {
 import { ShareButton } from "@/components/ui/ShareButton";
 import { LanguageSelector } from "@/components/ui/LanguageSelector";
 
-import { Download, Menu, Coffee } from "lucide-react";
+import { Download, Menu, Coffee, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import { useTranslation, useI18n } from "@/lib/i18n/provider";
 
 export function NavigationHeader() {
   const t = useTranslation();
   const { locale } = useI18n();
+  const router = useRouter();
+  const pathname = usePathname();
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [canGoBack, setCanGoBack] = useState(false);
+
+  // Check if we can go back in history
+  useEffect(() => {
+    setCanGoBack(pathname !== "/" && window.history.length > 1);
+  }, [pathname]);
+
+  const handleBackNavigation = () => {
+    if (canGoBack) {
+      router.back();
+    } else {
+      router.push("/");
+    }
+  };
+
+  const handleNavigation = (href: string) => {
+    setIsSheetOpen(false);
+    router.push(href);
+  };
+
   return (
     <header className="border-b border-zinc-800 bg-black/90 backdrop-blur-sm sticky top-0 z-50">
       <nav className="flex items-center justify-between px-4 py-3">
-        {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src="/icons/favicon-32x32.png"
-            alt="Currency Calculator Logo"
-            width={28}
-            height={28}
-            className="rounded-sm"
-          />
-          <span className="text-white font-medium text-lg hidden sm:inline">
-            Currency Calculator
-          </span>
-        </Link>
+        {/* Back Button & Logo */}
+        <div className="flex items-center space-x-3">
+          {pathname !== "/" && (
+            <Button
+              onClick={handleBackNavigation}
+              variant="ghost"
+              size="icon"
+              className="text-zinc-400 hover:text-white hover:bg-zinc-800"
+            >
+              <ArrowLeft className="h-5 w-5" />
+              <span className="sr-only">Go back</span>
+            </Button>
+          )}
+
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="/icons/favicon-32x32.png"
+              alt="Currency Calculator Logo"
+              width={28}
+              height={28}
+              className="rounded-sm"
+            />
+            <span className="text-white font-medium text-lg hidden sm:inline">
+              {t.ui.appName || "Currency Calculator"}
+            </span>
+          </Link>
+        </div>
 
         {/* Right side - Download & Hamburger Menu */}
         <div className="flex items-center space-x-2">
@@ -52,7 +91,7 @@ export function NavigationHeader() {
           </Button>
 
           {/* Hamburger Menu */}
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
@@ -94,23 +133,42 @@ export function NavigationHeader() {
                   </Button>
                 </div>
 
-                <Link
-                  href={locale === "de" ? "/datenschutz" : "/privacy"}
-                  className="text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800"
+                <button
+                  onClick={() =>
+                    handleNavigation(
+                      locale === "de" ? "/datenschutz" : "/privacy",
+                    )
+                  }
+                  className="text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800 w-full text-left"
                 >
-                  {locale === "de" ? t.ui.dataProtection : t.ui.privacy}
-                </Link>
-                <Link
-                  href={locale === "de" ? "/impressum" : "/site-notice"}
-                  className="text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800"
+                  {t.ui.dataProtection || t.ui.privacy}
+                </button>
+                <button
+                  onClick={() =>
+                    handleNavigation(
+                      locale === "de" ? "/impressum" : "/site-notice",
+                    )
+                  }
+                  className="text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800 w-full text-left"
                 >
-                  {locale === "de" ? t.ui.imprint : t.ui.siteNotice}
-                </Link>
+                  {t.ui.imprint || t.ui.siteNotice}
+                </button>
 
-                {/* Notification Settings */}
-                {/* <div className='py-2 border-t border-zinc-700'>
-                  <NotificationSettings />
-                </div> */}
+                {/* Additional Navigation Links */}
+                <div className="py-2 border-t border-zinc-700">
+                  <button
+                    onClick={() => handleNavigation("/")}
+                    className="text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800 block w-full text-left"
+                  >
+                    {t.ui.calculator || "Calculator"}
+                  </button>
+                  <button
+                    onClick={() => handleNavigation("/guides")}
+                    className="text-white hover:text-orange-500 transition-colors py-2 px-3 rounded-md hover:bg-zinc-800 block w-full text-left"
+                  >
+                    {t.ui.guides || "Guides"}
+                  </button>
+                </div>
 
                 {/* Share Button */}
                 <div className="py-2 border-t border-zinc-700">

@@ -1,160 +1,236 @@
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
-import { CurrencyState, Currency } from "@/types/calculator";
+import { persist } from "zustand/middleware";
 import { currencyLogger } from "@/lib/debug";
-import { useConversionHistoryStore } from "./conversion-history";
 
-// Popular currencies with their symbols and flags
+interface Currency {
+  code: string;
+  name: string;
+  symbol: string;
+  flag: string;
+}
+
+// All available currencies
 const CURRENCIES: Currency[] = [
-  { code: "EUR", symbol: "€", name: "Euro", flag: "🇪🇺" },
-  { code: "USD", symbol: "$", name: "US Dollar", flag: "🇺🇸" },
-  { code: "GBP", symbol: "£", name: "British Pound", flag: "🇬🇧" },
-  { code: "CZK", symbol: "Kč", name: "Czech Koruna", flag: "🇨🇿" },
-  { code: "PLN", symbol: "zł", name: "Polish Zloty", flag: "🇵🇱" },
-  { code: "CHF", symbol: "Fr", name: "Swiss Franc", flag: "🇨🇭" },
-  { code: "CAD", symbol: "C$", name: "Canadian Dollar", flag: "🇨🇦" },
-  { code: "AUD", symbol: "A$", name: "Australian Dollar", flag: "🇦🇺" },
-  { code: "JPY", symbol: "¥", name: "Japanese Yen", flag: "🇯🇵" },
-  { code: "CNY", symbol: "¥", name: "Chinese Yuan", flag: "🇨🇳" },
-  { code: "MXN", symbol: "$", name: "Mexican Peso", flag: "🇲🇽" },
+  // Major World Currencies
+  { code: "EUR", name: "Euro", symbol: "€", flag: "🇪🇺" },
+  { code: "USD", name: "US Dollar", symbol: "$", flag: "🇺🇸" },
+  { code: "GBP", name: "British Pound", symbol: "£", flag: "🇬🇧" },
+  { code: "CHF", name: "Swiss Franc", symbol: "Fr", flag: "🇨🇭" },
+  { code: "JPY", name: "Japanese Yen", symbol: "¥", flag: "🇯🇵" },
+  { code: "CNY", name: "Chinese Yuan", symbol: "¥", flag: "🇨🇳" },
 
-  // Major Asian currencies
-  { code: "INR", symbol: "₹", name: "Indian Rupee", flag: "🇮🇳" },
-  { code: "KRW", symbol: "₩", name: "South Korean Won", flag: "🇰🇷" },
-  { code: "SGD", symbol: "S$", name: "Singapore Dollar", flag: "🇸🇬" },
-  { code: "HKD", symbol: "HK$", name: "Hong Kong Dollar", flag: "🇭🇰" },
-  { code: "THB", symbol: "฿", name: "Thai Baht", flag: "🇹🇭" },
-  { code: "MYR", symbol: "RM", name: "Malaysian Ringgit", flag: "🇲🇾" },
-  { code: "IDR", symbol: "Rp", name: "Indonesian Rupiah", flag: "🇮🇩" },
-  { code: "PHP", symbol: "₱", name: "Philippine Peso", flag: "🇵🇭" },
-  { code: "VND", symbol: "₫", name: "Vietnamese Dong", flag: "🇻🇳" },
+  // Asia-Pacific
+  { code: "AUD", name: "Australian Dollar", symbol: "A$", flag: "🇦🇺" },
+  { code: "CAD", name: "Canadian Dollar", symbol: "C$", flag: "🇨🇦" },
+  { code: "INR", name: "Indian Rupee", symbol: "₹", flag: "🇮🇳" },
+  { code: "KRW", name: "South Korean Won", symbol: "₩", flag: "🇰🇷" },
+  { code: "SGD", name: "Singapore Dollar", symbol: "S$", flag: "🇸🇬" },
+  { code: "MYR", name: "Malaysian Ringgit", symbol: "RM", flag: "🇲🇾" },
+  { code: "THB", name: "Thai Baht", symbol: "฿", flag: "🇹🇭" },
+  { code: "IDR", name: "Indonesian Rupiah", symbol: "Rp", flag: "🇮🇩" },
+  { code: "PHP", name: "Philippine Peso", symbol: "₱", flag: "🇵🇭" },
+  { code: "VND", name: "Vietnamese Dong", symbol: "₫", flag: "🇻🇳" },
+  { code: "HKD", name: "Hong Kong Dollar", symbol: "HK$", flag: "🇭🇰" },
+  { code: "TWD", name: "Taiwan Dollar", symbol: "NT$", flag: "🇹🇼" },
+  { code: "NZD", name: "New Zealand Dollar", symbol: "NZ$", flag: "🇳🇿" },
+  { code: "BDT", name: "Bangladeshi Taka", symbol: "৳", flag: "🇧🇩" },
+  { code: "PKR", name: "Pakistani Rupee", symbol: "₨", flag: "🇵🇰" },
+  { code: "LKR", name: "Sri Lankan Rupee", symbol: "₨", flag: "🇱🇰" },
+  { code: "NPR", name: "Nepalese Rupee", symbol: "₨", flag: "🇳🇵" },
+  { code: "BTN", name: "Bhutanese Ngultrum", symbol: "Nu.", flag: "🇧🇹" },
+  { code: "MVR", name: "Maldivian Rufiyaa", symbol: "Rf", flag: "🇲🇻" },
+  { code: "MMK", name: "Myanmar Kyat", symbol: "Ks", flag: "🇲🇲" },
+  { code: "LAK", name: "Lao Kip", symbol: "₭", flag: "🇱🇦" },
+  { code: "KHR", name: "Cambodian Riel", symbol: "៛", flag: "🇰🇭" },
+  { code: "BND", name: "Brunei Dollar", symbol: "B$", flag: "🇧🇳" },
+  { code: "MOP", name: "Macanese Pataca", symbol: "P", flag: "🇲🇴" },
+  { code: "FJD", name: "Fijian Dollar", symbol: "FJ$", flag: "🇫🇯" },
+  { code: "PGK", name: "Papua New Guinea Kina", symbol: "K", flag: "🇵🇬" },
+  { code: "WST", name: "Samoan Tala", symbol: "T", flag: "🇼🇸" },
+  { code: "TOP", name: "Tongan Paʻanga", symbol: "T$", flag: "🇹🇴" },
+  { code: "VUV", name: "Vanuatu Vatu", symbol: "Vt", flag: "🇻🇺" },
+  { code: "SBD", name: "Solomon Islands Dollar", symbol: "SI$", flag: "🇸🇧" },
 
-  // Middle East & Africa
-  { code: "AED", symbol: "د.إ", name: "UAE Dirham", flag: "🇦🇪" },
-  { code: "SAR", symbol: "﷼", name: "Saudi Riyal", flag: "🇸🇦" },
-  { code: "ZAR", symbol: "R", name: "South African Rand", flag: "🇿🇦" },
-  { code: "ILS", symbol: "₪", name: "Israeli Shekel", flag: "🇮🇱" },
-  { code: "TRY", symbol: "₺", name: "Turkish Lira", flag: "🇹🇷" },
-  { code: "EGP", symbol: "E£", name: "Egyptian Pound", flag: "🇪🇬" },
+  // Europe
+  { code: "SEK", name: "Swedish Krona", symbol: "kr", flag: "🇸🇪" },
+  { code: "NOK", name: "Norwegian Krone", symbol: "kr", flag: "🇳🇴" },
+  { code: "DKK", name: "Danish Krone", symbol: "kr", flag: "🇩🇰" },
+  { code: "ISK", name: "Icelandic Króna", symbol: "kr", flag: "🇮🇸" },
+  { code: "PLN", name: "Polish Zloty", symbol: "zł", flag: "🇵🇱" },
+  { code: "CZK", name: "Czech Koruna", symbol: "Kč", flag: "🇨🇿" },
+  { code: "HUF", name: "Hungarian Forint", symbol: "Ft", flag: "🇭🇺" },
+  { code: "RON", name: "Romanian Leu", symbol: "lei", flag: "🇷🇴" },
+  { code: "BGN", name: "Bulgarian Lev", symbol: "лв", flag: "🇧🇬" },
+  { code: "HRK", name: "Croatian Kuna", symbol: "kn", flag: "🇭🇷" },
+  { code: "RSD", name: "Serbian Dinar", symbol: "din", flag: "🇷🇸" },
+  { code: "BAM", name: "Bosnia-Herzegovina Mark", symbol: "KM", flag: "🇧🇦" },
+  { code: "MKD", name: "Macedonian Denar", symbol: "ден", flag: "🇲🇰" },
+  { code: "ALL", name: "Albanian Lek", symbol: "L", flag: "🇦🇱" },
+  { code: "EUR", name: "Euro (Montenegro)", symbol: "€", flag: "🇲🇪" },
+  { code: "RUB", name: "Russian Ruble", symbol: "₽", flag: "🇷🇺" },
+  { code: "UAH", name: "Ukrainian Hryvnia", symbol: "₴", flag: "🇺🇦" },
+  { code: "BYN", name: "Belarusian Ruble", symbol: "Br", flag: "🇧🇾" },
+  { code: "MDL", name: "Moldovan Leu", symbol: "L", flag: "🇲🇩" },
+  { code: "GEL", name: "Georgian Lari", symbol: "₾", flag: "🇬🇪" },
+  { code: "AMD", name: "Armenian Dram", symbol: "֏", flag: "🇦🇲" },
+  { code: "AZN", name: "Azerbaijani Manat", symbol: "₼", flag: "🇦🇿" },
+  { code: "KZT", name: "Kazakhstani Tenge", symbol: "₸", flag: "🇰🇿" },
+  { code: "KGS", name: "Kyrgyzstani Som", symbol: "с", flag: "🇰🇬" },
+  { code: "TJS", name: "Tajikistani Somoni", symbol: "ЅМ", flag: "🇹🇯" },
+  { code: "TMT", name: "Turkmenistani Manat", symbol: "m", flag: "🇹🇲" },
+  { code: "UZS", name: "Uzbekistani Som", symbol: "so'm", flag: "🇺🇿" },
 
-  // South America
-  { code: "BRL", symbol: "R$", name: "Brazilian Real", flag: "🇧🇷" },
-  { code: "ARS", symbol: "$", name: "Argentine Peso", flag: "🇦🇷" },
-  { code: "COP", symbol: "$", name: "Colombian Peso", flag: "🇨🇴" },
-  { code: "CLP", symbol: "$", name: "Chilean Peso", flag: "🇨🇱" },
-  { code: "PEN", symbol: "S/", name: "Peruvian Sol", flag: "🇵🇪" },
-  { code: "UYU", symbol: "$U", name: "Uruguayan Peso", flag: "🇺🇾" },
-  { code: "BOB", symbol: "Bs", name: "Bolivian Boliviano", flag: "🇧🇴" },
-  { code: "PYG", symbol: "₲", name: "Paraguayan Guarani", flag: "🇵🇾" },
-  { code: "VES", symbol: "Bs.S", name: "Venezuelan Bolívar", flag: "🇻🇪" },
+  // Americas
+  { code: "TRY", name: "Turkish Lira", symbol: "₺", flag: "🇹🇷" },
+  { code: "BRL", name: "Brazilian Real", symbol: "R$", flag: "🇧🇷" },
+  { code: "MXN", name: "Mexican Peso", symbol: "$", flag: "🇲🇽" },
+  { code: "ARS", name: "Argentine Peso", symbol: "$", flag: "🇦🇷" },
+  { code: "CLP", name: "Chilean Peso", symbol: "$", flag: "🇨🇱" },
+  { code: "COP", name: "Colombian Peso", symbol: "$", flag: "🇨🇴" },
+  { code: "PEN", name: "Peruvian Sol", symbol: "S/", flag: "🇵🇪" },
+  { code: "UYU", name: "Uruguayan Peso", symbol: "$U", flag: "🇺🇾" },
+  { code: "PYG", name: "Paraguayan Guarani", symbol: "₲", flag: "🇵🇾" },
+  { code: "BOB", name: "Bolivian Boliviano", symbol: "Bs", flag: "🇧🇴" },
+  { code: "VES", name: "Venezuelan Bolívar", symbol: "Bs.S", flag: "🇻🇪" },
+  { code: "GYD", name: "Guyanese Dollar", symbol: "GY$", flag: "🇬🇾" },
+  { code: "SRD", name: "Surinamese Dollar", symbol: "Sr$", flag: "🇸🇷" },
+  { code: "GTQ", name: "Guatemalan Quetzal", symbol: "Q", flag: "🇬🇹" },
+  { code: "BZD", name: "Belize Dollar", symbol: "BZ$", flag: "🇧🇿" },
+  { code: "CRC", name: "Costa Rican Colón", symbol: "₡", flag: "🇨🇷" },
+  { code: "HNL", name: "Honduran Lempira", symbol: "L", flag: "🇭🇳" },
+  { code: "NIO", name: "Nicaraguan Córdoba", symbol: "C$", flag: "🇳🇮" },
+  { code: "PAB", name: "Panamanian Balboa", symbol: "B/.", flag: "🇵🇦" },
+  { code: "SVC", name: "Salvadoran Colón", symbol: "₡", flag: "🇸🇻" },
+  { code: "JMD", name: "Jamaican Dollar", symbol: "J$", flag: "🇯🇲" },
+  { code: "HTG", name: "Haitian Gourde", symbol: "G", flag: "🇭🇹" },
+  { code: "DOP", name: "Dominican Peso", symbol: "$", flag: "🇩🇴" },
+  { code: "CUP", name: "Cuban Peso", symbol: "$", flag: "🇨🇺" },
+  { code: "BBD", name: "Barbadian Dollar", symbol: "Bds$", flag: "🇧🇧" },
+  { code: "TTD", name: "Trinidad & Tobago Dollar", symbol: "TT$", flag: "🇹🇹" },
+  { code: "XCD", name: "East Caribbean Dollar", symbol: "EC$", flag: "🇦🇬" },
+  { code: "BSD", name: "Bahamian Dollar", symbol: "B$", flag: "🇧🇸" },
+  { code: "KYD", name: "Cayman Islands Dollar", symbol: "CI$", flag: "🇰🇾" },
+  { code: "BMD", name: "Bermudian Dollar", symbol: "BD$", flag: "🇧🇲" },
+  { code: "AWG", name: "Aruban Florin", symbol: "ƒ", flag: "🇦🇼" },
+  {
+    code: "ANG",
+    name: "Netherlands Antillean Guilder",
+    symbol: "ƒ",
+    flag: "🇨🇼",
+  },
 
-  // Central America & Caribbean
-  { code: "GTQ", symbol: "Q", name: "Guatemalan Quetzal", flag: "🇬🇹" },
-  { code: "BZD", symbol: "BZ$", name: "Belize Dollar", flag: "🇧🇿" },
-  { code: "CRC", symbol: "₡", name: "Costa Rican Colón", flag: "🇨🇷" },
-  { code: "HNL", symbol: "L", name: "Honduran Lempira", flag: "🇭🇳" },
-  { code: "NIO", symbol: "C$", name: "Nicaraguan Córdoba", flag: "🇳🇮" },
-  { code: "PAB", symbol: "B/.", name: "Panamanian Balboa", flag: "🇵🇦" },
-  { code: "SVC", symbol: "₡", name: "Salvadoran Colón", flag: "🇸🇻" },
-  { code: "JMD", symbol: "J$", name: "Jamaican Dollar", flag: "🇯🇲" },
-  { code: "TTD", symbol: "TT$", name: "Trinidad & Tobago Dollar", flag: "🇹🇹" },
-  { code: "DOP", symbol: "RD$", name: "Dominican Peso", flag: "🇩🇴" },
+  // Africa
+  { code: "ZAR", name: "South African Rand", symbol: "R", flag: "🇿🇦" },
+  { code: "EGP", name: "Egyptian Pound", symbol: "£", flag: "🇪🇬" },
+  { code: "MAD", name: "Moroccan Dirham", symbol: "MAD", flag: "🇲🇦" },
+  { code: "NGN", name: "Nigerian Naira", symbol: "₦", flag: "🇳🇬" },
+  { code: "KES", name: "Kenyan Shilling", symbol: "KSh", flag: "🇰🇪" },
+  { code: "GHS", name: "Ghanaian Cedi", symbol: "₵", flag: "🇬🇭" },
+  { code: "TND", name: "Tunisian Dinar", symbol: "د.ت", flag: "🇹🇳" },
+  { code: "DZD", name: "Algerian Dinar", symbol: "د.ج", flag: "🇩🇿" },
+  { code: "LYD", name: "Libyan Dinar", symbol: "ل.د", flag: "🇱🇾" },
+  { code: "SDG", name: "Sudanese Pound", symbol: "ج.س", flag: "🇸🇩" },
+  { code: "ETB", name: "Ethiopian Birr", symbol: "Br", flag: "🇪🇹" },
+  { code: "UGX", name: "Ugandan Shilling", symbol: "USh", flag: "🇺🇬" },
+  { code: "TZS", name: "Tanzanian Shilling", symbol: "TSh", flag: "🇹🇿" },
+  { code: "RWF", name: "Rwandan Franc", symbol: "FRw", flag: "🇷🇼" },
+  { code: "BIF", name: "Burundian Franc", symbol: "FBu", flag: "🇧🇮" },
+  { code: "DJF", name: "Djiboutian Franc", symbol: "Fdj", flag: "🇩🇯" },
+  { code: "SOS", name: "Somali Shilling", symbol: "Sh.So", flag: "🇸🇴" },
+  { code: "ERN", name: "Eritrean Nakfa", symbol: "Nfk", flag: "🇪🇷" },
+  {
+    code: "XAF",
+    name: "Central African CFA Franc",
+    symbol: "FCFA",
+    flag: "🇨🇲",
+  },
+  { code: "XOF", name: "West African CFA Franc", symbol: "CFA", flag: "🇸🇳" },
+  { code: "KMF", name: "Comorian Franc", symbol: "CF", flag: "🇰🇲" },
+  { code: "MGA", name: "Malagasy Ariary", symbol: "Ar", flag: "🇲🇬" },
+  { code: "MUR", name: "Mauritian Rupee", symbol: "₨", flag: "🇲🇺" },
+  { code: "SCR", name: "Seychellois Rupee", symbol: "₨", flag: "🇸🇨" },
+  { code: "MVR", name: "Maldivian Rufiyaa", symbol: "Rf", flag: "🇲🇻" },
+  { code: "AOA", name: "Angolan Kwanza", symbol: "Kz", flag: "🇦🇴" },
+  { code: "BWP", name: "Botswanan Pula", symbol: "P", flag: "🇧🇼" },
+  { code: "LSL", name: "Lesotho Loti", symbol: "M", flag: "🇱🇸" },
+  { code: "NAD", name: "Namibian Dollar", symbol: "N$", flag: "🇳🇦" },
+  { code: "SZL", name: "Swazi Lilangeni", symbol: "E", flag: "🇸🇿" },
+  { code: "ZMW", name: "Zambian Kwacha", symbol: "ZK", flag: "🇿🇲" },
+  { code: "ZWL", name: "Zimbabwean Dollar", symbol: "Z$", flag: "🇿🇼" },
+  { code: "MWK", name: "Malawian Kwacha", symbol: "MK", flag: "🇲🇼" },
+  { code: "MZN", name: "Mozambican Metical", symbol: "MT", flag: "🇲🇿" },
+  { code: "CDF", name: "Congolese Franc", symbol: "FC", flag: "🇨🇩" },
+  { code: "GMD", name: "Gambian Dalasi", symbol: "D", flag: "🇬🇲" },
+  { code: "GNF", name: "Guinean Franc", symbol: "FG", flag: "🇬🇳" },
+  { code: "LRD", name: "Liberian Dollar", symbol: "L$", flag: "🇱🇷" },
+  { code: "SLE", name: "Sierra Leonean Leone", symbol: "Le", flag: "🇸🇱" },
+  { code: "CVE", name: "Cape Verdean Escudo", symbol: "$", flag: "🇨🇻" },
+  { code: "STP", name: "São Tomé & Príncipe Dobra", symbol: "Db", flag: "🇸🇹" },
 
-  // Nordic countries
-  { code: "SEK", symbol: "kr", name: "Swedish Krona", flag: "🇸🇪" },
-  { code: "NOK", symbol: "kr", name: "Norwegian Krone", flag: "🇳🇴" },
-  { code: "DKK", symbol: "kr", name: "Danish Krone", flag: "🇩🇰" },
-  { code: "ISK", symbol: "kr", name: "Icelandic Krona", flag: "🇮🇸" },
-
-  // Other European currencies
-  { code: "HUF", symbol: "Ft", name: "Hungarian Forint", flag: "🇭🇺" },
-  { code: "RON", symbol: "lei", name: "Romanian Leu", flag: "🇷🇴" },
-  { code: "BGN", symbol: "лв", name: "Bulgarian Lev", flag: "🇧🇬" },
-  { code: "HRK", symbol: "kn", name: "Croatian Kuna", flag: "🇭🇷" },
-  { code: "RSD", symbol: "дин", name: "Serbian Dinar", flag: "🇷🇸" },
-  { code: "UAH", symbol: "₴", name: "Ukrainian Hryvnia", flag: "🇺🇦" },
-  { code: "RUB", symbol: "₽", name: "Russian Ruble", flag: "🇷🇺" },
-
-  // Other major currencies
-  { code: "NZD", symbol: "NZ$", name: "New Zealand Dollar", flag: "🇳🇿" },
-  { code: "TWD", symbol: "NT$", name: "Taiwan Dollar", flag: "🇹🇼" },
-
-  // Africa (additional)
-  { code: "NGN", symbol: "₦", name: "Nigerian Naira", flag: "🇳🇬" },
-  { code: "KES", symbol: "KSh", name: "Kenyan Shilling", flag: "🇰🇪" },
-  { code: "GHS", symbol: "₵", name: "Ghanaian Cedi", flag: "🇬🇭" },
-  { code: "MAD", symbol: "د.م.", name: "Moroccan Dirham", flag: "🇲🇦" },
-  { code: "TND", symbol: "د.ت", name: "Tunisian Dinar", flag: "🇹🇳" },
-  { code: "ETB", symbol: "Br", name: "Ethiopian Birr", flag: "🇪🇹" },
-  { code: "UGX", symbol: "USh", name: "Ugandan Shilling", flag: "🇺🇬" },
-
-  // Pacific & Oceania
-  { code: "FJD", symbol: "FJ$", name: "Fijian Dollar", flag: "🇫🇯" },
-  { code: "PGK", symbol: "K", name: "Papua New Guinea Kina", flag: "🇵🇬" },
-  { code: "WST", symbol: "WS$", name: "Samoan Tala", flag: "🇼🇸" },
-  { code: "TOP", symbol: "T$", name: "Tongan Paʻanga", flag: "🇹🇴" },
-
-  // Additional Asian currencies
-  { code: "BDT", symbol: "৳", name: "Bangladeshi Taka", flag: "🇧🇩" },
-  { code: "PKR", symbol: "₨", name: "Pakistani Rupee", flag: "🇵🇰" },
-  { code: "LKR", symbol: "₨", name: "Sri Lankan Rupee", flag: "🇱🇰" },
-  { code: "NPR", symbol: "₨", name: "Nepalese Rupee", flag: "🇳🇵" },
-  { code: "MMK", symbol: "K", name: "Myanmar Kyat", flag: "🇲🇲" },
-  { code: "KHR", symbol: "៛", name: "Cambodian Riel", flag: "🇰🇭" },
-  { code: "LAK", symbol: "₭", name: "Lao Kip", flag: "🇱🇦" },
-  { code: "BND", symbol: "B$", name: "Brunei Dollar", flag: "🇧🇳" },
-  { code: "MOP", symbol: "MOP$", name: "Macanese Pataca", flag: "🇲🇴" },
-
-  // Additional European currencies
-  { code: "ALL", symbol: "L", name: "Albanian Lek", flag: "🇦🇱" },
-  { code: "BAM", symbol: "KM", name: "Bosnia-Herzegovina Mark", flag: "🇧🇦" },
-  { code: "MKD", symbol: "ден", name: "Macedonian Denar", flag: "🇲🇰" },
-  { code: "MDL", symbol: "L", name: "Moldovan Leu", flag: "🇲🇩" },
-  { code: "GEL", symbol: "₾", name: "Georgian Lari", flag: "🇬🇪" },
-  { code: "AMD", symbol: "֏", name: "Armenian Dram", flag: "🇦🇲" },
-  { code: "AZN", symbol: "₼", name: "Azerbaijani Manat", flag: "🇦🇿" },
-  { code: "BYN", symbol: "Br", name: "Belarusian Ruble", flag: "🇧🇾" },
-  { code: "KZT", symbol: "₸", name: "Kazakhstani Tenge", flag: "🇰🇿" },
-  { code: "UZS", symbol: "so'm", name: "Uzbekistani Som", flag: "🇺🇿" },
-
-  // Additional Middle Eastern currencies
-  { code: "QAR", symbol: "ر.ق", name: "Qatari Riyal", flag: "🇶🇦" },
-  { code: "BHD", symbol: ".د.ب", name: "Bahraini Dinar", flag: "🇧🇭" },
-  { code: "KWD", symbol: "د.ك", name: "Kuwaiti Dinar", flag: "🇰🇼" },
-  { code: "OMR", symbol: "ر.ع.", name: "Omani Rial", flag: "🇴🇲" },
-  { code: "JOD", symbol: "د.ا", name: "Jordanian Dinar", flag: "🇯🇴" },
-  { code: "LBP", symbol: "ل.ل", name: "Lebanese Pound", flag: "🇱🇧" },
-  { code: "SYP", symbol: "£S", name: "Syrian Pound", flag: "🇸🇾" },
-  { code: "IQD", symbol: "ع.د", name: "Iraqi Dinar", flag: "🇮🇶" },
-  { code: "IRR", symbol: "﷼", name: "Iranian Rial", flag: "🇮🇷" },
-  { code: "AFN", symbol: "؋", name: "Afghan Afghani", flag: "🇦🇫" },
+  // Middle East
+  { code: "ILS", name: "Israeli Shekel", symbol: "₪", flag: "🇮🇱" },
+  { code: "AED", name: "UAE Dirham", symbol: "د.إ", flag: "🇦🇪" },
+  { code: "SAR", name: "Saudi Riyal", symbol: "﷼", flag: "🇸🇦" },
+  { code: "QAR", name: "Qatari Riyal", symbol: "﷼", flag: "🇶🇦" },
+  { code: "KWD", name: "Kuwaiti Dinar", symbol: "د.ك", flag: "🇰🇼" },
+  { code: "BHD", name: "Bahraini Dinar", symbol: ".د.ب", flag: "🇧🇭" },
+  { code: "OMR", name: "Omani Rial", symbol: "﷼", flag: "🇴🇲" },
+  { code: "JOD", name: "Jordanian Dinar", symbol: "د.ا", flag: "🇯🇴" },
+  { code: "LBP", name: "Lebanese Pound", symbol: "ل.ل", flag: "🇱🇧" },
+  { code: "SYP", name: "Syrian Pound", symbol: "ل.س", flag: "🇸🇾" },
+  { code: "IQD", name: "Iraqi Dinar", symbol: "ع.د", flag: "🇮🇶" },
+  { code: "IRR", name: "Iranian Rial", symbol: "﷼", flag: "🇮🇷" },
+  { code: "AFN", name: "Afghan Afghani", symbol: "؋", flag: "🇦🇫" },
+  { code: "YER", name: "Yemeni Rial", symbol: "﷼", flag: "🇾🇪" },
 ];
 
 // Cache duration: 15 minutes
 const CACHE_DURATION = 15 * 60 * 1000;
 
-// Interface for cached exchange rates
+// Background update timeout: 3 seconds (faster than old 10 second timeout)
+const BACKGROUND_UPDATE_TIMEOUT = 3000;
+
 interface CachedRates {
-  [baseCurrency: string]: {
-    rates: { [targetCurrency: string]: number };
-    timestamp: number;
-  };
+  rates: Record<string, number>;
+  timestamp: number;
 }
 
-interface CurrencyStore extends CurrencyState {
+interface CurrencyStore {
+  // Core data
   currencies: Currency[];
-  isHydrated: boolean;
-  cachedRates: CachedRates;
+  baseCurrency: Currency;
+  targetCurrency: Currency;
+  rates: Record<string, number>;
+  lastUpdated: Date | null;
+
+  // Cache management
+  cachedRates: Record<string, CachedRates>;
+
+  // Status flags
   isOnline: boolean;
-  hasEverBeenOnline: boolean;
+  isUpdating: boolean; // Background updates, never blocks UI
+  hasInitialData: boolean;
+  updateError: string | null;
+
+  // Actions
+  setOnlineStatus: (status: boolean) => void;
   setBaseCurrency: (currency: Currency) => void;
   setTargetCurrency: (currency: Currency) => void;
   swapCurrencies: () => void;
-  fetchExchangeRates: (forceRefresh?: boolean) => Promise<void>;
-  fetchAllCurrencyRates: () => Promise<void>;
-  convertAmount: (amount: number) => number;
-  getCurrencyByCode: (code: string) => Currency | undefined;
-  setOnlineStatus: (status: boolean) => void;
+
+  // Data access - always returns immediately
+  getCurrentRate: () => number | null;
+  getDisplayRate: () => {
+    rate: number | null;
+    isFromCache: boolean;
+    age: string;
+  };
+
+  // Background operations
+  updateRatesInBackground: () => void;
+  updateAllRatesInBackground: () => void;
+
+  // Cache utilities
   isCacheValid: (baseCurrency: string) => boolean;
   getRatesFromCache: (
     baseCurrency: string,
@@ -162,13 +238,16 @@ interface CurrencyStore extends CurrencyState {
   ) => number | null;
 }
 
-const initialState: CurrencyState = {
-  baseCurrency: CURRENCIES[0], // EUR
-  targetCurrency: CURRENCIES[1], // USD
+const initialState = {
+  baseCurrency: { code: "EUR", name: "Euro", symbol: "€", flag: "🇪🇺" },
+  targetCurrency: { code: "USD", name: "US Dollar", symbol: "$", flag: "🇺🇸" },
   rates: {},
   lastUpdated: null,
-  isLoading: false,
-  error: null,
+  cachedRates: {},
+  isOnline: false, // Start offline by default - safer assumption
+  isUpdating: false,
+  hasInitialData: false,
+  updateError: null,
 };
 
 export const useCurrencyStore = create<CurrencyStore>()(
@@ -176,62 +255,90 @@ export const useCurrencyStore = create<CurrencyStore>()(
     (set, get) => ({
       ...initialState,
       currencies: CURRENCIES,
-      isHydrated: false,
-      cachedRates: {},
-      isOnline: typeof navigator !== "undefined" ? navigator.onLine : true,
-      hasEverBeenOnline: false,
 
       setOnlineStatus: (status: boolean) => {
-        const state = get();
-        currencyLogger.debug(
-          `Setting online status to ${status} (was ${state.isOnline})`,
-        );
-
-        // Update the state immediately for UI feedback
+        const prevStatus = get().isOnline;
         set({ isOnline: status });
 
-        if (status && !state.isOnline) {
-          // When coming back online from offline state
-          if (!state.hasEverBeenOnline) {
-            currencyLogger.info(
-              "First time online - marking hasEverBeenOnline=true",
-            );
-            set({ hasEverBeenOnline: true });
-          }
+        currencyLogger.debug(`Online status: ${prevStatus} → ${status}`);
 
-          currencyLogger.debug(
-            "Going online - will fetch currency rates for current pair",
-          );
-          // Small delay to allow UI to update, then fetch rates
+        // If coming online for first time or after being offline
+        if (status && !prevStatus) {
+          // Start background update immediately when coming online
           setTimeout(() => {
-            const currentState = get();
-            if (currentState.isOnline) {
-              // Double-check we're still online
-              currentState.fetchExchangeRates(true); // Force refresh when coming back online
+            const state = get();
+            if (state.isOnline) {
+              state.updateRatesInBackground();
+              // Also update comprehensive cache after delay
+              setTimeout(() => {
+                if (get().isOnline) {
+                  get().updateAllRatesInBackground();
+                }
+              }, 5000);
             }
-          }, 1000);
-
-          // Also fetch comprehensive rates in background after a longer delay
-          setTimeout(() => {
-            const currentState = get();
-            if (currentState.isOnline) {
-              // Double-check we're still online
-              currentState.fetchAllCurrencyRates();
-            }
-          }, 3000);
-        } else if (!status) {
-          currencyLogger.debug("Going offline - will use cached rates only");
-          // Clear any loading states when going offline
-          set({
-            isLoading: false,
-            error: state.hasEverBeenOnline
-              ? null
-              : "Network connection required for initial setup",
-          });
+          }, 100);
         }
       },
 
-      isCacheValid: (baseCurrency: string): boolean => {
+      getCurrentRate: () => {
+        const state = get();
+
+        // Try current rates first
+        const currentRate = state.rates[state.targetCurrency.code];
+        if (currentRate) {
+          return currentRate;
+        }
+
+        // Fallback to cache
+        const cachedRate = state.getRatesFromCache(
+          state.baseCurrency.code,
+          state.targetCurrency.code,
+        );
+
+        return cachedRate;
+      },
+
+      getDisplayRate: () => {
+        const state = get();
+
+        // Try current rates first
+        let rate: number | null =
+          state.rates[state.targetCurrency.code] || null;
+        let isFromCache = false;
+        let timestamp = state.lastUpdated;
+
+        if (!rate) {
+          // Use cached data
+          const cachedData = state.cachedRates[state.baseCurrency.code];
+          if (cachedData) {
+            rate = cachedData.rates[state.targetCurrency.code] || null;
+            isFromCache = true;
+            timestamp = new Date(cachedData.timestamp);
+          }
+        }
+
+        // Calculate age
+        let age = "unknown";
+        if (timestamp) {
+          const now = new Date();
+          const diffMinutes = Math.floor(
+            (now.getTime() - new Date(timestamp).getTime()) / (1000 * 60),
+          );
+          if (diffMinutes < 1) {
+            age = "now";
+          } else if (diffMinutes < 60) {
+            age = `${diffMinutes}m ago`;
+          } else if (diffMinutes < 1440) {
+            age = `${Math.floor(diffMinutes / 60)}h ago`;
+          } else {
+            age = `${Math.floor(diffMinutes / 1440)}d ago`;
+          }
+        }
+
+        return { rate, isFromCache, age };
+      },
+
+      isCacheValid: (baseCurrency: string) => {
         const state = get();
         const cached = state.cachedRates[baseCurrency];
         if (!cached) return false;
@@ -240,10 +347,7 @@ export const useCurrencyStore = create<CurrencyStore>()(
         return now - cached.timestamp < CACHE_DURATION;
       },
 
-      getRatesFromCache: (
-        baseCurrency: string,
-        targetCurrency: string,
-      ): number | null => {
+      getRatesFromCache: (baseCurrency: string, targetCurrency: string) => {
         const state = get();
         const cached = state.cachedRates[baseCurrency];
         if (!cached) return null;
@@ -252,166 +356,241 @@ export const useCurrencyStore = create<CurrencyStore>()(
       },
 
       setBaseCurrency: (currency: Currency) => {
-        const state = get();
         set({ baseCurrency: currency });
 
-        // Only fetch rates if online, otherwise use cache
+        // Check if we have cached data for this currency
+        const state = get();
+        const cachedRate = state.getRatesFromCache(
+          currency.code,
+          state.targetCurrency.code,
+        );
+
+        if (cachedRate) {
+          // Update current rates with cached data immediately
+          const cachedData = state.cachedRates[currency.code];
+          if (cachedData) {
+            set({
+              rates: cachedData.rates,
+              lastUpdated: new Date(cachedData.timestamp),
+            });
+          }
+        }
+
+        // Start background update if online
         if (state.isOnline) {
-          state.fetchExchangeRates();
+          setTimeout(() => state.updateRatesInBackground(), 100);
         }
       },
 
       setTargetCurrency: (currency: Currency) => {
         set({ targetCurrency: currency });
-        // No need to fetch rates, conversion will use cached data
+        // No need to fetch new data - conversion uses existing rates
       },
 
       swapCurrencies: () => {
         const state = get();
+        const newBase = state.targetCurrency;
+        const newTarget = state.baseCurrency;
+
         set({
-          baseCurrency: state.targetCurrency,
-          targetCurrency: state.baseCurrency,
+          baseCurrency: newBase,
+          targetCurrency: newTarget,
         });
-        // Only fetch rates if online, otherwise use cache
+
+        // Check cached data for new base currency
+        const cachedRate = state.getRatesFromCache(
+          newBase.code,
+          newTarget.code,
+        );
+        if (cachedRate) {
+          const cachedData = state.cachedRates[newBase.code];
+          if (cachedData) {
+            set({
+              rates: cachedData.rates,
+              lastUpdated: new Date(cachedData.timestamp),
+            });
+          }
+        }
+
+        // Background update if online
         if (state.isOnline) {
-          state.fetchExchangeRates();
+          setTimeout(() => state.updateRatesInBackground(), 100);
         }
       },
 
-      fetchExchangeRates: async (forceRefresh = false) => {
+      updateRatesInBackground: async () => {
         const state = get();
 
-        // If offline and we have cached data, don't attempt to fetch
-        if (!state.isOnline && !forceRefresh) {
-          console.log("Offline: Using cached exchange rates");
-
-          // Try to use cached data
-          const cachedRate = state.getRatesFromCache(
-            state.baseCurrency.code,
-            state.targetCurrency.code,
-          );
-          if (cachedRate !== null) {
-            // Update UI to show we're using cached data
-            set({
-              isLoading: false,
-              error: null,
-            });
-            return;
-          } else {
-            // No cached data available
-            set({
-              isLoading: false,
-              error: state.hasEverBeenOnline
-                ? "Using cached rates (network unavailable)"
-                : "Network connection required for initial setup",
-            });
-            return;
-          }
-        }
-
-        // If offline and forcing refresh, show appropriate message
-        if (!state.isOnline && forceRefresh) {
-          set({
-            isLoading: false,
-            error: "Cannot refresh - device is offline",
-          });
+        if (!state.isOnline) {
+          currencyLogger.debug("Skipping background update - offline");
           return;
         }
 
-        // If we have valid cached data and not forcing refresh, use cache
-        if (!forceRefresh && state.isCacheValid(state.baseCurrency.code)) {
+        if (state.isUpdating) {
+          currencyLogger.debug("Already updating - skipping duplicate request");
+          return;
+        }
+
+        // Check if we have fresh cache and don't need to update
+        if (
+          !state.hasInitialData ||
+          state.isCacheValid(state.baseCurrency.code)
+        ) {
           const cachedRate = state.getRatesFromCache(
             state.baseCurrency.code,
             state.targetCurrency.code,
           );
-          if (cachedRate !== null) {
-            console.log("Using cached exchange rates");
-            set({
-              isLoading: false,
-              error: null,
-            });
+          if (cachedRate && !state.hasInitialData) {
+            // Use cached data for initial load
+            const cachedData = state.cachedRates[state.baseCurrency.code];
+            if (cachedData) {
+              set({
+                rates: cachedData.rates,
+                lastUpdated: new Date(cachedData.timestamp),
+                hasInitialData: true,
+              });
+              currencyLogger.info("Loaded initial data from cache");
+            }
+          }
+
+          if (
+            state.hasInitialData &&
+            state.isCacheValid(state.baseCurrency.code)
+          ) {
+            currencyLogger.debug("Cache is still valid - skipping update");
             return;
           }
         }
 
-        set({ isLoading: true, error: null });
+        set({ isUpdating: true, updateError: null });
 
         try {
+          currencyLogger.info(
+            `Background update: fetching rates for ${state.baseCurrency.code}`,
+          );
+
+          const controller = new AbortController();
+          const timeoutId = setTimeout(
+            () => controller.abort(),
+            BACKGROUND_UPDATE_TIMEOUT,
+          );
+
           const response = await fetch(
             `https://api.exchangerate-api.com/v4/latest/${state.baseCurrency.code}`,
             {
-              signal: AbortSignal.timeout(10000), // 10 second timeout
+              signal: controller.signal,
+              cache: "no-cache",
             },
           );
 
+          clearTimeout(timeoutId);
+
           if (!response.ok) {
-            throw new Error("Failed to fetch exchange rates");
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
           }
 
           const data = await response.json();
           const rates = data.rates || data.conversion_rates || {};
 
-          // Update main rates
+          if (Object.keys(rates).length === 0) {
+            throw new Error("No rates received from API");
+          }
+
+          // Update main rates and cache
+          const now = new Date();
           set({
             rates,
-            lastUpdated: new Date(),
-            isLoading: false,
-            error: null,
+            lastUpdated: now,
+            hasInitialData: true,
+            updateError: null,
           });
 
-          // Cache the rates
+          // Update cache
           const newCachedRates = { ...state.cachedRates };
           newCachedRates[state.baseCurrency.code] = {
             rates,
-            timestamp: Date.now(),
+            timestamp: now.getTime(),
           };
           set({ cachedRates: newCachedRates });
-        } catch (error) {
-          console.error("Failed to fetch exchange rates:", error);
 
-          // Try to use cached data as fallback
+          currencyLogger.info(
+            `Background update successful for ${state.baseCurrency.code}`,
+          );
+        } catch (error) {
+          const errorMessage =
+            error instanceof Error ? error.message : "Unknown error";
+          currencyLogger.warn(`Background update failed: ${errorMessage}`);
+
+          set({
+            updateError: errorMessage,
+          });
+
+          // Don't show error to user if we have cached data
           const cachedRate = state.getRatesFromCache(
             state.baseCurrency.code,
             state.targetCurrency.code,
           );
-          if (cachedRate !== null) {
-            console.log("API failed, using cached rates");
-            set({
-              isLoading: false,
-              error: "Using cached rates (network error)",
-            });
-          } else {
-            set({
-              isLoading: false,
-              error: state.hasEverBeenOnline
-                ? "Unable to fetch exchange rates and no cached data available"
-                : "Network connection required - please try again when online",
-            });
+          if (cachedRate && !state.hasInitialData) {
+            const cachedData = state.cachedRates[state.baseCurrency.code];
+            if (cachedData) {
+              set({
+                rates: cachedData.rates,
+                lastUpdated: new Date(cachedData.timestamp),
+                hasInitialData: true,
+              });
+              currencyLogger.info(
+                "Fallback to cached data after failed update",
+              );
+            }
           }
+        } finally {
+          set({ isUpdating: false });
         }
       },
 
-      fetchAllCurrencyRates: async () => {
+      updateAllRatesInBackground: async () => {
         const state = get();
 
         if (!state.isOnline) {
-          console.log("Offline: Skipping background currency fetch");
+          currencyLogger.debug("Skipping comprehensive update - offline");
           return;
         }
 
-        console.log("Fetching all currency rates in background...");
+        currencyLogger.info(
+          "Starting comprehensive background currency update",
+        );
 
-        // Fetch rates for all major currencies to build comprehensive cache
-        const baseCurrencies = ["EUR", "USD", "GBP", "CHF", "CZK", "PLN"]; // Extended list
-        const promises = baseCurrencies.map(async (baseCurrency) => {
+        // Fetch rates for major currencies to build comprehensive cache
+        const baseCurrencies = [
+          "EUR",
+          "USD",
+          "GBP",
+          "CHF",
+          "JPY",
+          "CZK",
+          "PLN",
+        ];
+
+        const updatePromises = baseCurrencies.map(async (baseCurrency) => {
           try {
-            const response = await fetch(
-              `https://api.exchangerate-api.com/v4/latest/${baseCurrency}`,
-              { cache: "no-cache" }, // Ensure fresh data
+            const controller = new AbortController();
+            const timeoutId = setTimeout(
+              () => controller.abort(),
+              BACKGROUND_UPDATE_TIMEOUT,
             );
 
+            const response = await fetch(
+              `https://api.exchangerate-api.com/v4/latest/${baseCurrency}`,
+              {
+                signal: controller.signal,
+                cache: "no-cache",
+              },
+            );
+
+            clearTimeout(timeoutId);
+
             if (!response.ok) {
-              throw new Error(`Failed to fetch rates for ${baseCurrency}`);
+              throw new Error(`HTTP ${response.status} for ${baseCurrency}`);
             }
 
             const data = await response.json();
@@ -423,170 +602,52 @@ export const useCurrencyStore = create<CurrencyStore>()(
               timestamp: Date.now(),
             };
           } catch (error) {
-            console.error(`Failed to fetch rates for ${baseCurrency}:`, error);
+            currencyLogger.warn(
+              `Failed to fetch rates for ${baseCurrency}:`,
+              error,
+            );
             return null;
           }
         });
 
-        const results = await Promise.all(promises);
-        const newCachedRates = { ...state.cachedRates };
+        try {
+          const results = await Promise.all(updatePromises);
+          const newCachedRates = { ...state.cachedRates };
+          let successCount = 0;
 
-        let successCount = 0;
-        results.forEach((result) => {
-          if (result) {
-            newCachedRates[result.baseCurrency] = {
-              rates: result.rates,
-              timestamp: result.timestamp,
-            };
-            successCount++;
-          }
-        });
+          results.forEach((result) => {
+            if (result) {
+              newCachedRates[result.baseCurrency] = {
+                rates: result.rates,
+                timestamp: result.timestamp,
+              };
+              successCount++;
+            }
+          });
 
-        if (successCount > 0) {
-          set({ cachedRates: newCachedRates });
-          console.log(
-            `Background currency rates updated (${successCount}/${baseCurrencies.length} successful)`,
-          );
-        }
-      },
-
-      convertAmount: (amount: number): number => {
-        const state = get();
-        if (isNaN(amount)) {
-          return 0;
-        }
-
-        // If converting from the same currency, return original amount
-        if (state.baseCurrency.code === state.targetCurrency.code) {
-          return amount;
-        }
-
-        let convertedAmount = 0;
-        let usedRate = 0;
-
-        // Strategy: Try multiple approaches to find a conversion rate
-
-        // 1. Try direct conversion using cached rates for the base currency
-        const directRate = state.getRatesFromCache(
-          state.baseCurrency.code,
-          state.targetCurrency.code,
-        );
-        if (directRate !== null) {
-          convertedAmount = amount * directRate;
-          usedRate = directRate;
-        }
-
-        // 2. Try using current rates
-        if (convertedAmount === 0) {
-          const currentBaseRate = state.rates[state.baseCurrency.code] || 1;
-          const currentTargetRate = state.rates[state.targetCurrency.code];
-          if (currentTargetRate && currentBaseRate) {
-            usedRate = currentTargetRate / currentBaseRate;
-            convertedAmount = amount * usedRate;
-          }
-        }
-
-        // 3. Try reverse conversion (target as base currency)
-        if (convertedAmount === 0) {
-          const reverseRate = state.getRatesFromCache(
-            state.targetCurrency.code,
-            state.baseCurrency.code,
-          );
-          if (reverseRate !== null && reverseRate !== 0) {
-            usedRate = 1 / reverseRate;
-            convertedAmount = amount / reverseRate;
-          }
-        }
-
-        // 4. Try using EUR as intermediary (most cached rates are EUR-based)
-        if (
-          convertedAmount === 0 &&
-          state.baseCurrency.code !== "EUR" &&
-          state.targetCurrency.code !== "EUR"
-        ) {
-          const baseToEUR = state.getRatesFromCache(
-            "EUR",
-            state.baseCurrency.code,
-          );
-          const eurToTarget = state.getRatesFromCache(
-            "EUR",
-            state.targetCurrency.code,
-          );
-
-          if (baseToEUR && eurToTarget && baseToEUR !== 0) {
-            // Convert: amount / baseToEUR * eurToTarget
-            usedRate = eurToTarget / baseToEUR;
-            convertedAmount = (amount / baseToEUR) * eurToTarget;
-          }
-        }
-
-        // 5. Try using USD as intermediary
-        if (
-          convertedAmount === 0 &&
-          state.baseCurrency.code !== "USD" &&
-          state.targetCurrency.code !== "USD"
-        ) {
-          const baseToUSD = state.getRatesFromCache(
-            "USD",
-            state.baseCurrency.code,
-          );
-          const usdToTarget = state.getRatesFromCache(
-            "USD",
-            state.targetCurrency.code,
-          );
-
-          if (baseToUSD && usdToTarget && baseToUSD !== 0) {
-            usedRate = usdToTarget / baseToUSD;
-            convertedAmount = (amount / baseToUSD) * usdToTarget;
-          }
-        }
-
-        // Log conversion to history if successful and online
-        if (convertedAmount > 0 && usedRate > 0 && state.isOnline) {
-          try {
-            const historyStore = useConversionHistoryStore.getState();
-            historyStore.addConversion(
-              state.baseCurrency,
-              state.targetCurrency,
-              amount,
-              convertedAmount,
-              usedRate,
-              state.isOnline,
+          if (successCount > 0) {
+            set({ cachedRates: newCachedRates });
+            currencyLogger.info(
+              `Comprehensive update completed: ${successCount}/${baseCurrencies.length} successful`,
             );
-          } catch (error) {
-            console.warn("Failed to log conversion to history:", error);
           }
+        } catch (error) {
+          currencyLogger.warn("Comprehensive update failed:", error);
         }
-
-        if (convertedAmount === 0) {
-          console.warn(
-            `No conversion path found for ${state.baseCurrency.code} -> ${state.targetCurrency.code}`,
-          );
-        }
-
-        return convertedAmount;
-      },
-
-      getCurrencyByCode: (code: string): Currency | undefined => {
-        return CURRENCIES.find((currency) => currency.code === code);
       },
     }),
     {
-      name: "currency-storage",
-      storage: createJSONStorage(() => localStorage),
+      name: "currency-store-offline-first",
+      version: 1,
+      // Only persist data, not status flags
       partialize: (state) => ({
         baseCurrency: state.baseCurrency,
         targetCurrency: state.targetCurrency,
         rates: state.rates,
         lastUpdated: state.lastUpdated,
         cachedRates: state.cachedRates,
-        hasEverBeenOnline: state.hasEverBeenOnline,
+        hasInitialData: state.hasInitialData,
       }),
-      onRehydrateStorage: () => (state) => {
-        if (state) {
-          state.isHydrated = true;
-        }
-      },
     },
   ),
 );

@@ -1,0 +1,729 @@
+{
+  "totalPages": 1277,
+  "generatedAt": "2025-10-20T14:52:10.400Z",
+  "strategy": "Regional Currency Prioritization",
+  "locales": [
+    "en",
+    "de",
+    "es",
+    "fr",
+    "it",
+    "pt",
+    "ru",
+    "ja",
+    "zh-cn",
+    "ar",
+    "hi",
+    "nl"
+  ],
+  "regionalConfig": [
+    "en",
+    "de",
+    "es",
+    "fr",
+    "it",
+    "pt",
+    "ru",
+    "ja",
+    "zh-cn",
+    "ar",
+    "hi",
+    "nl"
+  ],
+  "localeStats": {
+    "en": {
+      "pages": 120,
+      "popular_pairs": 96,
+      "primary_currencies": 24,
+      "currencies_used": [
+        "USD",
+        "EUR",
+        "GBP",
+        "CAD",
+        "AUD",
+        "CHF",
+        "JPY",
+        "CNY",
+        "INR"
+      ],
+      "amounts_used": [
+        1,
+        5,
+        10,
+        20,
+        50,
+        100,
+        200,
+        500
+      ]
+    },
+    "de": {
+      "pages": 111,
+      "popular_pairs": 96,
+      "primary_currencies": 15,
+      "currencies_used": [
+        "EUR",
+        "CHF",
+        "USD",
+        "GBP",
+        "JPY",
+        "CAD",
+        "AUD",
+        "SEK",
+        "NOK"
+      ],
+      "amounts_used": [
+        1,
+        5,
+        10,
+        20,
+        50,
+        100,
+        200,
+        500
+      ]
+    },
+    "es": {
+      "pages": 120,
+      "popular_pairs": 88,
+      "primary_currencies": 32,
+      "currencies_used": [
+        "EUR",
+        "USD",
+        "GBP",
+        "MXN",
+        "ARS",
+        "COP",
+        "CLP"
+      ],
+      "amounts_used": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100,
+        250,
+        500
+      ]
+    },
+    "fr": {
+      "pages": 98,
+      "popular_pairs": 80,
+      "primary_currencies": 18,
+      "currencies_used": [
+        "EUR",
+        "USD",
+        "CHF",
+        "GBP",
+        "CAD",
+        "MAD",
+        "TND"
+      ],
+      "amounts_used": [
+        1,
+        5,
+        10,
+        20,
+        50,
+        100,
+        200,
+        500
+      ]
+    },
+    "it": {
+      "pages": 108,
+      "popular_pairs": 96,
+      "primary_currencies": 12,
+      "currencies_used": [
+        "EUR",
+        "USD",
+        "GBP",
+        "CHF",
+        "JPY",
+        "TRY",
+        "CAD",
+        "AUD"
+      ],
+      "amounts_used": [
+        1,
+        5,
+        10,
+        20,
+        50,
+        100,
+        200,
+        500
+      ]
+    },
+    "pt": {
+      "pages": 84,
+      "popular_pairs": 72,
+      "primary_currencies": 12,
+      "currencies_used": [
+        "EUR",
+        "USD",
+        "BRL",
+        "GBP",
+        "ARS"
+      ],
+      "amounts_used": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100,
+        250,
+        500
+      ]
+    },
+    "ru": {
+      "pages": 66,
+      "popular_pairs": 48,
+      "primary_currencies": 18,
+      "currencies_used": [
+        "USD",
+        "EUR",
+        "RUB",
+        "CNY"
+      ],
+      "amounts_used": [
+        1,
+        10,
+        50,
+        100,
+        500,
+        1000,
+        5000,
+        10000
+      ]
+    },
+    "ja": {
+      "pages": 120,
+      "popular_pairs": 96,
+      "primary_currencies": 24,
+      "currencies_used": [
+        "USD",
+        "EUR",
+        "JPY",
+        "CNY",
+        "KRW",
+        "AUD",
+        "GBP",
+        "HKD",
+        "SGD"
+      ],
+      "amounts_used": [
+        100,
+        500,
+        1000,
+        5000,
+        10000,
+        50000,
+        100000,
+        500000
+      ]
+    },
+    "zh-cn": {
+      "pages": 120,
+      "popular_pairs": 96,
+      "primary_currencies": 24,
+      "currencies_used": [
+        "USD",
+        "EUR",
+        "CNY",
+        "HKD",
+        "JPY",
+        "KRW",
+        "SGD",
+        "THB"
+      ],
+      "amounts_used": [
+        1,
+        10,
+        50,
+        100,
+        500,
+        1000,
+        5000,
+        10000
+      ]
+    },
+    "ar": {
+      "pages": 120,
+      "popular_pairs": 96,
+      "primary_currencies": 24,
+      "currencies_used": [
+        "USD",
+        "EUR",
+        "SAR",
+        "AED",
+        "EGP",
+        "KWD",
+        "QAR"
+      ],
+      "amounts_used": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100,
+        500,
+        1000
+      ]
+    },
+    "hi": {
+      "pages": 120,
+      "popular_pairs": 96,
+      "primary_currencies": 24,
+      "currencies_used": [
+        "USD",
+        "EUR",
+        "GBP",
+        "INR",
+        "AED",
+        "SAR",
+        "PKR",
+        "SGD"
+      ],
+      "amounts_used": [
+        1,
+        10,
+        50,
+        100,
+        500,
+        1000,
+        5000,
+        10000
+      ]
+    },
+    "nl": {
+      "pages": 90,
+      "popular_pairs": 72,
+      "primary_currencies": 18,
+      "currencies_used": [
+        "EUR",
+        "USD",
+        "GBP",
+        "CHF",
+        "CAD",
+        "AUD",
+        "JPY"
+      ],
+      "amounts_used": [
+        1,
+        5,
+        10,
+        20,
+        50,
+        100,
+        200,
+        500
+      ]
+    }
+  },
+  "pages": [
+    {
+      "slug": "1-dollar-to-euro",
+      "from": "USD",
+      "to": "EUR",
+      "amount": 1,
+      "path": "/convert/1-dollar-to-euro",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "5-dollar-to-euro",
+      "from": "USD",
+      "to": "EUR",
+      "amount": 5,
+      "path": "/convert/5-dollar-to-euro",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "10-dollar-to-euro",
+      "from": "USD",
+      "to": "EUR",
+      "amount": 10,
+      "path": "/convert/10-dollar-to-euro",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "20-dollar-to-euro",
+      "from": "USD",
+      "to": "EUR",
+      "amount": 20,
+      "path": "/convert/20-dollar-to-euro",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "50-dollar-to-euro",
+      "from": "USD",
+      "to": "EUR",
+      "amount": 50,
+      "path": "/convert/50-dollar-to-euro",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "100-dollar-to-euro",
+      "from": "USD",
+      "to": "EUR",
+      "amount": 100,
+      "path": "/convert/100-dollar-to-euro",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "200-dollar-to-euro",
+      "from": "USD",
+      "to": "EUR",
+      "amount": 200,
+      "path": "/convert/200-dollar-to-euro",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "500-dollar-to-euro",
+      "from": "USD",
+      "to": "EUR",
+      "amount": 500,
+      "path": "/convert/500-dollar-to-euro",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "1-dollar-to-pound",
+      "from": "USD",
+      "to": "GBP",
+      "amount": 1,
+      "path": "/convert/1-dollar-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "5-dollar-to-pound",
+      "from": "USD",
+      "to": "GBP",
+      "amount": 5,
+      "path": "/convert/5-dollar-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "10-dollar-to-pound",
+      "from": "USD",
+      "to": "GBP",
+      "amount": 10,
+      "path": "/convert/10-dollar-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "20-dollar-to-pound",
+      "from": "USD",
+      "to": "GBP",
+      "amount": 20,
+      "path": "/convert/20-dollar-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "50-dollar-to-pound",
+      "from": "USD",
+      "to": "GBP",
+      "amount": 50,
+      "path": "/convert/50-dollar-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "100-dollar-to-pound",
+      "from": "USD",
+      "to": "GBP",
+      "amount": 100,
+      "path": "/convert/100-dollar-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "200-dollar-to-pound",
+      "from": "USD",
+      "to": "GBP",
+      "amount": 200,
+      "path": "/convert/200-dollar-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "500-dollar-to-pound",
+      "from": "USD",
+      "to": "GBP",
+      "amount": 500,
+      "path": "/convert/500-dollar-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "1-dollar-to-canadian-dollar",
+      "from": "USD",
+      "to": "CAD",
+      "amount": 1,
+      "path": "/convert/1-dollar-to-canadian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "5-dollar-to-canadian-dollar",
+      "from": "USD",
+      "to": "CAD",
+      "amount": 5,
+      "path": "/convert/5-dollar-to-canadian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "10-dollar-to-canadian-dollar",
+      "from": "USD",
+      "to": "CAD",
+      "amount": 10,
+      "path": "/convert/10-dollar-to-canadian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "20-dollar-to-canadian-dollar",
+      "from": "USD",
+      "to": "CAD",
+      "amount": 20,
+      "path": "/convert/20-dollar-to-canadian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "50-dollar-to-canadian-dollar",
+      "from": "USD",
+      "to": "CAD",
+      "amount": 50,
+      "path": "/convert/50-dollar-to-canadian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "100-dollar-to-canadian-dollar",
+      "from": "USD",
+      "to": "CAD",
+      "amount": 100,
+      "path": "/convert/100-dollar-to-canadian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "200-dollar-to-canadian-dollar",
+      "from": "USD",
+      "to": "CAD",
+      "amount": 200,
+      "path": "/convert/200-dollar-to-canadian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "500-dollar-to-canadian-dollar",
+      "from": "USD",
+      "to": "CAD",
+      "amount": 500,
+      "path": "/convert/500-dollar-to-canadian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "1-dollar-to-australian-dollar",
+      "from": "USD",
+      "to": "AUD",
+      "amount": 1,
+      "path": "/convert/1-dollar-to-australian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "5-dollar-to-australian-dollar",
+      "from": "USD",
+      "to": "AUD",
+      "amount": 5,
+      "path": "/convert/5-dollar-to-australian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "10-dollar-to-australian-dollar",
+      "from": "USD",
+      "to": "AUD",
+      "amount": 10,
+      "path": "/convert/10-dollar-to-australian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "20-dollar-to-australian-dollar",
+      "from": "USD",
+      "to": "AUD",
+      "amount": 20,
+      "path": "/convert/20-dollar-to-australian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "50-dollar-to-australian-dollar",
+      "from": "USD",
+      "to": "AUD",
+      "amount": 50,
+      "path": "/convert/50-dollar-to-australian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "100-dollar-to-australian-dollar",
+      "from": "USD",
+      "to": "AUD",
+      "amount": 100,
+      "path": "/convert/100-dollar-to-australian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "200-dollar-to-australian-dollar",
+      "from": "USD",
+      "to": "AUD",
+      "amount": 200,
+      "path": "/convert/200-dollar-to-australian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "500-dollar-to-australian-dollar",
+      "from": "USD",
+      "to": "AUD",
+      "amount": 500,
+      "path": "/convert/500-dollar-to-australian-dollar",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "1-euro-to-pound",
+      "from": "EUR",
+      "to": "GBP",
+      "amount": 1,
+      "path": "/convert/1-euro-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "5-euro-to-pound",
+      "from": "EUR",
+      "to": "GBP",
+      "amount": 5,
+      "path": "/convert/5-euro-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "10-euro-to-pound",
+      "from": "EUR",
+      "to": "GBP",
+      "amount": 10,
+      "path": "/convert/10-euro-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "20-euro-to-pound",
+      "from": "EUR",
+      "to": "GBP",
+      "amount": 20,
+      "path": "/convert/20-euro-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "50-euro-to-pound",
+      "from": "EUR",
+      "to": "GBP",
+      "amount": 50,
+      "path": "/convert/50-euro-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "100-euro-to-pound",
+      "from": "EUR",
+      "to": "GBP",
+      "amount": 100,
+      "path": "/convert/100-euro-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "200-euro-to-pound",
+      "from": "EUR",
+      "to": "GBP",
+      "amount": 200,
+      "path": "/convert/200-euro-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "500-euro-to-pound",
+      "from": "EUR",
+      "to": "GBP",
+      "amount": 500,
+      "path": "/convert/500-euro-to-pound",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "1-euro-to-franc",
+      "from": "EUR",
+      "to": "CHF",
+      "amount": 1,
+      "path": "/convert/1-euro-to-franc",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "5-euro-to-franc",
+      "from": "EUR",
+      "to": "CHF",
+      "amount": 5,
+      "path": "/convert/5-euro-to-franc",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "10-euro-to-franc",
+      "from": "EUR",
+      "to": "CHF",
+      "amount": 10,
+      "path": "/convert/10-euro-to-franc",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "20-euro-to-franc",
+      "from": "EUR",
+      "to": "CHF",
+      "amount": 20,
+      "path": "/convert/20-euro-to-franc",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "50-euro-to-franc",
+      "from": "EUR",
+      "to": "CHF",
+      "amount": 50,
+      "path": "/convert/50-euro-to-franc",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "100-euro-to-franc",
+      "from": "EUR",
+      "to": "CHF",
+      "amount": 100,
+      "path": "/convert/100-euro-to-franc",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "200-euro-to-franc",
+      "from": "EUR",
+      "to": "CHF",
+      "amount": 200,
+      "path": "/convert/200-euro-to-franc",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "500-euro-to-franc",
+      "from": "EUR",
+      "to": "CHF",
+      "amount": 500,
+      "path": "/convert/500-euro-to-franc",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "1-pound-to-franc",
+      "from": "GBP",
+      "to": "CHF",
+      "amount": 1,
+      "path": "/convert/1-pound-to-franc",
+      "priority": "popular_pair"
+    },
+    {
+      "slug": "5-pound-to-franc",
+      "from": "GBP",
+      "to": "CHF",
+      "amount": 5,
+      "path": "/convert/5-pound-to-franc",
+      "priority": "popular_pair"
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import {
   generateConversionPages,
   getUrlFriendlyName,
 } from "./page-generator";
+import { generateCurrencyUrl } from "@/lib/utils";
 
 export class SitemapBuilder {
   private baseUrl: string;
@@ -73,17 +74,15 @@ export class SitemapBuilder {
     MAJOR_CURRENCY_PAIRS.forEach((pair) => {
       // English version
       pages.push({
-        url: `${this.baseUrl}/currency-calculator-${pair.from.toLowerCase()}-${pair.to.toLowerCase()}`,
+        url: `${this.baseUrl}${generateCurrencyUrl("en", pair.from, pair.to)}`,
         lastModified: this.currentDate,
         changeFrequency: "daily",
         priority: (pair.priority || 0.8) * 0.9,
       });
 
       // German version
-      const fromUrl = getUrlFriendlyName(pair.from);
-      const toUrl = getUrlFriendlyName(pair.to);
       pages.push({
-        url: `${this.baseUrl}/waehrungsrechner-${fromUrl}-${toUrl}`,
+        url: `${this.baseUrl}${generateCurrencyUrl("de", pair.from, pair.to)}`,
         lastModified: this.currentDate,
         changeFrequency: "daily",
         priority: (pair.priority || 0.8) * 0.9,

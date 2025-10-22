@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { generateCurrencyUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Euro Guide - History, Facts & Exchange Rates | EUR Currency Guide",
@@ -225,14 +226,14 @@ export default function EuroGuidePage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Link
-                href="/currency-calculator-eur-usd"
+                href={generateCurrencyUrl("en", "EUR", "USD")}
                 className="bg-zinc-800 hover:bg-zinc-700 p-3 rounded transition-colors"
               >
                 <div className="font-semibold">EUR/USD</div>
                 <div className="text-sm text-gray-400">Euro to US Dollar</div>
               </Link>
               <Link
-                href="/currency-calculator-eur-gbp"
+                href={generateCurrencyUrl("en", "EUR", "GBP")}
                 className="bg-zinc-800 hover:bg-zinc-700 p-3 rounded transition-colors"
               >
                 <div className="font-semibold">EUR/GBP</div>
@@ -241,14 +242,14 @@ export default function EuroGuidePage() {
                 </div>
               </Link>
               <Link
-                href="/currency-calculator-eur-chf"
+                href={generateCurrencyUrl("en", "EUR", "CHF")}
                 className="bg-zinc-800 hover:bg-zinc-700 p-3 rounded transition-colors"
               >
                 <div className="font-semibold">EUR/CHF</div>
                 <div className="text-sm text-gray-400">Euro to Swiss Franc</div>
               </Link>
               <Link
-                href="/currency-calculator-eur-jpy"
+                href={generateCurrencyUrl("en", "EUR", "JPY")}
                 className="bg-zinc-800 hover:bg-zinc-700 p-3 rounded transition-colors"
               >
                 <div className="font-semibold">EUR/JPY</div>

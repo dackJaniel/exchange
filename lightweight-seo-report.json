@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-10-22T14:51:11.245Z",
+  "total_pages": 120,
+  "locales": {
+    "en": {
+      "pages": 30
+    },
+    "de": {
+      "pages": 30
+    },
+    "es": {
+      "pages": 30
+    },
+    "fr": {
+      "pages": 30
+    }
+  },
+  "memory_optimized": true
+}
