@@ -1,10 +1,10 @@
-'use client';
-import { init, push } from '@socialgouv/matomo-next';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { Suspense, useEffect, useState } from 'react';
+"use client";
+import { init, push } from "@socialgouv/matomo-next";
+import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
 
-const MATOMO_URL = 'https://matomo.danielhilmer.de';
-const MATOMO_SITE_ID = '4';
+const MATOMO_URL = process.env.NEXT_PUBLIC_MATOMO_URL;
+const MATOMO_SITE_ID = process.env.NEXT_PUBLIC_MATOMO_ID;
 
 const MatomoComponent = () => {
   const [initialised, setInitialised] = useState(false);
@@ -24,9 +24,9 @@ const MatomoComponent = () => {
   useEffect(() => {
     if (!pathname) return;
     // may be necessary to decodeURIComponent searchParamsString ?
-    const url = pathname + (searchParamsString ? '?' + searchParamsString : '');
-    push(['setCustomUrl', url]);
-    push(['trackPageView']);
+    const url = pathname + (searchParamsString ? "?" + searchParamsString : "");
+    push(["setCustomUrl", url]);
+    push(["trackPageView"]);
   }, [pathname, searchParamsString]);
   return null;
 };
